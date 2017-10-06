@@ -1,0 +1,13 @@
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.exe.config
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.exe
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.pdb
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.csprojResolveAssemblyReference.cache
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.exe
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.pdb
+D:\LTM C#\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.exe.config
+D:\LTM C#\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.exe
+D:\LTM C#\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.pdb
+D:\LTM C#\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.csprojResolveAssemblyReference.cache
+D:\LTM C#\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.csproj.CoreCompileInputs.cache
+D:\LTM C#\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.exe
+D:\LTM C#\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.pdb

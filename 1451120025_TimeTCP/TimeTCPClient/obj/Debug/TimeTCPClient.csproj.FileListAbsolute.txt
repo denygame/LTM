@@ -1,0 +1,6 @@
+D:\LTM C#\1451120025_TimeTCP\TimeTCPClient\bin\Debug\TimeTCPClient.exe.config
+D:\LTM C#\1451120025_TimeTCP\TimeTCPClient\bin\Debug\TimeTCPClient.exe
+D:\LTM C#\1451120025_TimeTCP\TimeTCPClient\bin\Debug\TimeTCPClient.pdb
+D:\LTM C#\1451120025_TimeTCP\TimeTCPClient\obj\Debug\TimeTCPClient.csproj.CoreCompileInputs.cache
+D:\LTM C#\1451120025_TimeTCP\TimeTCPClient\obj\Debug\TimeTCPClient.exe
+D:\LTM C#\1451120025_TimeTCP\TimeTCPClient\obj\Debug\TimeTCPClient.pdb

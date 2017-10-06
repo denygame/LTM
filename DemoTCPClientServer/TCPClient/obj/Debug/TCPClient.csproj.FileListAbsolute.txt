@@ -1,0 +1,11 @@
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPClient\bin\Debug\TCPClient.exe.config
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPClient\bin\Debug\TCPClient.exe
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPClient\bin\Debug\TCPClient.pdb
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPClient\obj\Debug\TCPClient.exe
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPClient\obj\Debug\TCPClient.pdb
+D:\LTM C#\DemoTCPClientServer\TCPClient\bin\Debug\TCPClient.exe.config
+D:\LTM C#\DemoTCPClientServer\TCPClient\bin\Debug\TCPClient.exe
+D:\LTM C#\DemoTCPClientServer\TCPClient\bin\Debug\TCPClient.pdb
+D:\LTM C#\DemoTCPClientServer\TCPClient\obj\Debug\TCPClient.csproj.CoreCompileInputs.cache
+D:\LTM C#\DemoTCPClientServer\TCPClient\obj\Debug\TCPClient.exe
+D:\LTM C#\DemoTCPClientServer\TCPClient\obj\Debug\TCPClient.pdb

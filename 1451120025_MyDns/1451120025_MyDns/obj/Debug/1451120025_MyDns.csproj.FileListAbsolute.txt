@@ -1,0 +1,9 @@
+E:\1451120025_MyDns\1451120025_MyDns\bin\Debug\1451120025_MyDns.exe.config
+E:\1451120025_MyDns\1451120025_MyDns\bin\Debug\1451120025_MyDns.exe
+E:\1451120025_MyDns\1451120025_MyDns\bin\Debug\1451120025_MyDns.pdb
+E:\1451120025_MyDns\1451120025_MyDns\obj\Debug\1451120025_MyDns.csprojResolveAssemblyReference.cache
+E:\1451120025_MyDns\1451120025_MyDns\obj\Debug\_1451120025_MyDns.frmMain.resources
+E:\1451120025_MyDns\1451120025_MyDns\obj\Debug\_1451120025_MyDns.Properties.Resources.resources
+E:\1451120025_MyDns\1451120025_MyDns\obj\Debug\1451120025_MyDns.csproj.GenerateResource.Cache
+E:\1451120025_MyDns\1451120025_MyDns\obj\Debug\1451120025_MyDns.exe
+E:\1451120025_MyDns\1451120025_MyDns\obj\Debug\1451120025_MyDns.pdb

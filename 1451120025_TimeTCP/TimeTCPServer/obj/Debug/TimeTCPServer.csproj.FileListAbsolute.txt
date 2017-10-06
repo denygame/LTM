@@ -1,0 +1,7 @@
+D:\LTM C#\1451120025_TimeTCP\TimeTCPServer\bin\Debug\TimeTCPServer.exe.config
+D:\LTM C#\1451120025_TimeTCP\TimeTCPServer\bin\Debug\TimeTCPServer.exe
+D:\LTM C#\1451120025_TimeTCP\TimeTCPServer\bin\Debug\TimeTCPServer.pdb
+D:\LTM C#\1451120025_TimeTCP\TimeTCPServer\obj\Debug\TimeTCPServer.csprojResolveAssemblyReference.cache
+D:\LTM C#\1451120025_TimeTCP\TimeTCPServer\obj\Debug\TimeTCPServer.csproj.CoreCompileInputs.cache
+D:\LTM C#\1451120025_TimeTCP\TimeTCPServer\obj\Debug\TimeTCPServer.exe
+D:\LTM C#\1451120025_TimeTCP\TimeTCPServer\obj\Debug\TimeTCPServer.pdb

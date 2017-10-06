@@ -1,0 +1,6 @@
+E:\1451120025_XuLyChuoi\1451120025_XuLyChuoi\bin\Debug\1451120025_XuLyChuoi.exe.config
+E:\1451120025_XuLyChuoi\1451120025_XuLyChuoi\bin\Debug\1451120025_XuLyChuoi.exe
+E:\1451120025_XuLyChuoi\1451120025_XuLyChuoi\bin\Debug\1451120025_XuLyChuoi.pdb
+E:\1451120025_XuLyChuoi\1451120025_XuLyChuoi\obj\Debug\1451120025_XuLyChuoi.csprojResolveAssemblyReference.cache
+E:\1451120025_XuLyChuoi\1451120025_XuLyChuoi\obj\Debug\1451120025_XuLyChuoi.exe
+E:\1451120025_XuLyChuoi\1451120025_XuLyChuoi\obj\Debug\1451120025_XuLyChuoi.pdb

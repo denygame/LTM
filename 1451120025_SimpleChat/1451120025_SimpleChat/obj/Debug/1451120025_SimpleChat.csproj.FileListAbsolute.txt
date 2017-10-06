@@ -1,0 +1,9 @@
+D:\1451120025_SimpleChat\1451120025_SimpleChat\bin\Debug\1451120025_SimpleChat.exe.config
+D:\1451120025_SimpleChat\1451120025_SimpleChat\bin\Debug\1451120025_SimpleChat.exe
+D:\1451120025_SimpleChat\1451120025_SimpleChat\bin\Debug\1451120025_SimpleChat.pdb
+D:\1451120025_SimpleChat\1451120025_SimpleChat\obj\Debug\1451120025_SimpleChat.csprojResolveAssemblyReference.cache
+D:\1451120025_SimpleChat\1451120025_SimpleChat\obj\Debug\_1451120025_SimpleChat.frmMain.resources
+D:\1451120025_SimpleChat\1451120025_SimpleChat\obj\Debug\_1451120025_SimpleChat.Properties.Resources.resources
+D:\1451120025_SimpleChat\1451120025_SimpleChat\obj\Debug\1451120025_SimpleChat.csproj.GenerateResource.Cache
+D:\1451120025_SimpleChat\1451120025_SimpleChat\obj\Debug\1451120025_SimpleChat.exe
+D:\1451120025_SimpleChat\1451120025_SimpleChat\obj\Debug\1451120025_SimpleChat.pdb
