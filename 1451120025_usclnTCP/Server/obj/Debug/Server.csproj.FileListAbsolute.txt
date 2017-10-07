@@ -1,0 +1,6 @@
+E:\1451120025_usclnTCP\Server\bin\Debug\Server.exe.config
+E:\1451120025_usclnTCP\Server\bin\Debug\Server.exe
+E:\1451120025_usclnTCP\Server\bin\Debug\Server.pdb
+E:\1451120025_usclnTCP\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+E:\1451120025_usclnTCP\Server\obj\Debug\Server.exe
+E:\1451120025_usclnTCP\Server\obj\Debug\Server.pdb
