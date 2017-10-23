@@ -1,0 +1,13 @@
+E:\1451120025_SimpleEnCodeUDP\ServerUdp\bin\Debug\ServerUdp.exe.config
+E:\1451120025_SimpleEnCodeUDP\ServerUdp\bin\Debug\ServerUdp.exe
+E:\1451120025_SimpleEnCodeUDP\ServerUdp\bin\Debug\ServerUdp.pdb
+E:\1451120025_SimpleEnCodeUDP\ServerUdp\obj\Debug\ServerUdp.csprojResolveAssemblyReference.cache
+E:\1451120025_SimpleEnCodeUDP\ServerUdp\obj\Debug\ServerUdp.exe
+E:\1451120025_SimpleEnCodeUDP\ServerUdp\obj\Debug\ServerUdp.pdb
+D:\LTM C#\1451120025_SimpleEnCodeUDP\ServerUdp\bin\Debug\ServerUdp.exe.config
+D:\LTM C#\1451120025_SimpleEnCodeUDP\ServerUdp\bin\Debug\ServerUdp.exe
+D:\LTM C#\1451120025_SimpleEnCodeUDP\ServerUdp\bin\Debug\ServerUdp.pdb
+D:\LTM C#\1451120025_SimpleEnCodeUDP\ServerUdp\obj\Debug\ServerUdp.csprojResolveAssemblyReference.cache
+D:\LTM C#\1451120025_SimpleEnCodeUDP\ServerUdp\obj\Debug\ServerUdp.csproj.CoreCompileInputs.cache
+D:\LTM C#\1451120025_SimpleEnCodeUDP\ServerUdp\obj\Debug\ServerUdp.exe
+D:\LTM C#\1451120025_SimpleEnCodeUDP\ServerUdp\obj\Debug\ServerUdp.pdb

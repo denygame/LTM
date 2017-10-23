@@ -12,12 +12,19 @@ namespace TimeTCPClient
     {
         public static Socket connectToServer(string ip, int port)
         {
-            Console.WriteLine("--------------TCP Client--------------");
             Socket sckClient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPEndPoint ipep = new IPEndPoint(IPAddress.Parse(ip), port);
-            sckClient.Connect(ipep);
-            Console.WriteLine("Ket noi den server thanh cong!");
-            return sckClient;
+            try
+            {
+                IPEndPoint ipep = new IPEndPoint(IPAddress.Parse(ip), port);
+                sckClient.Connect(ipep);
+                Console.WriteLine("Ket noi den server thanh cong!");
+                return sckClient;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
         }
 
         public static string receiveString(Socket sckClient)

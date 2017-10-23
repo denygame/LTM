@@ -11,7 +11,8 @@ namespace TimeTCPServer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--------------TCP Server--------------");
+            Console.WriteLine("14511200025 - Nguyen Thanh Huy");
+            Console.WriteLine("--------------TCP Server Time--------------");
             var sckServer = ClassTCPserver.getSocketServer(12345);
             while (true)
             {
@@ -27,7 +28,7 @@ namespace TimeTCPServer
                         ClassTCPserver.sendData(Encoding.ASCII.GetBytes(DateTime.Now.TimeOfDay.ToString()), sckClient);
                         break;
                     case "2":
-                        ClassTCPserver.sendData(Encoding.ASCII.GetBytes(DateTime.Now.Date.ToString()), sckClient);
+                        ClassTCPserver.sendData(Encoding.ASCII.GetBytes(DateTime.Now.Date.ToString("d")), sckClient);
                         break;
                     case "3":
                         ClassTCPserver.sendData(Encoding.ASCII.GetBytes(DateTime.Now.ToString()), sckClient);
