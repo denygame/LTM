@@ -1,0 +1,7 @@
+D:\LTM C#\1451120025-DoubleChatTCP\ServerDoubleChatTCP\bin\Debug\ServerDoubleChatTCP.exe.config
+D:\LTM C#\1451120025-DoubleChatTCP\ServerDoubleChatTCP\bin\Debug\ServerDoubleChatTCP.exe
+D:\LTM C#\1451120025-DoubleChatTCP\ServerDoubleChatTCP\bin\Debug\ServerDoubleChatTCP.pdb
+D:\LTM C#\1451120025-DoubleChatTCP\ServerDoubleChatTCP\obj\Debug\ServerDoubleChatTCP.csprojResolveAssemblyReference.cache
+D:\LTM C#\1451120025-DoubleChatTCP\ServerDoubleChatTCP\obj\Debug\ServerDoubleChatTCP.csproj.CoreCompileInputs.cache
+D:\LTM C#\1451120025-DoubleChatTCP\ServerDoubleChatTCP\obj\Debug\ServerDoubleChatTCP.exe
+D:\LTM C#\1451120025-DoubleChatTCP\ServerDoubleChatTCP\obj\Debug\ServerDoubleChatTCP.pdb

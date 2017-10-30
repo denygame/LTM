@@ -1,0 +1,5 @@
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeClient\bin\Debug\UDPTimeClient.exe.config
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeClient\bin\Debug\UDPTimeClient.exe
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeClient\bin\Debug\UDPTimeClient.pdb
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeClient\obj\Debug\UDPTimeClient.exe
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeClient\obj\Debug\UDPTimeClient.pdb

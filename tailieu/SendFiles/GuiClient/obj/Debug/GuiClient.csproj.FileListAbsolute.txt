@@ -1,0 +1,9 @@
+D:\LTM C#\tailieu\SendFiles\GuiClient\bin\Debug\GuiClient.exe
+D:\LTM C#\tailieu\SendFiles\GuiClient\bin\Debug\GuiClient.pdb
+D:\LTM C#\tailieu\SendFiles\GuiClient\obj\Debug\GuiClient.csprojResolveAssemblyReference.cache
+D:\LTM C#\tailieu\SendFiles\GuiClient\obj\Debug\GuiClient.Client.resources
+D:\LTM C#\tailieu\SendFiles\GuiClient\obj\Debug\GuiClient.Properties.Resources.resources
+D:\LTM C#\tailieu\SendFiles\GuiClient\obj\Debug\GuiClient.csproj.GenerateResource.Cache
+D:\LTM C#\tailieu\SendFiles\GuiClient\obj\Debug\GuiClient.csproj.CoreCompileInputs.cache
+D:\LTM C#\tailieu\SendFiles\GuiClient\obj\Debug\GuiClient.exe
+D:\LTM C#\tailieu\SendFiles\GuiClient\obj\Debug\GuiClient.pdb

@@ -1,0 +1,7 @@
+D:\LTM C#\baitap\1451120025_FileTransfer\1451120025_FileTransfer\obj\Debug\1451120025_FileTransfer.csprojResolveAssemblyReference.cache
+D:\LTM C#\baitap\1451120025_FileTransfer\1451120025_FileTransfer\obj\Debug\1451120025_FileTransfer.csproj.CoreCompileInputs.cache
+D:\LTM C#\baitap\1451120025_FileTransfer\1451120025_FileTransfer\bin\Debug\1451120025_FileTransfer.exe.config
+D:\LTM C#\baitap\1451120025_FileTransfer\1451120025_FileTransfer\bin\Debug\1451120025_FileTransfer.exe
+D:\LTM C#\baitap\1451120025_FileTransfer\1451120025_FileTransfer\bin\Debug\1451120025_FileTransfer.pdb
+D:\LTM C#\baitap\1451120025_FileTransfer\1451120025_FileTransfer\obj\Debug\1451120025_FileTransfer.exe
+D:\LTM C#\baitap\1451120025_FileTransfer\1451120025_FileTransfer\obj\Debug\1451120025_FileTransfer.pdb

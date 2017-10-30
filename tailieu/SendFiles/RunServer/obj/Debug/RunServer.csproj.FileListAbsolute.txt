@@ -1,0 +1,8 @@
+D:\LTM C#\tailieu\SendFiles\RunServer\bin\Debug\RunServer.exe
+D:\LTM C#\tailieu\SendFiles\RunServer\bin\Debug\RunServer.pdb
+D:\LTM C#\tailieu\SendFiles\RunServer\obj\Debug\RunServer.Server.resources
+D:\LTM C#\tailieu\SendFiles\RunServer\obj\Debug\RunServer.Properties.Resources.resources
+D:\LTM C#\tailieu\SendFiles\RunServer\obj\Debug\RunServer.csproj.GenerateResource.Cache
+D:\LTM C#\tailieu\SendFiles\RunServer\obj\Debug\RunServer.csproj.CoreCompileInputs.cache
+D:\LTM C#\tailieu\SendFiles\RunServer\obj\Debug\RunServer.exe
+D:\LTM C#\tailieu\SendFiles\RunServer\obj\Debug\RunServer.pdb

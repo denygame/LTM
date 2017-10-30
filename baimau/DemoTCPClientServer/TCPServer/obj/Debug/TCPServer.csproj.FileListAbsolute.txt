@@ -1,0 +1,6 @@
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.exe.config
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.exe
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\bin\Debug\TCPServer.pdb
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.csprojResolveAssemblyReference.cache
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.exe
+G:\Lap trinh mang -v2\Demo\DemoTCPClientServer\TCPServer\obj\Debug\TCPServer.pdb

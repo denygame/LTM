@@ -1,0 +1,29 @@
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\bin\Debug\FTClientCode.exe
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\bin\Debug\FTClientCode.pdb
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\obj\Debug\FTClientCode.Form1.resources
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\obj\Debug\FTClientCode.Properties.Resources.resources
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\obj\Debug\FTClientCode.exe
+C:\Users\Ding\Desktop\FileTransfer\FTClientCode\obj\Debug\FTClientCode.pdb
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\obj\Debug\FTClientCode.exe
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\obj\Debug\FTClientCode.pdb
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\bin\Debug\FTClientCode.exe
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\bin\Debug\FTClientCode.pdb
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\obj\Debug\FTClientCode.Form1.resources
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\obj\Debug\FTClientCode.Properties.Resources.resources
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Ding\Desktop\LAN CHAT\FileTransfer\FTClientCode\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Nhan\Desktop\code\FileTransfer\FTClientCode\obj\Debug\FTClientCode.exe
+C:\Users\Nhan\Desktop\code\FileTransfer\FTClientCode\obj\Debug\FTClientCode.pdb
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\bin\Debug\FTClientCode.exe
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\bin\Debug\FTClientCode.pdb
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\obj\Debug\FTClientCode.csprojResolveAssemblyReference.cache
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\obj\Debug\FTClientCode.Form1.resources
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\obj\Debug\FTClientCode.Properties.Resources.resources
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\obj\Debug\FTClientCode.csproj.GenerateResource.Cache
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\obj\Debug\FTClientCode.csproj.CoreCompileInputs.cache
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\obj\Debug\FTClientCode.exe
+D:\LTM C#\tailieu\FileTransfer\FileTransfer\FTClientCode\obj\Debug\FTClientCode.pdb

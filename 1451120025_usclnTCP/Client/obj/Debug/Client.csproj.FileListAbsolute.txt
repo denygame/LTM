@@ -1,5 +1,0 @@
-E:\1451120025_usclnTCP\Client\bin\Debug\Client.exe.config
-E:\1451120025_usclnTCP\Client\bin\Debug\Client.exe
-E:\1451120025_usclnTCP\Client\bin\Debug\Client.pdb
-E:\1451120025_usclnTCP\Client\obj\Debug\Client.exe
-E:\1451120025_usclnTCP\Client\obj\Debug\Client.pdb

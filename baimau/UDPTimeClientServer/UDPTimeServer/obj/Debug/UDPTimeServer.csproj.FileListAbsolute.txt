@@ -1,0 +1,6 @@
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeServer\bin\Debug\UDPTimeServer.exe.config
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeServer\bin\Debug\UDPTimeServer.exe
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeServer\bin\Debug\UDPTimeServer.pdb
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeServer\obj\Debug\UDPTimeServer.csprojResolveAssemblyReference.cache
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeServer\obj\Debug\UDPTimeServer.exe
+G:\Lap trinh mang -v2\Demo\UDPTimeClientServer\UDPTimeServer\obj\Debug\UDPTimeServer.pdb
