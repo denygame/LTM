@@ -31,6 +31,8 @@ namespace Server
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
+            
+
             if (panelSlideMenu.Width == 50)
             {
                 panelSlideMenu.Width = 206;
@@ -43,8 +45,7 @@ namespace Server
                 panelSlideMenu.Width = 50;
                 SlideMenuTransition.ShowSync(panelSlideMenu);
             }
-
-
+            
             if (this.ucSelected != null)
                 resizeUcPanelContent();
         }

@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelSlideMenu = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.btnRunServer = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSetting = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnMenu = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnQuestion = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMenu = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnImgClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.LogoTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
@@ -62,18 +62,17 @@
             // 
             // panelSlideMenu
             // 
-            this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.panelSlideMenu.Controls.Add(this.logo);
             this.panelSlideMenu.Controls.Add(this.btnRunServer);
             this.panelSlideMenu.Controls.Add(this.btnSetting);
-            this.panelSlideMenu.Controls.Add(this.btnMenu);
             this.panelSlideMenu.Controls.Add(this.btnQuestion);
             this.SlideMenuTransition.SetDecoration(this.panelSlideMenu, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.panelSlideMenu, BunifuAnimatorNS.DecorationType.None);
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSlideMenu.Location = new System.Drawing.Point(0, 36);
+            this.panelSlideMenu.Location = new System.Drawing.Point(0, 45);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(206, 465);
+            this.panelSlideMenu.Size = new System.Drawing.Size(206, 478);
             this.panelSlideMenu.TabIndex = 0;
             // 
             // logo
@@ -81,7 +80,7 @@
             this.LogoTransition.SetDecoration(this.logo, BunifuAnimatorNS.DecorationType.None);
             this.SlideMenuTransition.SetDecoration(this.logo, BunifuAnimatorNS.DecorationType.None);
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(0, 47);
+            this.logo.Location = new System.Drawing.Point(0, 3);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(207, 57);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -90,15 +89,16 @@
             // 
             // btnRunServer
             // 
-            this.btnRunServer.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnRunServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnRunServer.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnRunServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.btnRunServer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRunServer.BorderRadius = 0;
-            this.btnRunServer.ButtonText = "        Run Server";
+            this.btnRunServer.ButtonText = "      Run Server";
             this.btnRunServer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SlideMenuTransition.SetDecoration(this.btnRunServer, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.btnRunServer, BunifuAnimatorNS.DecorationType.None);
             this.btnRunServer.DisabledColor = System.Drawing.Color.Gray;
+            this.btnRunServer.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRunServer.Iconcolor = System.Drawing.Color.Transparent;
             this.btnRunServer.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnRunServer.Iconimage")));
             this.btnRunServer.Iconimage_right = null;
@@ -109,32 +109,34 @@
             this.btnRunServer.IconRightVisible = true;
             this.btnRunServer.IconRightZoom = 0D;
             this.btnRunServer.IconVisible = true;
-            this.btnRunServer.IconZoom = 50D;
+            this.btnRunServer.IconZoom = 70D;
             this.btnRunServer.IsTab = true;
-            this.btnRunServer.Location = new System.Drawing.Point(0, 218);
+            this.btnRunServer.Location = new System.Drawing.Point(1, 184);
+            this.btnRunServer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRunServer.Name = "btnRunServer";
-            this.btnRunServer.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnRunServer.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnRunServer.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnRunServer.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.btnRunServer.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnRunServer.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(65)))), ((int)(((byte)(44)))));
             this.btnRunServer.selected = false;
             this.btnRunServer.Size = new System.Drawing.Size(207, 48);
             this.btnRunServer.TabIndex = 3;
-            this.btnRunServer.Text = "        Run Server";
+            this.btnRunServer.Text = "      Run Server";
             this.btnRunServer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRunServer.Textcolor = System.Drawing.Color.White;
-            this.btnRunServer.TextFont = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRunServer.TextFont = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnSetting
             // 
-            this.btnSetting.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnSetting.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSetting.BorderRadius = 0;
-            this.btnSetting.ButtonText = "        Cấu Hình";
+            this.btnSetting.ButtonText = "      Cấu Hình";
             this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SlideMenuTransition.SetDecoration(this.btnSetting, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.btnSetting, BunifuAnimatorNS.DecorationType.None);
             this.btnSetting.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSetting.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetting.Iconcolor = System.Drawing.Color.Transparent;
             this.btnSetting.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSetting.Iconimage")));
             this.btnSetting.Iconimage_right = null;
@@ -145,48 +147,34 @@
             this.btnSetting.IconRightVisible = true;
             this.btnSetting.IconRightZoom = 0D;
             this.btnSetting.IconVisible = true;
-            this.btnSetting.IconZoom = 50D;
+            this.btnSetting.IconZoom = 70D;
             this.btnSetting.IsTab = true;
-            this.btnSetting.Location = new System.Drawing.Point(0, 164);
+            this.btnSetting.Location = new System.Drawing.Point(1, 128);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnSetting.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnSetting.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSetting.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.btnSetting.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnSetting.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(65)))), ((int)(((byte)(44)))));
             this.btnSetting.selected = false;
             this.btnSetting.Size = new System.Drawing.Size(207, 48);
             this.btnSetting.TabIndex = 2;
-            this.btnSetting.Text = "        Cấu Hình";
+            this.btnSetting.Text = "      Cấu Hình";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetting.Textcolor = System.Drawing.Color.White;
-            this.btnSetting.TextFont = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.SlideMenuTransition.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.ImageActive = null;
-            this.btnMenu.Location = new System.Drawing.Point(12, 15);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(25, 25);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Zoom = 20;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.btnSetting.TextFont = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnQuestion
             // 
-            this.btnQuestion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnQuestion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
             this.btnQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnQuestion.BorderRadius = 0;
-            this.btnQuestion.ButtonText = "        Câu Hỏi";
+            this.btnQuestion.ButtonText = "      CSDL";
             this.btnQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SlideMenuTransition.SetDecoration(this.btnQuestion, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.btnQuestion, BunifuAnimatorNS.DecorationType.None);
             this.btnQuestion.DisabledColor = System.Drawing.Color.Gray;
+            this.btnQuestion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuestion.Iconcolor = System.Drawing.Color.Transparent;
             this.btnQuestion.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnQuestion.Iconimage")));
             this.btnQuestion.Iconimage_right = null;
@@ -197,48 +185,53 @@
             this.btnQuestion.IconRightVisible = true;
             this.btnQuestion.IconRightZoom = 0D;
             this.btnQuestion.IconVisible = true;
-            this.btnQuestion.IconZoom = 50D;
+            this.btnQuestion.IconZoom = 70D;
             this.btnQuestion.IsTab = true;
-            this.btnQuestion.Location = new System.Drawing.Point(0, 110);
+            this.btnQuestion.Location = new System.Drawing.Point(1, 72);
+            this.btnQuestion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQuestion.Name = "btnQuestion";
-            this.btnQuestion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnQuestion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnQuestion.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnQuestion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.btnQuestion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnQuestion.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(65)))), ((int)(((byte)(44)))));
             this.btnQuestion.selected = true;
             this.btnQuestion.Size = new System.Drawing.Size(207, 48);
             this.btnQuestion.TabIndex = 0;
-            this.btnQuestion.Text = "        Câu Hỏi";
+            this.btnQuestion.Text = "      CSDL";
             this.btnQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuestion.Textcolor = System.Drawing.Color.White;
-            this.btnQuestion.TextFont = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuestion.TextFont = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuestion.Click += new System.EventHandler(this.btnQuestion_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.SlideMenuTransition.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.btnMenu, BunifuAnimatorNS.DecorationType.None);
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.ImageActive = null;
+            this.btnMenu.Location = new System.Drawing.Point(12, 9);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(25, 25);
+            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Zoom = 20;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.panelHeader.Controls.Add(this.bunifuCustomLabel1);
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.panelHeader.Controls.Add(this.btnMinimize);
+            this.panelHeader.Controls.Add(this.bunifuCustomLabel1);
+            this.panelHeader.Controls.Add(this.btnMenu);
             this.panelHeader.Controls.Add(this.btnImgClose);
             this.SlideMenuTransition.SetDecoration(this.panelHeader, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.panelHeader, BunifuAnimatorNS.DecorationType.None);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(886, 36);
+            this.panelHeader.Size = new System.Drawing.Size(913, 45);
             this.panelHeader.TabIndex = 1;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.LogoTransition.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.SlideMenuTransition.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 9);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(188, 18);
-            this.bunifuCustomLabel1.TabIndex = 1;
-            this.bunifuCustomLabel1.Text = "Server - Quiz Solution";
             // 
             // btnMinimize
             // 
@@ -248,7 +241,7 @@
             this.LogoTransition.SetDecoration(this.btnMinimize, BunifuAnimatorNS.DecorationType.None);
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
             this.btnMinimize.ImageActive = null;
-            this.btnMinimize.Location = new System.Drawing.Point(816, 5);
+            this.btnMinimize.Location = new System.Drawing.Point(845, 9);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(25, 25);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -256,6 +249,19 @@
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Zoom = 20;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.LogoTransition.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
+            this.SlideMenuTransition.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(43, 11);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(179, 23);
+            this.bunifuCustomLabel1.TabIndex = 1;
+            this.bunifuCustomLabel1.Text = "Server - Quiz Solution";
             // 
             // btnImgClose
             // 
@@ -265,7 +271,7 @@
             this.LogoTransition.SetDecoration(this.btnImgClose, BunifuAnimatorNS.DecorationType.None);
             this.btnImgClose.Image = ((System.Drawing.Image)(resources.GetObject("btnImgClose.Image")));
             this.btnImgClose.ImageActive = null;
-            this.btnImgClose.Location = new System.Drawing.Point(847, 5);
+            this.btnImgClose.Location = new System.Drawing.Point(876, 9);
             this.btnImgClose.Name = "btnImgClose";
             this.btnImgClose.Size = new System.Drawing.Size(25, 25);
             this.btnImgClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -285,60 +291,60 @@
             // 
             this.LogoTransition.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
             this.LogoTransition.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 20;
-            animation4.Padding = new System.Windows.Forms.Padding(30);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.LogoTransition.DefaultAnimation = animation4;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 20;
+            animation2.Padding = new System.Windows.Forms.Padding(30);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.LogoTransition.DefaultAnimation = animation2;
             // 
             // panelContent
             // 
-            this.panelContent.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
             this.SlideMenuTransition.SetDecoration(this.panelContent, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.panelContent, BunifuAnimatorNS.DecorationType.None);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(206, 36);
+            this.panelContent.Location = new System.Drawing.Point(206, 45);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(680, 465);
+            this.panelContent.Size = new System.Drawing.Size(707, 478);
             this.panelContent.TabIndex = 2;
             // 
             // SlideMenuTransition
             // 
             this.SlideMenuTransition.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
             this.SlideMenuTransition.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 1F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.SlideMenuTransition.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 1F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.SlideMenuTransition.DefaultAnimation = animation1;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 501);
+            this.ClientSize = new System.Drawing.Size(913, 523);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelSlideMenu);
             this.Controls.Add(this.panelHeader);

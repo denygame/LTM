@@ -14,7 +14,10 @@ namespace Server.View
     {
         public ucQuestionDB()
         {
-            InitializeComponent();
+            if (!this.DesignMode)
+            {
+                InitializeComponent();
+            }
         }
 
 
@@ -23,23 +26,12 @@ namespace Server.View
             resizeFill();
         }
 
-        private void lblMsg_MouseHover(object sender, EventArgs e)
-        {
-            lblMsg.ForeColor = Color.Black;
-        }
-
-        private void lblMsg_MouseLeave(object sender, EventArgs e)
-        {
-            lblMsg.ForeColor = Color.Gray;
-        }
-
-
-
+        
+        
         public void resizeFill()
         {
             this.Width = this.Parent.Width;
             this.Height = this.Parent.Height;
         }
-
     }
 }

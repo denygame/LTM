@@ -28,412 +28,569 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucQuestionDB));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gBCourses = new System.Windows.Forms.GroupBox();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtFindCourses = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.btnDeleteCourses = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnEditCourses = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnAddCourses = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.dGv_Courses = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.gBQues = new System.Windows.Forms.GroupBox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtFindQues = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.btnReadFile = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnDeleteQues = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnEditQues = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnAddQues = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.dGv_question = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.contentCourse = new System.Windows.Forms.Panel();
+            this.btnPrevPageCourse = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnNextPageCourse = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPageCourse = new System.Windows.Forms.Label();
+            this.dGv_Course = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtSearchCourse = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.headerCourse = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblMsg = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.gBCourses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGv_Courses)).BeginInit();
-            this.gBQues.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGv_question)).BeginInit();
+            this.bunifuElipse_Header = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.contentQues = new System.Windows.Forms.Panel();
+            this.btnAddQues = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnReadFile = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPageQues = new System.Windows.Forms.Label();
+            this.btnPrevPageQues = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnNextPageQues = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.dGv_Ques = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtSearchQues = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.headerQues = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.colnumCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumOfAws = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAwsRight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentCourse.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGv_Course)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.headerCourse.SuspendLayout();
+            this.contentQues.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGv_Ques)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.headerQues.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gBCourses
+            // contentCourse
             // 
-            this.gBCourses.Controls.Add(this.bunifuCustomLabel2);
-            this.gBCourses.Controls.Add(this.txtFindCourses);
-            this.gBCourses.Controls.Add(this.btnDeleteCourses);
-            this.gBCourses.Controls.Add(this.btnEditCourses);
-            this.gBCourses.Controls.Add(this.btnAddCourses);
-            this.gBCourses.Controls.Add(this.dGv_Courses);
-            this.gBCourses.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBCourses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.gBCourses.Location = new System.Drawing.Point(13, 59);
-            this.gBCourses.Name = "gBCourses";
-            this.gBCourses.Size = new System.Drawing.Size(285, 393);
-            this.gBCourses.TabIndex = 0;
-            this.gBCourses.TabStop = false;
-            this.gBCourses.Text = "Môn Học";
+            this.contentCourse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.contentCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.contentCourse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contentCourse.Controls.Add(this.btnPrevPageCourse);
+            this.contentCourse.Controls.Add(this.btnNextPageCourse);
+            this.contentCourse.Controls.Add(this.panel1);
+            this.contentCourse.Controls.Add(this.dGv_Course);
+            this.contentCourse.Controls.Add(this.pictureBox1);
+            this.contentCourse.Controls.Add(this.txtSearchCourse);
+            this.contentCourse.Location = new System.Drawing.Point(11, 36);
+            this.contentCourse.Name = "contentCourse";
+            this.contentCourse.Size = new System.Drawing.Size(294, 382);
+            this.contentCourse.TabIndex = 0;
             // 
-            // bunifuCustomLabel2
+            // btnPrevPageCourse
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(3, 61);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(70, 16);
-            this.bunifuCustomLabel2.TabIndex = 3;
-            this.bunifuCustomLabel2.Text = "Tìm Kiếm";
+            this.btnPrevPageCourse.ActiveBorderThickness = 1;
+            this.btnPrevPageCourse.ActiveCornerRadius = 20;
+            this.btnPrevPageCourse.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnPrevPageCourse.ActiveForecolor = System.Drawing.Color.White;
+            this.btnPrevPageCourse.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrevPageCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPrevPageCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.btnPrevPageCourse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrevPageCourse.BackgroundImage")));
+            this.btnPrevPageCourse.ButtonText = "Trước";
+            this.btnPrevPageCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevPageCourse.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevPageCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnPrevPageCourse.IdleBorderThickness = 1;
+            this.btnPrevPageCourse.IdleCornerRadius = 20;
+            this.btnPrevPageCourse.IdleFillColor = System.Drawing.Color.White;
+            this.btnPrevPageCourse.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnPrevPageCourse.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrevPageCourse.Location = new System.Drawing.Point(14, 330);
+            this.btnPrevPageCourse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnPrevPageCourse.Name = "btnPrevPageCourse";
+            this.btnPrevPageCourse.Size = new System.Drawing.Size(84, 41);
+            this.btnPrevPageCourse.TabIndex = 4;
+            this.btnPrevPageCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtFindCourses
+            // btnNextPageCourse
             // 
-            this.txtFindCourses.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFindCourses.Location = new System.Drawing.Point(73, 56);
-            this.txtFindCourses.Name = "txtFindCourses";
-            this.txtFindCourses.Size = new System.Drawing.Size(206, 27);
-            this.txtFindCourses.TabIndex = 2;
+            this.btnNextPageCourse.ActiveBorderThickness = 1;
+            this.btnNextPageCourse.ActiveCornerRadius = 20;
+            this.btnNextPageCourse.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnNextPageCourse.ActiveForecolor = System.Drawing.Color.White;
+            this.btnNextPageCourse.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNextPageCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNextPageCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.btnNextPageCourse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNextPageCourse.BackgroundImage")));
+            this.btnNextPageCourse.ButtonText = "Sau";
+            this.btnNextPageCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNextPageCourse.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextPageCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnNextPageCourse.IdleBorderThickness = 1;
+            this.btnNextPageCourse.IdleCornerRadius = 20;
+            this.btnNextPageCourse.IdleFillColor = System.Drawing.Color.White;
+            this.btnNextPageCourse.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnNextPageCourse.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNextPageCourse.Location = new System.Drawing.Point(194, 330);
+            this.btnNextPageCourse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnNextPageCourse.Name = "btnNextPageCourse";
+            this.btnNextPageCourse.Size = new System.Drawing.Size(84, 41);
+            this.btnNextPageCourse.TabIndex = 4;
+            this.btnNextPageCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnDeleteCourses
+            // panel1
             // 
-            this.btnDeleteCourses.ActiveBorderThickness = 1;
-            this.btnDeleteCourses.ActiveCornerRadius = 20;
-            this.btnDeleteCourses.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnDeleteCourses.ActiveForecolor = System.Drawing.Color.White;
-            this.btnDeleteCourses.ActiveLineColor = System.Drawing.Color.SkyBlue;
-            this.btnDeleteCourses.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnDeleteCourses.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteCourses.BackgroundImage")));
-            this.btnDeleteCourses.ButtonText = "Xóa";
-            this.btnDeleteCourses.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteCourses.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCourses.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnDeleteCourses.IdleBorderThickness = 1;
-            this.btnDeleteCourses.IdleCornerRadius = 20;
-            this.btnDeleteCourses.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
-            this.btnDeleteCourses.IdleForecolor = System.Drawing.Color.Gainsboro;
-            this.btnDeleteCourses.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnDeleteCourses.Location = new System.Drawing.Point(193, 349);
-            this.btnDeleteCourses.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnDeleteCourses.Name = "btnDeleteCourses";
-            this.btnDeleteCourses.Size = new System.Drawing.Size(83, 37);
-            this.btnDeleteCourses.TabIndex = 1;
-            this.btnDeleteCourses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Controls.Add(this.lblPageCourse);
+            this.panel1.Location = new System.Drawing.Point(98, 335);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(96, 36);
+            this.panel1.TabIndex = 3;
             // 
-            // btnEditCourses
+            // lblPageCourse
             // 
-            this.btnEditCourses.ActiveBorderThickness = 1;
-            this.btnEditCourses.ActiveCornerRadius = 20;
-            this.btnEditCourses.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnEditCourses.ActiveForecolor = System.Drawing.Color.White;
-            this.btnEditCourses.ActiveLineColor = System.Drawing.Color.SkyBlue;
-            this.btnEditCourses.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnEditCourses.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditCourses.BackgroundImage")));
-            this.btnEditCourses.ButtonText = "Sửa";
-            this.btnEditCourses.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCourses.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnEditCourses.IdleBorderThickness = 1;
-            this.btnEditCourses.IdleCornerRadius = 20;
-            this.btnEditCourses.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
-            this.btnEditCourses.IdleForecolor = System.Drawing.Color.Gainsboro;
-            this.btnEditCourses.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnEditCourses.Location = new System.Drawing.Point(100, 349);
-            this.btnEditCourses.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnEditCourses.Name = "btnEditCourses";
-            this.btnEditCourses.Size = new System.Drawing.Size(83, 37);
-            this.btnEditCourses.TabIndex = 1;
-            this.btnEditCourses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPageCourse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPageCourse.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.lblPageCourse.Location = new System.Drawing.Point(0, 0);
+            this.lblPageCourse.Name = "lblPageCourse";
+            this.lblPageCourse.Size = new System.Drawing.Size(96, 36);
+            this.lblPageCourse.TabIndex = 0;
+            this.lblPageCourse.Text = "10000/10000";
+            this.lblPageCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAddCourses
+            // dGv_Course
             // 
-            this.btnAddCourses.ActiveBorderThickness = 1;
-            this.btnAddCourses.ActiveCornerRadius = 20;
-            this.btnAddCourses.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnAddCourses.ActiveForecolor = System.Drawing.Color.White;
-            this.btnAddCourses.ActiveLineColor = System.Drawing.Color.SkyBlue;
-            this.btnAddCourses.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAddCourses.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddCourses.BackgroundImage")));
-            this.btnAddCourses.ButtonText = "Thêm";
-            this.btnAddCourses.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCourses.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnAddCourses.IdleBorderThickness = 1;
-            this.btnAddCourses.IdleCornerRadius = 20;
-            this.btnAddCourses.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
-            this.btnAddCourses.IdleForecolor = System.Drawing.Color.Gainsboro;
-            this.btnAddCourses.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnAddCourses.Location = new System.Drawing.Point(6, 349);
-            this.btnAddCourses.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnAddCourses.Name = "btnAddCourses";
-            this.btnAddCourses.Size = new System.Drawing.Size(83, 37);
-            this.btnAddCourses.TabIndex = 1;
-            this.btnAddCourses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dGv_Course.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dGv_Course.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dGv_Course.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dGv_Course.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dGv_Course.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
+            this.dGv_Course.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGv_Course.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dGv_Course.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGv_Course.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colnumCourse,
+            this.colEdit,
+            this.colDelete});
+            this.dGv_Course.DoubleBuffered = true;
+            this.dGv_Course.EnableHeadersVisualStyles = false;
+            this.dGv_Course.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.dGv_Course.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.dGv_Course.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dGv_Course.Location = new System.Drawing.Point(14, 75);
+            this.dGv_Course.Name = "dGv_Course";
+            this.dGv_Course.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dGv_Course.Size = new System.Drawing.Size(264, 248);
+            this.dGv_Course.TabIndex = 2;
             // 
-            // dGv_Courses
+            // pictureBox1
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dGv_Courses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dGv_Courses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(14, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtSearchCourse
+            // 
+            this.txtSearchCourse.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchCourse.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchCourse.HintForeColor = System.Drawing.Color.Empty;
+            this.txtSearchCourse.HintText = "";
+            this.txtSearchCourse.isPassword = false;
+            this.txtSearchCourse.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.txtSearchCourse.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtSearchCourse.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.txtSearchCourse.LineThickness = 3;
+            this.txtSearchCourse.Location = new System.Drawing.Point(53, 35);
+            this.txtSearchCourse.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchCourse.Name = "txtSearchCourse";
+            this.txtSearchCourse.Size = new System.Drawing.Size(225, 33);
+            this.txtSearchCourse.TabIndex = 0;
+            this.txtSearchCourse.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // headerCourse
+            // 
+            this.headerCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.headerCourse.Controls.Add(this.bunifuCustomLabel1);
+            this.headerCourse.Location = new System.Drawing.Point(26, 9);
+            this.headerCourse.Name = "headerCourse";
+            this.headerCourse.Size = new System.Drawing.Size(264, 56);
+            this.headerCourse.TabIndex = 0;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(264, 56);
+            this.bunifuCustomLabel1.TabIndex = 0;
+            this.bunifuCustomLabel1.Text = "KHÓA HỌC !";
+            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuElipse_Header
+            // 
+            this.bunifuElipse_Header.ElipseRadius = 5;
+            this.bunifuElipse_Header.TargetControl = this.headerCourse;
+            // 
+            // contentQues
+            // 
+            this.contentQues.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dGv_Courses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dGv_Courses.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dGv_Courses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGv_Courses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dGv_Courses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGv_Courses.DoubleBuffered = true;
-            this.dGv_Courses.EnableHeadersVisualStyles = false;
-            this.dGv_Courses.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dGv_Courses.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.dGv_Courses.Location = new System.Drawing.Point(6, 92);
-            this.dGv_Courses.Name = "dGv_Courses";
-            this.dGv_Courses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dGv_Courses.Size = new System.Drawing.Size(273, 250);
-            this.dGv_Courses.TabIndex = 0;
-            // 
-            // gBQues
-            // 
-            this.gBQues.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gBQues.BackColor = System.Drawing.Color.Gainsboro;
-            this.gBQues.Controls.Add(this.lblMsg);
-            this.gBQues.Controls.Add(this.bunifuCustomLabel3);
-            this.gBQues.Controls.Add(this.txtFindQues);
-            this.gBQues.Controls.Add(this.btnReadFile);
-            this.gBQues.Controls.Add(this.btnDeleteQues);
-            this.gBQues.Controls.Add(this.btnEditQues);
-            this.gBQues.Controls.Add(this.btnAddQues);
-            this.gBQues.Controls.Add(this.dGv_question);
-            this.gBQues.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gBQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.gBQues.Location = new System.Drawing.Point(304, 21);
-            this.gBQues.Name = "gBQues";
-            this.gBQues.Size = new System.Drawing.Size(360, 431);
-            this.gBQues.TabIndex = 1;
-            this.gBQues.TabStop = false;
-            this.gBQues.Text = "Câu Hỏi";
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(6, 65);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(70, 16);
-            this.bunifuCustomLabel3.TabIndex = 3;
-            this.bunifuCustomLabel3.Text = "Tìm Kiếm";
-            // 
-            // txtFindQues
-            // 
-            this.txtFindQues.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFindQues.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFindQues.Location = new System.Drawing.Point(82, 60);
-            this.txtFindQues.Name = "txtFindQues";
-            this.txtFindQues.Size = new System.Drawing.Size(272, 27);
-            this.txtFindQues.TabIndex = 2;
-            // 
-            // btnReadFile
-            // 
-            this.btnReadFile.ActiveBorderThickness = 1;
-            this.btnReadFile.ActiveCornerRadius = 20;
-            this.btnReadFile.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnReadFile.ActiveForecolor = System.Drawing.Color.White;
-            this.btnReadFile.ActiveLineColor = System.Drawing.Color.SkyBlue;
-            this.btnReadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReadFile.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnReadFile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReadFile.BackgroundImage")));
-            this.btnReadFile.ButtonText = "Đọc Từ File";
-            this.btnReadFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReadFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReadFile.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnReadFile.IdleBorderThickness = 1;
-            this.btnReadFile.IdleCornerRadius = 20;
-            this.btnReadFile.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
-            this.btnReadFile.IdleForecolor = System.Drawing.Color.Gainsboro;
-            this.btnReadFile.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnReadFile.Location = new System.Drawing.Point(186, 16);
-            this.btnReadFile.Margin = new System.Windows.Forms.Padding(5);
-            this.btnReadFile.Name = "btnReadFile";
-            this.btnReadFile.Size = new System.Drawing.Size(168, 36);
-            this.btnReadFile.TabIndex = 2;
-            this.btnReadFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnDeleteQues
-            // 
-            this.btnDeleteQues.ActiveBorderThickness = 1;
-            this.btnDeleteQues.ActiveCornerRadius = 20;
-            this.btnDeleteQues.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnDeleteQues.ActiveForecolor = System.Drawing.Color.White;
-            this.btnDeleteQues.ActiveLineColor = System.Drawing.Color.SkyBlue;
-            this.btnDeleteQues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteQues.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnDeleteQues.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteQues.BackgroundImage")));
-            this.btnDeleteQues.ButtonText = "Xóa";
-            this.btnDeleteQues.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteQues.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteQues.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnDeleteQues.IdleBorderThickness = 1;
-            this.btnDeleteQues.IdleCornerRadius = 20;
-            this.btnDeleteQues.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
-            this.btnDeleteQues.IdleForecolor = System.Drawing.Color.Gainsboro;
-            this.btnDeleteQues.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnDeleteQues.Location = new System.Drawing.Point(269, 387);
-            this.btnDeleteQues.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnDeleteQues.Name = "btnDeleteQues";
-            this.btnDeleteQues.Size = new System.Drawing.Size(83, 37);
-            this.btnDeleteQues.TabIndex = 1;
-            this.btnDeleteQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnEditQues
-            // 
-            this.btnEditQues.ActiveBorderThickness = 1;
-            this.btnEditQues.ActiveCornerRadius = 20;
-            this.btnEditQues.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnEditQues.ActiveForecolor = System.Drawing.Color.White;
-            this.btnEditQues.ActiveLineColor = System.Drawing.Color.SkyBlue;
-            this.btnEditQues.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditQues.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnEditQues.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditQues.BackgroundImage")));
-            this.btnEditQues.ButtonText = "Sửa";
-            this.btnEditQues.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditQues.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditQues.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnEditQues.IdleBorderThickness = 1;
-            this.btnEditQues.IdleCornerRadius = 20;
-            this.btnEditQues.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
-            this.btnEditQues.IdleForecolor = System.Drawing.Color.Gainsboro;
-            this.btnEditQues.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnEditQues.Location = new System.Drawing.Point(136, 387);
-            this.btnEditQues.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnEditQues.Name = "btnEditQues";
-            this.btnEditQues.Size = new System.Drawing.Size(83, 37);
-            this.btnEditQues.TabIndex = 1;
-            this.btnEditQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.contentQues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.contentQues.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contentQues.Controls.Add(this.btnAddQues);
+            this.contentQues.Controls.Add(this.btnReadFile);
+            this.contentQues.Controls.Add(this.panel2);
+            this.contentQues.Controls.Add(this.btnPrevPageQues);
+            this.contentQues.Controls.Add(this.btnNextPageQues);
+            this.contentQues.Controls.Add(this.dGv_Ques);
+            this.contentQues.Controls.Add(this.pictureBox2);
+            this.contentQues.Controls.Add(this.txtSearchQues);
+            this.contentQues.Location = new System.Drawing.Point(311, 36);
+            this.contentQues.Name = "contentQues";
+            this.contentQues.Size = new System.Drawing.Size(385, 382);
+            this.contentQues.TabIndex = 2;
             // 
             // btnAddQues
             // 
             this.btnAddQues.ActiveBorderThickness = 1;
             this.btnAddQues.ActiveCornerRadius = 20;
-            this.btnAddQues.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnAddQues.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
             this.btnAddQues.ActiveForecolor = System.Drawing.Color.White;
-            this.btnAddQues.ActiveLineColor = System.Drawing.Color.SkyBlue;
-            this.btnAddQues.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAddQues.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddQues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
             this.btnAddQues.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddQues.BackgroundImage")));
             this.btnAddQues.ButtonText = "Thêm";
             this.btnAddQues.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddQues.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddQues.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnAddQues.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
             this.btnAddQues.IdleBorderThickness = 1;
             this.btnAddQues.IdleCornerRadius = 20;
-            this.btnAddQues.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(60)))), ((int)(((byte)(97)))));
-            this.btnAddQues.IdleForecolor = System.Drawing.Color.Gainsboro;
-            this.btnAddQues.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnAddQues.Location = new System.Drawing.Point(6, 387);
-            this.btnAddQues.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnAddQues.IdleFillColor = System.Drawing.Color.White;
+            this.btnAddQues.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnAddQues.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddQues.Location = new System.Drawing.Point(14, 72);
+            this.btnAddQues.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAddQues.Name = "btnAddQues";
-            this.btnAddQues.Size = new System.Drawing.Size(83, 37);
-            this.btnAddQues.TabIndex = 1;
+            this.btnAddQues.Size = new System.Drawing.Size(101, 41);
+            this.btnAddQues.TabIndex = 9;
             this.btnAddQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dGv_question
+            // btnReadFile
             // 
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dGv_question.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dGv_question.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnReadFile.ActiveBorderThickness = 1;
+            this.btnReadFile.ActiveCornerRadius = 20;
+            this.btnReadFile.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnReadFile.ActiveForecolor = System.Drawing.Color.White;
+            this.btnReadFile.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReadFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dGv_question.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dGv_question.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dGv_question.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGv_question.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.dGv_question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGv_question.DoubleBuffered = true;
-            this.dGv_question.EnableHeadersVisualStyles = false;
-            this.dGv_question.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dGv_question.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.dGv_question.Location = new System.Drawing.Point(6, 94);
-            this.dGv_question.Name = "dGv_question";
-            this.dGv_question.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dGv_question.Size = new System.Drawing.Size(348, 286);
-            this.dGv_question.TabIndex = 0;
+            this.btnReadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.btnReadFile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReadFile.BackgroundImage")));
+            this.btnReadFile.ButtonText = "Đọc File TXT";
+            this.btnReadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReadFile.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnReadFile.IdleBorderThickness = 1;
+            this.btnReadFile.IdleCornerRadius = 20;
+            this.btnReadFile.IdleFillColor = System.Drawing.Color.White;
+            this.btnReadFile.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnReadFile.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReadFile.Location = new System.Drawing.Point(231, 72);
+            this.btnReadFile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnReadFile.Name = "btnReadFile";
+            this.btnReadFile.Size = new System.Drawing.Size(138, 41);
+            this.btnReadFile.TabIndex = 8;
+            this.btnReadFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuCustomLabel1
+            // panel2
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(48, 12);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(225, 25);
-            this.bunifuCustomLabel1.TabIndex = 2;
-            this.bunifuCustomLabel1.Text = "QUẢN LÝ CÂU HỎI";
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.lblPageQues);
+            this.panel2.Location = new System.Drawing.Point(148, 335);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(96, 36);
+            this.panel2.TabIndex = 7;
             // 
-            // lblMsg
+            // lblPageQues
             // 
-            this.lblMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMsg.AutoSize = true;
-            this.lblMsg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMsg.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMsg.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblMsg.Location = new System.Drawing.Point(6, 30);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(170, 14);
-            this.lblMsg.TabIndex = 4;
-            this.lblMsg.Text = "Thêm câu hỏi bằng file text";
-            this.lblMsg.MouseLeave += new System.EventHandler(this.lblMsg_MouseLeave);
-            this.lblMsg.MouseHover += new System.EventHandler(this.lblMsg_MouseHover);
+            this.lblPageQues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPageQues.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.lblPageQues.Location = new System.Drawing.Point(0, 0);
+            this.lblPageQues.Name = "lblPageQues";
+            this.lblPageQues.Size = new System.Drawing.Size(96, 36);
+            this.lblPageQues.TabIndex = 0;
+            this.lblPageQues.Text = "10000/10000";
+            this.lblPageQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnPrevPageQues
+            // 
+            this.btnPrevPageQues.ActiveBorderThickness = 1;
+            this.btnPrevPageQues.ActiveCornerRadius = 20;
+            this.btnPrevPageQues.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnPrevPageQues.ActiveForecolor = System.Drawing.Color.White;
+            this.btnPrevPageQues.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrevPageQues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPrevPageQues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.btnPrevPageQues.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrevPageQues.BackgroundImage")));
+            this.btnPrevPageQues.ButtonText = "Trước";
+            this.btnPrevPageQues.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevPageQues.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevPageQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnPrevPageQues.IdleBorderThickness = 1;
+            this.btnPrevPageQues.IdleCornerRadius = 20;
+            this.btnPrevPageQues.IdleFillColor = System.Drawing.Color.White;
+            this.btnPrevPageQues.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnPrevPageQues.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrevPageQues.Location = new System.Drawing.Point(14, 330);
+            this.btnPrevPageQues.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnPrevPageQues.Name = "btnPrevPageQues";
+            this.btnPrevPageQues.Size = new System.Drawing.Size(101, 41);
+            this.btnPrevPageQues.TabIndex = 5;
+            this.btnPrevPageQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnNextPageQues
+            // 
+            this.btnNextPageQues.ActiveBorderThickness = 1;
+            this.btnNextPageQues.ActiveCornerRadius = 20;
+            this.btnNextPageQues.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnNextPageQues.ActiveForecolor = System.Drawing.Color.White;
+            this.btnNextPageQues.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNextPageQues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNextPageQues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.btnNextPageQues.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNextPageQues.BackgroundImage")));
+            this.btnNextPageQues.ButtonText = "Sau";
+            this.btnNextPageQues.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNextPageQues.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextPageQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnNextPageQues.IdleBorderThickness = 1;
+            this.btnNextPageQues.IdleCornerRadius = 20;
+            this.btnNextPageQues.IdleFillColor = System.Drawing.Color.White;
+            this.btnNextPageQues.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnNextPageQues.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNextPageQues.Location = new System.Drawing.Point(268, 330);
+            this.btnNextPageQues.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnNextPageQues.Name = "btnNextPageQues";
+            this.btnNextPageQues.Size = new System.Drawing.Size(101, 41);
+            this.btnNextPageQues.TabIndex = 6;
+            this.btnNextPageQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dGv_Ques
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dGv_Ques.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dGv_Ques.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dGv_Ques.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dGv_Ques.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dGv_Ques.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dGv_Ques.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGv_Ques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dGv_Ques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGv_Ques.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colQues,
+            this.colNumOfAws,
+            this.colAwsRight});
+            this.dGv_Ques.DoubleBuffered = true;
+            this.dGv_Ques.EnableHeadersVisualStyles = false;
+            this.dGv_Ques.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.dGv_Ques.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dGv_Ques.Location = new System.Drawing.Point(14, 115);
+            this.dGv_Ques.Name = "dGv_Ques";
+            this.dGv_Ques.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dGv_Ques.Size = new System.Drawing.Size(355, 208);
+            this.dGv_Ques.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(14, 35);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtSearchQues
+            // 
+            this.txtSearchQues.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchQues.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchQues.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchQues.HintForeColor = System.Drawing.Color.Empty;
+            this.txtSearchQues.HintText = "";
+            this.txtSearchQues.isPassword = false;
+            this.txtSearchQues.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.txtSearchQues.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtSearchQues.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.txtSearchQues.LineThickness = 3;
+            this.txtSearchQues.Location = new System.Drawing.Point(53, 35);
+            this.txtSearchQues.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchQues.Name = "txtSearchQues";
+            this.txtSearchQues.Size = new System.Drawing.Size(316, 33);
+            this.txtSearchQues.TabIndex = 1;
+            this.txtSearchQues.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // headerQues
+            // 
+            this.headerQues.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.headerQues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.headerQues.Controls.Add(this.bunifuCustomLabel2);
+            this.headerQues.Location = new System.Drawing.Point(326, 9);
+            this.headerQues.Name = "headerQues";
+            this.headerQues.Size = new System.Drawing.Size(355, 56);
+            this.headerQues.TabIndex = 1;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(0, 0);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(355, 56);
+            this.bunifuCustomLabel2.TabIndex = 0;
+            this.bunifuCustomLabel2.Text = "CÂU HỎI ?";
+            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this.headerQues;
+            // 
+            // colnumCourse
+            // 
+            this.colnumCourse.HeaderText = "Mã";
+            this.colnumCourse.Name = "colnumCourse";
+            // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "Sửa";
+            this.colEdit.Name = "colEdit";
+            // 
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "Xóa";
+            this.colDelete.Name = "colDelete";
+            this.colDelete.Text = "Xóa";
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            // 
+            // colQues
+            // 
+            this.colQues.HeaderText = "Câu Hỏi";
+            this.colQues.Name = "colQues";
+            // 
+            // colNumOfAws
+            // 
+            this.colNumOfAws.HeaderText = "Số Câu Trả Lời";
+            this.colNumOfAws.Name = "colNumOfAws";
+            // 
+            // colAwsRight
+            // 
+            this.colAwsRight.HeaderText = "Số Câu Đúng";
+            this.colAwsRight.Name = "colAwsRight";
             // 
             // ucQuestionDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Gainsboro;
-            this.Controls.Add(this.bunifuCustomLabel1);
-            this.Controls.Add(this.gBQues);
-            this.Controls.Add(this.gBCourses);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.Controls.Add(this.headerQues);
+            this.Controls.Add(this.contentQues);
+            this.Controls.Add(this.headerCourse);
+            this.Controls.Add(this.contentCourse);
             this.Name = "ucQuestionDB";
-            this.Size = new System.Drawing.Size(680, 465);
+            this.Size = new System.Drawing.Size(707, 428);
             this.Load += new System.EventHandler(this.ucQuestionDB_Load);
-            this.gBCourses.ResumeLayout(false);
-            this.gBCourses.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGv_Courses)).EndInit();
-            this.gBQues.ResumeLayout(false);
-            this.gBQues.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGv_question)).EndInit();
+            this.contentCourse.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGv_Course)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.headerCourse.ResumeLayout(false);
+            this.contentQues.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGv_Ques)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.headerQues.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gBCourses;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dGv_Courses;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnDeleteCourses;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnEditCourses;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnAddCourses;
-        private System.Windows.Forms.GroupBox gBQues;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnDeleteQues;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnEditQues;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnAddQues;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dGv_question;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnReadFile;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtFindCourses;
+        private System.Windows.Forms.Panel contentCourse;
+        private System.Windows.Forms.Panel headerCourse;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse_Header;
+        private System.Windows.Forms.Panel contentQues;
+        private System.Windows.Forms.Panel headerQues;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtFindQues;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblMsg;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSearchCourse;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSearchQues;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dGv_Course;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dGv_Ques;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnPrevPageCourse;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnNextPageCourse;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblPageCourse;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnPrevPageQues;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnNextPageQues;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblPageQues;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnReadFile;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAddQues;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colnumCourse;
+        private System.Windows.Forms.DataGridViewImageColumn colEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn colDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQues;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumOfAws;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAwsRight;
     }
 }
