@@ -1,0 +1,12 @@
+D:\LTM C#\doan\QuizSolution\Client\bin\Debug\Client.exe.config
+D:\LTM C#\doan\QuizSolution\Client\bin\Debug\Client.exe
+D:\LTM C#\doan\QuizSolution\Client\bin\Debug\Client.pdb
+D:\LTM C#\doan\QuizSolution\Client\bin\Debug\Bunifu_UI_v1.5.3.dll
+D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.Properties.Resources.resources
+D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.View.frmLogin.resources
+D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.exe
+D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.pdb
+D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.View.frmMain.resources
