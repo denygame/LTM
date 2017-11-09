@@ -10,3 +10,15 @@ D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.csproj.CoreCompileInputs.cac
 D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.exe
 D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.pdb
 D:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.View.frmMain.resources
+E:\LTM C#\doan\QuizSolution\Client\bin\Debug\Client.exe.config
+E:\LTM C#\doan\QuizSolution\Client\bin\Debug\Client.exe
+E:\LTM C#\doan\QuizSolution\Client\bin\Debug\Client.pdb
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.Properties.Resources.resources
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.View.frmLogin.resources
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.View.frmMain.resources
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.exe
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.pdb
+E:\LTM C#\doan\QuizSolution\Client\bin\Debug\Bunifu_UI_v1.5.3.dll

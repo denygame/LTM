@@ -28,69 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.lblQues = new System.Windows.Forms.Label();
+            this.panelContent.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.bunifuCustomLabel1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 51);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.638889F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.36111F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(702, 432);
-            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 51);
+            this.panel1.Size = new System.Drawing.Size(691, 37);
             this.panel1.TabIndex = 1;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
-            // bunifuCustomLabel1
+            // bunifuDragControl1
             // 
-            this.bunifuCustomLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(3, 0);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Padding = new System.Windows.Forms.Padding(10);
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(696, 32);
-            this.bunifuCustomLabel1.TabIndex = 0;
-            this.bunifuCustomLabel1.Text = resources.GetString("bunifuCustomLabel1.Text");
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // panelContent
+            // 
+            this.panelContent.AutoScroll = true;
+            this.panelContent.Controls.Add(this.lblQues);
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelContent.Location = new System.Drawing.Point(0, 37);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(691, 363);
+            this.panelContent.TabIndex = 2;
+            // 
+            // lblQues
+            // 
+            this.lblQues.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblQues.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQues.Location = new System.Drawing.Point(0, 0);
+            this.lblQues.Name = "lblQues";
+            this.lblQues.Size = new System.Drawing.Size(691, 57);
+            this.lblQues.TabIndex = 0;
+            this.lblQues.Text = "label1";
+            this.lblQues.Paint += new System.Windows.Forms.PaintEventHandler(this.lblQues_Paint);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 483);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(691, 454);
+            this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.Resize += new System.EventHandler(this.frmMain_Resize);
+            this.panelContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Label lblQues;
     }
 }
