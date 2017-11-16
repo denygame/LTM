@@ -1,0 +1,6 @@
+E:\LTM C#\baitap\1451120025_2FloatTCP\Client\bin\Debug\Client.exe.config
+E:\LTM C#\baitap\1451120025_2FloatTCP\Client\bin\Debug\Client.exe
+E:\LTM C#\baitap\1451120025_2FloatTCP\Client\bin\Debug\Client.pdb
+E:\LTM C#\baitap\1451120025_2FloatTCP\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+E:\LTM C#\baitap\1451120025_2FloatTCP\Client\obj\Debug\Client.exe
+E:\LTM C#\baitap\1451120025_2FloatTCP\Client\obj\Debug\Client.pdb
