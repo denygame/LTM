@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabServer = new System.Windows.Forms.TabPage();
             this.btnStopService = new System.Windows.Forms.Button();
@@ -39,7 +38,7 @@
             this.tabClient = new System.Windows.Forms.TabPage();
             this.btnDis = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numPortFromClient = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.cbConnect = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,27 +54,19 @@
             this.txtTextSend = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
+            this.sttChange = new System.Windows.Forms.ToolStripStatusLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblText = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabServer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUdPortServer)).BeginInit();
             this.tabClient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPortFromClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(251, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Simple Chat Application";
             // 
             // tabControl1
             // 
@@ -112,6 +103,7 @@
             this.btnStopService.TabIndex = 2;
             this.btnStopService.Text = "Stop Service";
             this.btnStopService.UseVisualStyleBackColor = true;
+            this.btnStopService.Click += new System.EventHandler(this.btnStopService_Click);
             // 
             // btnStartSevice
             // 
@@ -122,6 +114,7 @@
             this.btnStartSevice.TabIndex = 2;
             this.btnStartSevice.Text = "Start Service";
             this.btnStartSevice.UseVisualStyleBackColor = true;
+            this.btnStartSevice.Click += new System.EventHandler(this.btnStartSevice_Click);
             // 
             // nUdPortServer
             // 
@@ -134,6 +127,11 @@
             this.nUdPortServer.Name = "nUdPortServer";
             this.nUdPortServer.Size = new System.Drawing.Size(63, 20);
             this.nUdPortServer.TabIndex = 1;
+            this.nUdPortServer.Value = new decimal(new int[] {
+            12345,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
@@ -148,7 +146,7 @@
             // 
             this.tabClient.Controls.Add(this.btnDis);
             this.tabClient.Controls.Add(this.btnConnect);
-            this.tabClient.Controls.Add(this.numericUpDown1);
+            this.tabClient.Controls.Add(this.numPortFromClient);
             this.tabClient.Controls.Add(this.label4);
             this.tabClient.Controls.Add(this.cbConnect);
             this.tabClient.Controls.Add(this.label3);
@@ -169,6 +167,7 @@
             this.btnDis.TabIndex = 5;
             this.btnDis.Text = "Disconnect";
             this.btnDis.UseVisualStyleBackColor = true;
+            this.btnDis.Click += new System.EventHandler(this.btnDis_Click);
             // 
             // btnConnect
             // 
@@ -179,18 +178,24 @@
             this.btnConnect.TabIndex = 5;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // numericUpDown1
+            // numPortFromClient
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(275, 7);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numPortFromClient.Location = new System.Drawing.Point(275, 7);
+            this.numPortFromClient.Maximum = new decimal(new int[] {
             -727379969,
             232,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(63, 20);
-            this.numericUpDown1.TabIndex = 4;
+            this.numPortFromClient.Name = "numPortFromClient";
+            this.numPortFromClient.Size = new System.Drawing.Size(63, 20);
+            this.numPortFromClient.TabIndex = 4;
+            this.numPortFromClient.Value = new decimal(new int[] {
+            12345,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -208,6 +213,7 @@
             this.cbConnect.Name = "cbConnect";
             this.cbConnect.Size = new System.Drawing.Size(121, 21);
             this.cbConnect.TabIndex = 2;
+            this.cbConnect.Text = "127.0.0.1";
             // 
             // label3
             // 
@@ -226,10 +232,12 @@
             this.rTxtChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rTxtChat.Location = new System.Drawing.Point(26, 187);
             this.rTxtChat.Name = "rTxtChat";
+            this.rTxtChat.ReadOnly = true;
             this.rTxtChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
             this.rTxtChat.Size = new System.Drawing.Size(453, 182);
             this.rTxtChat.TabIndex = 2;
             this.rTxtChat.Text = "";
+            this.rTxtChat.TextChanged += new System.EventHandler(this.rTxtChat_TextChanged);
             // 
             // btnLoad
             // 
@@ -288,7 +296,8 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.sttChange});
             this.statusStrip1.Location = new System.Drawing.Point(0, 451);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(606, 22);
@@ -298,8 +307,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(237, 17);
-            this.toolStripStatusLabel1.Text = "Status: Connected/Waiting for Connections";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabel1.Text = "Status:";
             // 
             // panel1
             // 
@@ -325,6 +334,8 @@
             this.txtTextSend.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTextSend.Size = new System.Drawing.Size(344, 44);
             this.txtTextSend.TabIndex = 1;
+            this.txtTextSend.TextChanged += new System.EventHandler(this.txtTextSend_TextChanged);
+            this.txtTextSend.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTextSend_KeyPress);
             // 
             // label5
             // 
@@ -345,12 +356,40 @@
             this.btnSend.TabIndex = 3;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // sttChange
+            // 
+            this.sttChange.Name = "sttChange";
+            this.sttChange.Size = new System.Drawing.Size(51, 17);
+            this.sttChange.Text = "Unknow";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblText);
+            this.panel2.Location = new System.Drawing.Point(212, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(365, 100);
+            this.panel2.TabIndex = 7;
+            // 
+            // lblText
+            // 
+            this.lblText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblText.Location = new System.Drawing.Point(0, 0);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(365, 100);
+            this.lblText.TabIndex = 1;
+            this.lblText.Text = "Simple Chat Application";
+            this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 473);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
@@ -360,7 +399,6 @@
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.rTxtChat);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.label1);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple Chat";
@@ -371,20 +409,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUdPortServer)).EndInit();
             this.tabClient.ResumeLayout(false);
             this.tabClient.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPortFromClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabServer;
         private System.Windows.Forms.Button btnStopService;
@@ -394,7 +431,7 @@
         private System.Windows.Forms.TabPage tabClient;
         private System.Windows.Forms.Button btnDis;
         private System.Windows.Forms.Button btnConnect;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numPortFromClient;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbConnect;
         private System.Windows.Forms.Label label3;
@@ -410,6 +447,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTextSend;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.ToolStripStatusLabel sttChange;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblText;
     }
 }
 
