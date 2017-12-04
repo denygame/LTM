@@ -48,37 +48,15 @@ namespace Client.View
         {
             string ques = "dasklfdjbgajdsf gdsfhgifdsk fsadkdskjadfk sa dsauif hds fhdsa hfjkds hfjkds hafdsahfk ds;hli fhdsui hfuda hfuksd fkjsda ghfkj dsaghfjk dhsagk fjhdsajk fhdsj kafhds jkahfk jdsahfdjska hfkjdsa hfkjdsa hfjkdsa hfkjads hfkjasd hfdsjkfdsf  dfhdskf dsjkf dskjf kdjsh fkjds hfkjdsh fkjd hkjf hsf hsa fhdsugh dsif ghids hgiodsh flksajhf ksahg fksja fkusaj hfs hfsa f;isahf ;iosahfio;sah fisahfisa;f lsahfkjsagfjk saf usa fhsakjfh saklh fklsa hfklsa hfisah fskalh flksah klf end.";
 
-            Graphics g = this.CreateGraphics();
-            Font f = lblQues.Font;
-            SizeF sz = g.MeasureString(ques, f);
-            string strDetail = "height: " + sz.Height.ToString() + ", width: " + sz.Width.ToString();
+            var setupQues = setQues(ques);
 
-            //MessageBox.Show(strDetail);
+            int width = setupQues.Item1;
+            int height = setupQues.Item2;
 
-
-            var row = sz.Width / lblQues.Width;
-
-
-            var a = sz.Height;
-            var b = row + 1;
-            var c = (a * b);
-
-            //MessageBox.Show(a.ToString() + "," + b.ToString() + "," + c.ToString() /*row.ToString()*/);
-
-            lblQues.Height = (int)c;
-            lblQues.Text = ques;
-
-            //MessageBox.Show(lblQues.Height.ToString());
-            lblQues.BackColor = Color.Blue;
-
-
-            int width = this.panelQuiz.Width - 35;
-            int height = (int)c + 1;
-
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 2; i++)
             {
                 Panel pn = new Panel();
-                pn.Location = new Point(10, height);
+                pn.Location = new Point(20, height);
                 pn.Text = i.ToString();
                 pn.Size = new Size(width, 100);
 
@@ -90,67 +68,44 @@ namespace Client.View
 
                 this.list.Add(pn);
             }
+
+            Panel pn1 = new Panel();
+            pn1.Location = new Point(20, height);
+            pn1.Size = new Size(width, 10);
+            pn1.BackColor = Color.Red;
+            panelQuiz.Controls.Add(pn1);
         }
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
-            string ques = "dasklfdjbgajdsf gdsfhgifdsk fsadkdskjadfk sa dsauif hds fhdsa hfjkds hfjkds hafdsahfk ds;hli fhdsui hfuda hfuksd fkjsda ghfkj dsaghfjk dhsagk fjhdsajk fhdsj kafhds jkahfk jdsahfdjska hfkjdsa hfkjdsa hfjkdsa hfkjads hfkjasd hfdsjkfdsf  dfhdskf dsjkf dskjf kdjsh fkjds hfkjdsh fkjd hkjf hsf hsa fhdsugh dsif ghids hgiodsh flksajhf ksahg fksja fkusaj hfs hfsa f;isahf ;iosahfio;sah fisahfisa;f lsahfkjsagfjk saf usa fhsakjfh saklh fklsa hfklsa hfisah fskalh flksah klf end.";
+
+        }
 
 
-
-
+        // item1: width, item2:height
+        private Tuple<int, int> setQues(string ques)
+        {
             Graphics g = this.CreateGraphics();
             Font f = lblQues.Font;
             SizeF sz = g.MeasureString(ques, f);
-            string strDetail = "height: " + sz.Height.ToString() + ", width: " + sz.Width.ToString();
-
+            //string strDetail = "height: " + sz.Height.ToString() + ", width: " + sz.Width.ToString();
             //MessageBox.Show(strDetail);
-
-
             var row = sz.Width / lblQues.Width;
-
-
             var a = sz.Height;
-            var b = row + 1;
-            var c = (a * b);
+            var rowofQues = row + 1;
+            var heightQues = (a * rowofQues);
 
-            //MessageBox.Show(a.ToString() + "," + b.ToString() + "," + c.ToString() /*row.ToString()*/);
-
-            lblQues.Height = (int)c;
-            lblQues.Text = ques;
-
+            this.lblQues.Height = (int)heightQues;
+            this.lblQues.Text = ques;
             //MessageBox.Show(lblQues.Height.ToString());
-            lblQues.BackColor = Color.Blue;
+            this.lblQues.BackColor = Color.Blue;
 
-            int width, height = (int)c + 1;
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                width = this.panelQuiz.Width - 35;
-            }
-            else
-            {
-                width = this.panelQuiz.Width - 35;
-            }
+            // width height return for answers
+            int width = this.panelQuiz.Width - 40;
+            int height = (int)heightQues + 1;
 
-
-            foreach(var item in list)
-            {
-                item.Size = new Size(width, 100);
-            }
-
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    Panel pn = new Panel();
-            //    pn.Location = new Point(10, height);
-            //    pn.Text = i.ToString();
-            //    pn.Size = new Size(width, 100);
-
-            //    height += pn.Height + 10;
-
-            //    pn.BackColor = Color.Black;
-
-            //    panelQuiz.Controls.Add(pn);
-            //}
+            return new Tuple<int, int>(width, height);
         }
+
     }
 }
