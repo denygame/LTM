@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucQuestionDB));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contentCourse = new System.Windows.Forms.Panel();
             this.btnCreateCourse = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnPrevPageCourse = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -41,8 +41,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPageCourse = new System.Windows.Forms.Label();
             this.dGv_Course = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.colnumCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearchCourse = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.headerCourse = new System.Windows.Forms.Panel();
@@ -56,10 +54,6 @@
             this.btnPrevPageQues = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnNextPageQues = new Bunifu.Framework.UI.BunifuThinButton2();
             this.dGv_Ques = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQues = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumOfAws = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAwsRight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtSearchQues = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.headerQues = new System.Windows.Forms.Panel();
@@ -198,26 +192,26 @@
             // 
             // dGv_Course
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dGv_Course.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dGv_Course.AllowUserToAddRows = false;
+            this.dGv_Course.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dGv_Course.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGv_Course.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.dGv_Course.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGv_Course.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dGv_Course.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dGv_Course.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             this.dGv_Course.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGv_Course.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGv_Course.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGv_Course.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGv_Course.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colnumCourse,
-            this.colName});
             this.dGv_Course.DoubleBuffered = true;
             this.dGv_Course.EnableHeadersVisualStyles = false;
             this.dGv_Course.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
@@ -225,19 +219,12 @@
             this.dGv_Course.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dGv_Course.Location = new System.Drawing.Point(14, 115);
             this.dGv_Course.Name = "dGv_Course";
+            this.dGv_Course.ReadOnly = true;
             this.dGv_Course.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dGv_Course.Size = new System.Drawing.Size(264, 208);
             this.dGv_Course.TabIndex = 2;
-            // 
-            // colnumCourse
-            // 
-            this.colnumCourse.HeaderText = "Mã";
-            this.colnumCourse.Name = "colnumCourse";
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Tên Khóa Học";
-            this.colName.Name = "colName";
+            this.dGv_Course.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGv_Course_CellContentClick);
+            this.dGv_Course.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGv_Course_CellDoubleClick);
             // 
             // pictureBox1
             // 
@@ -443,8 +430,8 @@
             // 
             // dGv_Ques
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dGv_Ques.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dGv_Ques.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dGv_Ques.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -452,20 +439,15 @@
             this.dGv_Ques.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dGv_Ques.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dGv_Ques.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGv_Ques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGv_Ques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dGv_Ques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGv_Ques.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colQues,
-            this.colNumOfAws,
-            this.colAwsRight});
             this.dGv_Ques.DoubleBuffered = true;
             this.dGv_Ques.EnableHeadersVisualStyles = false;
             this.dGv_Ques.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
@@ -475,26 +457,6 @@
             this.dGv_Ques.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dGv_Ques.Size = new System.Drawing.Size(355, 208);
             this.dGv_Ques.TabIndex = 2;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            // 
-            // colQues
-            // 
-            this.colQues.HeaderText = "Câu Hỏi";
-            this.colQues.Name = "colQues";
-            // 
-            // colNumOfAws
-            // 
-            this.colNumOfAws.HeaderText = "Số Câu Trả Lời";
-            this.colNumOfAws.Name = "colNumOfAws";
-            // 
-            // colAwsRight
-            // 
-            this.colAwsRight.HeaderText = "Số Câu Đúng";
-            this.colAwsRight.Name = "colAwsRight";
             // 
             // pictureBox2
             // 
@@ -608,12 +570,6 @@
         private System.Windows.Forms.Label lblPageQues;
         private Bunifu.Framework.UI.BunifuThinButton2 btnReadFile;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAddQues;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQues;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNumOfAws;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAwsRight;
         private Bunifu.Framework.UI.BunifuThinButton2 btnCreateCourse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colnumCourse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
     }
 }

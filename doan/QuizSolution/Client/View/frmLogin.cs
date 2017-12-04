@@ -22,7 +22,7 @@ namespace Client.View
             Application.Exit();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void frmLogin2_Load(object sender, EventArgs e)
         {
             PanelTransition.Hide(panelProcess);
             PanelTransition.ShowSync(panelProcess);
@@ -37,6 +37,10 @@ namespace Client.View
             PanelTransition.ShowSync(panelProcess);
         }
 
-
+        private void btnStartQuiz_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new frmMain()).ShowDialog();
+        }
     }
 }

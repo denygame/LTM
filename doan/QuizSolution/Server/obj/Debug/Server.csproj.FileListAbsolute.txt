@@ -30,3 +30,4 @@ E:\LTM C#\doan\QuizSolution\Server\obj\Debug\Server.csproj.CoreCompileInputs.cac
 E:\LTM C#\doan\QuizSolution\Server\obj\Debug\Server.exe
 E:\LTM C#\doan\QuizSolution\Server\obj\Debug\Server.pdb
 E:\LTM C#\doan\QuizSolution\Server\bin\Debug\Bunifu_UI_v1.5.3.dll
+E:\LTM C#\doan\QuizSolution\Server\bin\Debug\MySql.Data.dll

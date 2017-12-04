@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Server.View
 {
     public partial class frmMain : Form
@@ -18,6 +19,8 @@ namespace Server.View
         {
             InitializeComponent();
         }
+
+        #region -- Event -- 
 
         private void btnImgClose_Click(object sender, EventArgs e)
         {
@@ -86,9 +89,12 @@ namespace Server.View
             this.btnSetting_Click(sender, e);
         }
 
+        #endregion
 
 
 
+
+        #region -- Method --
 
         private void resizeUcPanelContent()
         {
@@ -107,6 +113,7 @@ namespace Server.View
             }
         }
 
+        #endregion
 
     }
 }

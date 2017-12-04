@@ -24,6 +24,15 @@ namespace Server.View
         private void ucQuestionDB_Load(object sender, EventArgs e)
         {
             resizeFill();
+
+            try
+            {
+                dGv_Course.DataSource = Controller.CourseController.getCourses();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         
@@ -42,6 +51,16 @@ namespace Server.View
         private void btnAddQues_Click(object sender, EventArgs e)
         {
             (new View.frmQues()).ShowDialog();
+        }
+
+        private void dGv_Course_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            (new View.frmCourse()).ShowDialog();
+        }
+
+        private void dGv_Course_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
