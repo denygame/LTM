@@ -223,8 +223,8 @@
             this.dGv_Course.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dGv_Course.Size = new System.Drawing.Size(264, 208);
             this.dGv_Course.TabIndex = 2;
-            this.dGv_Course.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGv_Course_CellContentClick);
             this.dGv_Course.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGv_Course_CellDoubleClick);
+            this.dGv_Course.SelectionChanged += new System.EventHandler(this.dGv_Course_SelectionChanged);
             // 
             // pictureBox1
             // 
@@ -430,6 +430,8 @@
             // 
             // dGv_Ques
             // 
+            this.dGv_Ques.AllowUserToAddRows = false;
+            this.dGv_Ques.AllowUserToDeleteRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dGv_Ques.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dGv_Ques.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -454,9 +456,11 @@
             this.dGv_Ques.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dGv_Ques.Location = new System.Drawing.Point(14, 115);
             this.dGv_Ques.Name = "dGv_Ques";
+            this.dGv_Ques.ReadOnly = true;
             this.dGv_Ques.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dGv_Ques.Size = new System.Drawing.Size(355, 208);
             this.dGv_Ques.TabIndex = 2;
+            this.dGv_Ques.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGv_Ques_CellContentClick);
             // 
             // pictureBox2
             // 

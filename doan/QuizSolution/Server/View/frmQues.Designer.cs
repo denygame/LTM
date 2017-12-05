@@ -39,16 +39,17 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelQues = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtQues = new System.Windows.Forms.RichTextBox();
             this.panelAnswer = new System.Windows.Forms.Panel();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnCreateOrOK = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.dgv_answer = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.btnCancle = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSave = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).BeginInit();
             this.panelQues.SuspendLayout();
             this.panelAnswer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_answer)).BeginInit();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -112,123 +113,140 @@
             this.panelQues.AutoScroll = true;
             this.panelQues.AutoSize = true;
             this.panelQues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.panelQues.Controls.Add(this.richTextBox1);
+            this.panelQues.Controls.Add(this.txtQues);
             this.panelQues.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQues.Location = new System.Drawing.Point(0, 45);
             this.panelQues.Name = "panelQues";
             this.panelQues.Size = new System.Drawing.Size(487, 106);
             this.panelQues.TabIndex = 1;
             // 
-            // richTextBox1
+            // txtQues
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtQues.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(16, 17);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(455, 74);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.txtQues.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtQues.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQues.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQues.Location = new System.Drawing.Point(16, 17);
+            this.txtQues.Name = "txtQues";
+            this.txtQues.Size = new System.Drawing.Size(455, 74);
+            this.txtQues.TabIndex = 0;
+            this.txtQues.Text = "";
             // 
             // panelAnswer
             // 
-            this.panelAnswer.Controls.Add(this.bunifuCustomDataGrid1);
-            this.panelAnswer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAnswer.Location = new System.Drawing.Point(0, 151);
+            this.panelAnswer.Controls.Add(this.dgv_answer);
+            this.panelAnswer.Location = new System.Drawing.Point(16, 193);
             this.panelAnswer.Name = "panelAnswer";
-            this.panelAnswer.Size = new System.Drawing.Size(487, 160);
+            this.panelAnswer.Size = new System.Drawing.Size(455, 150);
             this.panelAnswer.TabIndex = 2;
             // 
-            // bunifuCustomDataGrid1
+            // dgv_answer
             // 
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_answer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_answer.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgv_answer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_answer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.GhostWhite;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(487, 160);
-            this.bunifuCustomDataGrid1.TabIndex = 0;
+            this.dgv_answer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_answer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_answer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_answer.DoubleBuffered = true;
+            this.dgv_answer.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgv_answer.EnableHeadersVisualStyles = false;
+            this.dgv_answer.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.dgv_answer.HeaderForeColor = System.Drawing.Color.GhostWhite;
+            this.dgv_answer.Location = new System.Drawing.Point(0, 0);
+            this.dgv_answer.Name = "dgv_answer";
+            this.dgv_answer.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_answer.Size = new System.Drawing.Size(455, 150);
+            this.dgv_answer.TabIndex = 0;
+            this.dgv_answer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_answer_CellContentClick);
+            this.dgv_answer.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_answer_ColumnHeaderMouseClick);
+            this.dgv_answer.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgv_answer_RowsAdded);
             // 
-            // btnDelete
+            // btnCancle
             // 
-            this.btnDelete.ActiveBorderThickness = 1;
-            this.btnDelete.ActiveCornerRadius = 20;
-            this.btnDelete.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnDelete.ActiveForecolor = System.Drawing.Color.White;
-            this.btnDelete.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
-            this.btnDelete.ButtonText = "Xóa";
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnDelete.IdleBorderThickness = 1;
-            this.btnDelete.IdleCornerRadius = 20;
-            this.btnDelete.IdleFillColor = System.Drawing.Color.White;
-            this.btnDelete.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnDelete.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.btnDelete.Location = new System.Drawing.Point(16, 320);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(185, 41);
-            this.btnDelete.TabIndex = 6;
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancle.ActiveBorderThickness = 1;
+            this.btnCancle.ActiveCornerRadius = 20;
+            this.btnCancle.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCancle.ActiveForecolor = System.Drawing.Color.White;
+            this.btnCancle.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.btnCancle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancle.BackgroundImage")));
+            this.btnCancle.ButtonText = "Hủy";
+            this.btnCancle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancle.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCancle.IdleBorderThickness = 1;
+            this.btnCancle.IdleCornerRadius = 20;
+            this.btnCancle.IdleFillColor = System.Drawing.Color.White;
+            this.btnCancle.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCancle.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
+            this.btnCancle.Location = new System.Drawing.Point(16, 354);
+            this.btnCancle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(185, 41);
+            this.btnCancle.TabIndex = 6;
+            this.btnCancle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancle.Click += new System.EventHandler(this.btnImgClose_Click);
             // 
-            // btnCreateOrOK
+            // btnSave
             // 
-            this.btnCreateOrOK.ActiveBorderThickness = 1;
-            this.btnCreateOrOK.ActiveCornerRadius = 20;
-            this.btnCreateOrOK.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnCreateOrOK.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCreateOrOK.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCreateOrOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCreateOrOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.btnCreateOrOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreateOrOK.BackgroundImage")));
-            this.btnCreateOrOK.ButtonText = "Tạo";
-            this.btnCreateOrOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateOrOK.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateOrOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnCreateOrOK.IdleBorderThickness = 1;
-            this.btnCreateOrOK.IdleCornerRadius = 20;
-            this.btnCreateOrOK.IdleFillColor = System.Drawing.Color.White;
-            this.btnCreateOrOK.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnCreateOrOK.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCreateOrOK.Location = new System.Drawing.Point(286, 320);
-            this.btnCreateOrOK.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnCreateOrOK.Name = "btnCreateOrOK";
-            this.btnCreateOrOK.Size = new System.Drawing.Size(185, 41);
-            this.btnCreateOrOK.TabIndex = 5;
-            this.btnCreateOrOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.ActiveBorderThickness = 1;
+            this.btnSave.ActiveCornerRadius = 20;
+            this.btnSave.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnSave.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSave.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.ButtonText = "Lưu";
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnSave.IdleBorderThickness = 1;
+            this.btnSave.IdleCornerRadius = 20;
+            this.btnSave.IdleFillColor = System.Drawing.Color.White;
+            this.btnSave.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.btnSave.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSave.Location = new System.Drawing.Point(286, 354);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(185, 41);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(255)))));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(13, 163);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(191, 18);
+            this.bunifuCustomLabel1.TabIndex = 7;
+            this.bunifuCustomLabel1.Text = "Danh Sách Câu Trả Lời";
             // 
             // frmQues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.ClientSize = new System.Drawing.Size(487, 379);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnCreateOrOK);
+            this.ClientSize = new System.Drawing.Size(487, 413);
+            this.Controls.Add(this.bunifuCustomLabel1);
+            this.Controls.Add(this.btnCancle);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panelAnswer);
             this.Controls.Add(this.panelQues);
             this.Controls.Add(this.panelHeader);
@@ -237,12 +255,13 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmQues";
+            this.Load += new System.EventHandler(this.frmQues_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).EndInit();
             this.panelQues.ResumeLayout(false);
             this.panelAnswer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_answer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,10 +276,11 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private System.Windows.Forms.Panel panelQues;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtQues;
         private System.Windows.Forms.Panel panelAnswer;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCreateOrOK;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_answer;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnCancle;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnSave;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
     }
 }

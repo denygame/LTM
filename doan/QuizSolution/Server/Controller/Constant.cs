@@ -14,5 +14,7 @@ namespace Server.Controller
         private static string mysql_user = "root";
 
         public static string str_conn = "Server=" + mysql_server + ";Database=" + mysql_db_name + ";Port=" + mysql_port + ";User ID=" + mysql_user + ";Password=";
+
+        public static List<string> ls_cb_answers_dgv = new List<string>() { "True", "False" };
     }
 }
