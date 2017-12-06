@@ -21,5 +21,44 @@ namespace Server.Controller
                 return new Model.Question(row);
             return null;
         }
+
+        public static bool delete(int id)
+        {
+            int result = DataProvider.sqlExecuteNonQuery("DELETE FROM `ques` WHERE id = @id", new object[] { id });
+            return result > 0;
+        }
+
+        public static bool update(int id, string content, int num)
+        {
+            int result = DataProvider.sqlExecuteNonQuery("UPDATE `ques` SET `content`= @content ,  `num_answer_right` = @num WHERE id = @id", new object[] { content, num, id });
+            return result > 0;
+        }
+
+        public static bool insert(string content, int id_course, int num)
+        {
+            int result = DataProvider.sqlExecuteNonQuery("INSERT INTO `ques`( `content`, `id_course`, `num_answer_right`) VALUES ( @content , @id_course , @num )", new object[] { content, id_course, num });
+            return result > 0;
+        }
+
+        public static int get_last_id()
+        {
+            return Convert.ToInt32(DataProvider.sqlExecuteScalar("SELECT MAX(id) FROM `ques`"));
+        }
+
+        public static int countInCourse(int idcourse)
+        {
+            return Convert.ToInt32(DataProvider.sqlExecuteScalar("SELECT Count(*) FROM `ques` where id_course = " + idcourse));
+        }
+
+        public static List<int> getListIdInCourse(int idcourse)
+        {
+            var ls = new List<int>();
+            var data = DataProvider.sqlQuery("Select id from `ques` where id_course = " + idcourse);
+            foreach(DataRow row in data.Rows)
+            {
+                ls.Add(Convert.ToInt32(row["id"]));
+            }
+            return ls;
+        }
     }
 }

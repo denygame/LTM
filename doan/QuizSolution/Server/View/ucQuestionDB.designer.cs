@@ -36,10 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contentCourse = new System.Windows.Forms.Panel();
             this.btnCreateCourse = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnPrevPageCourse = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnNextPageCourse = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblPageCourse = new System.Windows.Forms.Label();
+            this.lblCourse = new System.Windows.Forms.Label();
             this.dGv_Course = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearchCourse = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -50,9 +48,7 @@
             this.btnAddQues = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnReadFile = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblPageQues = new System.Windows.Forms.Label();
-            this.btnPrevPageQues = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnNextPageQues = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.lblQues = new System.Windows.Forms.Label();
             this.dGv_Ques = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtSearchQues = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -78,8 +74,6 @@
             this.contentCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
             this.contentCourse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.contentCourse.Controls.Add(this.btnCreateCourse);
-            this.contentCourse.Controls.Add(this.btnPrevPageCourse);
-            this.contentCourse.Controls.Add(this.btnNextPageCourse);
             this.contentCourse.Controls.Add(this.panel1);
             this.contentCourse.Controls.Add(this.dGv_Course);
             this.contentCourse.Controls.Add(this.pictureBox1);
@@ -117,78 +111,25 @@
             this.btnCreateCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCreateCourse.Click += new System.EventHandler(this.btnCreateCourse_Click);
             // 
-            // btnPrevPageCourse
-            // 
-            this.btnPrevPageCourse.ActiveBorderThickness = 1;
-            this.btnPrevPageCourse.ActiveCornerRadius = 20;
-            this.btnPrevPageCourse.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnPrevPageCourse.ActiveForecolor = System.Drawing.Color.White;
-            this.btnPrevPageCourse.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPrevPageCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPrevPageCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.btnPrevPageCourse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrevPageCourse.BackgroundImage")));
-            this.btnPrevPageCourse.ButtonText = "Trước";
-            this.btnPrevPageCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrevPageCourse.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevPageCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnPrevPageCourse.IdleBorderThickness = 1;
-            this.btnPrevPageCourse.IdleCornerRadius = 20;
-            this.btnPrevPageCourse.IdleFillColor = System.Drawing.Color.White;
-            this.btnPrevPageCourse.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnPrevPageCourse.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPrevPageCourse.Location = new System.Drawing.Point(14, 330);
-            this.btnPrevPageCourse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnPrevPageCourse.Name = "btnPrevPageCourse";
-            this.btnPrevPageCourse.Size = new System.Drawing.Size(84, 41);
-            this.btnPrevPageCourse.TabIndex = 4;
-            this.btnPrevPageCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnNextPageCourse
-            // 
-            this.btnNextPageCourse.ActiveBorderThickness = 1;
-            this.btnNextPageCourse.ActiveCornerRadius = 20;
-            this.btnNextPageCourse.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnNextPageCourse.ActiveForecolor = System.Drawing.Color.White;
-            this.btnNextPageCourse.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNextPageCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNextPageCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.btnNextPageCourse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNextPageCourse.BackgroundImage")));
-            this.btnNextPageCourse.ButtonText = "Sau";
-            this.btnNextPageCourse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNextPageCourse.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextPageCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnNextPageCourse.IdleBorderThickness = 1;
-            this.btnNextPageCourse.IdleCornerRadius = 20;
-            this.btnNextPageCourse.IdleFillColor = System.Drawing.Color.White;
-            this.btnNextPageCourse.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnNextPageCourse.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNextPageCourse.Location = new System.Drawing.Point(194, 330);
-            this.btnNextPageCourse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnNextPageCourse.Name = "btnNextPageCourse";
-            this.btnNextPageCourse.Size = new System.Drawing.Size(84, 41);
-            this.btnNextPageCourse.TabIndex = 4;
-            this.btnNextPageCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.Controls.Add(this.lblPageCourse);
-            this.panel1.Location = new System.Drawing.Point(98, 335);
+            this.panel1.Controls.Add(this.lblCourse);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 329);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(96, 36);
+            this.panel1.Size = new System.Drawing.Size(292, 51);
             this.panel1.TabIndex = 3;
             // 
-            // lblPageCourse
+            // lblCourse
             // 
-            this.lblPageCourse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPageCourse.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lblPageCourse.Location = new System.Drawing.Point(0, 0);
-            this.lblPageCourse.Name = "lblPageCourse";
-            this.lblPageCourse.Size = new System.Drawing.Size(96, 36);
-            this.lblPageCourse.TabIndex = 0;
-            this.lblPageCourse.Text = "10000/10000";
-            this.lblPageCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCourse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCourse.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.lblCourse.Location = new System.Drawing.Point(0, 0);
+            this.lblCourse.Name = "lblCourse";
+            this.lblCourse.Size = new System.Drawing.Size(292, 51);
+            this.lblCourse.TabIndex = 0;
+            this.lblCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dGv_Course
             // 
@@ -221,6 +162,7 @@
             this.dGv_Course.Name = "dGv_Course";
             this.dGv_Course.ReadOnly = true;
             this.dGv_Course.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dGv_Course.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGv_Course.Size = new System.Drawing.Size(264, 208);
             this.dGv_Course.TabIndex = 2;
             this.dGv_Course.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGv_Course_CellDoubleClick);
@@ -291,8 +233,6 @@
             this.contentQues.Controls.Add(this.btnAddQues);
             this.contentQues.Controls.Add(this.btnReadFile);
             this.contentQues.Controls.Add(this.panel2);
-            this.contentQues.Controls.Add(this.btnPrevPageQues);
-            this.contentQues.Controls.Add(this.btnNextPageQues);
             this.contentQues.Controls.Add(this.dGv_Ques);
             this.contentQues.Controls.Add(this.pictureBox2);
             this.contentQues.Controls.Add(this.txtSearchQues);
@@ -356,77 +296,23 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.lblPageQues);
-            this.panel2.Location = new System.Drawing.Point(148, 335);
+            this.panel2.Controls.Add(this.lblQues);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 329);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(96, 36);
+            this.panel2.Size = new System.Drawing.Size(383, 51);
             this.panel2.TabIndex = 7;
             // 
-            // lblPageQues
+            // lblQues
             // 
-            this.lblPageQues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPageQues.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lblPageQues.Location = new System.Drawing.Point(0, 0);
-            this.lblPageQues.Name = "lblPageQues";
-            this.lblPageQues.Size = new System.Drawing.Size(96, 36);
-            this.lblPageQues.TabIndex = 0;
-            this.lblPageQues.Text = "10000/10000";
-            this.lblPageQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnPrevPageQues
-            // 
-            this.btnPrevPageQues.ActiveBorderThickness = 1;
-            this.btnPrevPageQues.ActiveCornerRadius = 20;
-            this.btnPrevPageQues.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnPrevPageQues.ActiveForecolor = System.Drawing.Color.White;
-            this.btnPrevPageQues.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPrevPageQues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPrevPageQues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.btnPrevPageQues.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrevPageQues.BackgroundImage")));
-            this.btnPrevPageQues.ButtonText = "Trước";
-            this.btnPrevPageQues.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrevPageQues.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevPageQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnPrevPageQues.IdleBorderThickness = 1;
-            this.btnPrevPageQues.IdleCornerRadius = 20;
-            this.btnPrevPageQues.IdleFillColor = System.Drawing.Color.White;
-            this.btnPrevPageQues.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnPrevPageQues.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPrevPageQues.Location = new System.Drawing.Point(14, 330);
-            this.btnPrevPageQues.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnPrevPageQues.Name = "btnPrevPageQues";
-            this.btnPrevPageQues.Size = new System.Drawing.Size(101, 41);
-            this.btnPrevPageQues.TabIndex = 5;
-            this.btnPrevPageQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnNextPageQues
-            // 
-            this.btnNextPageQues.ActiveBorderThickness = 1;
-            this.btnNextPageQues.ActiveCornerRadius = 20;
-            this.btnNextPageQues.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnNextPageQues.ActiveForecolor = System.Drawing.Color.White;
-            this.btnNextPageQues.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNextPageQues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNextPageQues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.btnNextPageQues.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNextPageQues.BackgroundImage")));
-            this.btnNextPageQues.ButtonText = "Sau";
-            this.btnNextPageQues.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNextPageQues.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextPageQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnNextPageQues.IdleBorderThickness = 1;
-            this.btnNextPageQues.IdleCornerRadius = 20;
-            this.btnNextPageQues.IdleFillColor = System.Drawing.Color.White;
-            this.btnNextPageQues.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.btnNextPageQues.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNextPageQues.Location = new System.Drawing.Point(268, 330);
-            this.btnNextPageQues.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnNextPageQues.Name = "btnNextPageQues";
-            this.btnNextPageQues.Size = new System.Drawing.Size(101, 41);
-            this.btnNextPageQues.TabIndex = 6;
-            this.btnNextPageQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQues.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQues.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.lblQues.Location = new System.Drawing.Point(0, 0);
+            this.lblQues.Name = "lblQues";
+            this.lblQues.Size = new System.Drawing.Size(383, 51);
+            this.lblQues.TabIndex = 0;
+            this.lblQues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dGv_Ques
             // 
@@ -564,14 +450,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dGv_Course;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dGv_Ques;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnPrevPageCourse;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnNextPageCourse;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblPageCourse;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnPrevPageQues;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnNextPageQues;
+        private System.Windows.Forms.Label lblCourse;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblPageQues;
+        private System.Windows.Forms.Label lblQues;
         private Bunifu.Framework.UI.BunifuThinButton2 btnReadFile;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAddQues;
         private Bunifu.Framework.UI.BunifuThinButton2 btnCreateCourse;

@@ -12,6 +12,8 @@ namespace Server.View
 {
     public partial class ucQuestionDB : UserControl
     {
+        private int idcourse = -1;
+
         public ucQuestionDB()
         {
             if (!this.DesignMode)
@@ -20,52 +22,71 @@ namespace Server.View
             }
         }
 
+
+        #region -- Event --
+
         private void ucQuestionDB_Load(object sender, EventArgs e)
         {
             resizeFill();
+            show_course();
 
-            try
-            {
-                dGv_Course.DataSource = Controller.CourseController.getCourses();
-                dGv_Course.Columns[0].HeaderText = "Mã Khóa Học";
-                dGv_Course.Columns[1].HeaderText = "Tên Khóa Học";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            lblCourse.Text = "Có tất cả " + Controller.CourseController.count() + " khóa học";
         }
 
         private void btnCreateCourse_Click(object sender, EventArgs e)
         {
-            (new frmCourse()).ShowDialog();
+            var frm_course = new View.frmCourse();
+            frm_course.EvtSend += Frm_course_EvtSend;
+            frm_course.ShowDialog();
         }
 
         private void btnAddQues_Click(object sender, EventArgs e)
         {
-            (new View.frmQues()).ShowDialog();
+            var f = new View.frmQues(this.idcourse);
+            f.EvtSaveOk += F_EvtSaveOk;
+            f.ShowDialog();
+        }
+
+        private void F_EvtSaveOk(object sender, EventArgs e)
+        {
+            dGv_Course_SelectionChanged(null, null);
         }
 
         private void dGv_Course_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            (new View.frmCourse()).ShowDialog();
+            int id_course = int.Parse(get_current_cell_content_dgv(dGv_Course, 0).ToString());
+            var frm_course = new View.frmCourse(id_course);
+            frm_course.EvtSend += Frm_course_EvtSend;
+            frm_course.ShowDialog();
+        }
+
+        private void Frm_course_EvtSend(object sender, EventArgs e)
+        {
+            ucQuestionDB_Load(null, null);
         }
 
         private void dGv_Ques_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int id_ques = int.Parse(get_current_cell_content_dgv(dGv_Ques, 2).ToString());
             if (e.ColumnIndex == 0)//edit
             {
                 if (e.RowIndex != -1)// not header
-                    if (dGv_Ques.CurrentRow.Index != dGv_Ques.RowCount - 1)
-                    {
-                        int id_ques = int.Parse(get_current_cell_content_dgv(dGv_Ques, 2).ToString());
-                        (new View.frmQues(id_ques)).ShowDialog();
-                    }
+                {
+                    var f = new View.frmQues(this.idcourse, id_ques);
+                    f.EvtSaveOk += F_EvtSaveOk;
+                    f.ShowDialog();
+                }
             }
 
             if (e.ColumnIndex == 1)//xóa
             {
-                MessageBox.Show("Xóa");
+                DialogResult res = MessageBox.Show("Bạn xác nhận muốn xóa câu hỏi có mã " + id_ques + "?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    Controller.AnswerController.deleteByIdQues(id_ques);
+                    Controller.QuestionController.delete(id_ques);
+                    dGv_Course_SelectionChanged(null, null);
+                }
             }
         }
 
@@ -74,17 +95,25 @@ namespace Server.View
             if (dGv_Course.SelectedCells.Count > 0)
             {
                 int id_course = int.Parse(get_current_cell_content_dgv(dGv_Course, 0).ToString());
+                this.idcourse = id_course;
                 fill_dgv_ques(id_course);
+                lblQues.Text = "Khóa học: " + get_current_cell_content_dgv(dGv_Course, 1).ToString() + " có " + Controller.QuestionController.countInCourse(id_course) + " câu hỏi";
             }
         }
 
+        #endregion
 
 
 
 
+        #region -- Method -- 
 
-
-
+        private void show_course()
+        {
+            dGv_Course.DataSource = Controller.CourseController.getCourses();
+            dGv_Course.Columns[0].HeaderText = "Mã Khóa Học";
+            dGv_Course.Columns[1].HeaderText = "Tên Khóa Học";
+        }
 
         private object get_current_cell_content_dgv(DataGridView dgv, int cell_num)
         {
@@ -123,5 +152,6 @@ namespace Server.View
             this.Height = this.Parent.Height;
         }
 
+        #endregion
     }
 }

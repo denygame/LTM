@@ -54,6 +54,7 @@
     <Compile Include="Controller\Constant.cs" />
     <Compile Include="Controller\CourseController.cs" />
     <Compile Include="Controller\DataProvider.cs" />
+    <Compile Include="Controller\IO_INI.cs" />
     <Compile Include="Controller\Ip.cs" />
     <Compile Include="Controller\QuestionController.cs" />
     <Compile Include="Model\Answer.cs" />

@@ -139,6 +139,7 @@
             this.btnDelete.Size = new System.Drawing.Size(118, 41);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCreateOrOK
             // 
@@ -150,7 +151,7 @@
             this.btnCreateOrOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCreateOrOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
             this.btnCreateOrOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreateOrOK.BackgroundImage")));
-            this.btnCreateOrOK.ButtonText = "Tạo";
+            this.btnCreateOrOK.ButtonText = "Lưu";
             this.btnCreateOrOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateOrOK.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateOrOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
@@ -165,6 +166,7 @@
             this.btnCreateOrOK.Size = new System.Drawing.Size(118, 41);
             this.btnCreateOrOK.TabIndex = 3;
             this.btnCreateOrOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCreateOrOK.Click += new System.EventHandler(this.btnCreateOrOK_Click);
             // 
             // txtNameCourse
             // 
@@ -203,6 +205,7 @@
             this.txtNumCourse.Size = new System.Drawing.Size(201, 33);
             this.txtNumCourse.TabIndex = 0;
             this.txtNumCourse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNumCourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumCourse_KeyPress);
             // 
             // bunifuCustomLabel2
             // 
@@ -242,6 +245,7 @@
             this.Name = "frmCourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmCourse";
+            this.Load += new System.EventHandler(this.frmCourse_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).EndInit();

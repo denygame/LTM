@@ -18,7 +18,7 @@ namespace Server.Model
         public Course(DataRow r)
         {
             this.Name = r["name"].ToString();
-            this.Id = (int)r["id"];
+            this.Id = Convert.ToInt32(r["id"]);
         }
     }
 }

@@ -30,5 +30,23 @@ namespace Server.Controller
             int result = DataProvider.sqlExecuteNonQuery("DELETE FROM `answers` WHERE id = @id", new object[] { id });
             return result > 0;
         }
+
+        public static bool insert(string content, int id_ques, int tf)
+        {
+            int result = DataProvider.sqlExecuteNonQuery("INSERT INTO `answers`( `content`, `id_ques`, `true_or_false`) VALUES ( @content , @idques , @tf )", new object[] { content, id_ques, tf });
+            return result > 0;
+        }
+
+        public static bool update(Model.Answer ans)
+        {
+            int result = DataProvider.sqlExecuteNonQuery("UPDATE `answers` SET `content`= @content , `id_ques`= @id_ques , `true_or_false`= @tf WHERE `id` = @id ", new object[] { ans.Content, ans.Id_ques, ans.True_or_false, ans.Id });
+            return result > 0;
+        }
+
+        public static bool deleteByIdQues(int idques)
+        {
+            int result = DataProvider.sqlExecuteNonQuery("DELETE FROM `answers` WHERE id_ques = @id", new object[] { idques });
+            return result > 0;
+        }
     }
 }

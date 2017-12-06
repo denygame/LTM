@@ -44,7 +44,7 @@
             this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblQuesFile = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panelHeaderQuesFile = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@
             this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblQuesDB = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cbNumCourse = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHeaderQuesDB = new System.Windows.Forms.Panel();
@@ -64,16 +64,16 @@
             this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lblFile = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.checkBoxFile = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lblCSDL = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.checkBoxCSDL = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.btnCreateOrOK = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnCreateOrOK = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelTcpContent.SuspendLayout();
             this.panelTcpHeader.SuspendLayout();
             this.panelContentQuesFile.SuspendLayout();
@@ -119,6 +119,7 @@
             this.txtPort.TabIndex = 4;
             this.txtPort.Text = "9999";
             this.txtPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // bunifuCustomLabel2
             // 
@@ -136,7 +137,6 @@
             // 
             this.txtIP.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTransition1.SetDecoration(this.txtIP, BunifuAnimatorNS.DecorationType.None);
-            this.txtIP.Enabled = false;
             this.txtIP.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.txtIP.HintForeColor = System.Drawing.Color.Empty;
@@ -152,6 +152,7 @@
             this.txtIP.Size = new System.Drawing.Size(154, 33);
             this.txtIP.TabIndex = 2;
             this.txtIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIP_KeyPress);
             // 
             // bunifuCustomLabel1
             // 
@@ -238,7 +239,7 @@
             this.bunifuTransition1.SetDecoration(this.bunifuMaterialTextbox3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuMaterialTextbox3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuMaterialTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(7)))), ((int)(((byte)(71)))));
-            this.bunifuMaterialTextbox3.HintForeColor = System.Drawing.Color.Black;
+            this.bunifuMaterialTextbox3.HintForeColor = System.Drawing.Color.DimGray;
             this.bunifuMaterialTextbox3.HintText = "Random Question";
             this.bunifuMaterialTextbox3.isPassword = false;
             this.bunifuMaterialTextbox3.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(7)))), ((int)(((byte)(71)))));
@@ -251,6 +252,7 @@
             this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(292, 36);
             this.bunifuMaterialTextbox3.TabIndex = 11;
             this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bunifuMaterialTextbox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // bunifuCustomLabel10
             // 
@@ -268,25 +270,25 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.bunifuCustomLabel7);
+            this.panel1.Controls.Add(this.lblQuesFile);
             this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 27);
             this.panel1.TabIndex = 5;
             // 
-            // bunifuCustomLabel7
+            // lblQuesFile
             // 
-            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel7, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(7)))), ((int)(((byte)(71)))));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(0, 0);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(397, 27);
-            this.bunifuCustomLabel7.TabIndex = 5;
-            this.bunifuCustomLabel7.Text = "Có 1000 câu hỏi";
-            this.bunifuCustomLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuTransition1.SetDecoration(this.lblQuesFile, BunifuAnimatorNS.DecorationType.None);
+            this.lblQuesFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQuesFile.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuesFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(7)))), ((int)(((byte)(71)))));
+            this.lblQuesFile.Location = new System.Drawing.Point(0, 0);
+            this.lblQuesFile.Name = "lblQuesFile";
+            this.lblQuesFile.Size = new System.Drawing.Size(397, 27);
+            this.lblQuesFile.TabIndex = 5;
+            this.lblQuesFile.Text = "Có 1000 câu hỏi";
+            this.lblQuesFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuThinButton21
             // 
@@ -384,7 +386,7 @@
             this.bunifuTransition1.SetDecoration(this.bunifuMaterialTextbox2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(18)))), ((int)(((byte)(36)))));
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Black;
+            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.DimGray;
             this.bunifuMaterialTextbox2.HintText = "Random Question";
             this.bunifuMaterialTextbox2.isPassword = false;
             this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(18)))), ((int)(((byte)(36)))));
@@ -397,6 +399,7 @@
             this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(162, 36);
             this.bunifuMaterialTextbox2.TabIndex = 9;
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bunifuMaterialTextbox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // bunifuCustomLabel8
             // 
@@ -412,36 +415,39 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.bunifuCustomLabel4);
+            this.panel3.Controls.Add(this.lblQuesDB);
             this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
             this.panel3.Location = new System.Drawing.Point(1, 57);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(258, 27);
             this.panel3.TabIndex = 5;
             // 
-            // bunifuCustomLabel4
+            // lblQuesDB
             // 
-            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(18)))), ((int)(((byte)(36)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(0, 0);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(258, 27);
-            this.bunifuCustomLabel4.TabIndex = 4;
-            this.bunifuCustomLabel4.Text = "Có 1000 câu hỏi";
-            this.bunifuCustomLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuTransition1.SetDecoration(this.lblQuesDB, BunifuAnimatorNS.DecorationType.None);
+            this.lblQuesDB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQuesDB.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuesDB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(18)))), ((int)(((byte)(36)))));
+            this.lblQuesDB.Location = new System.Drawing.Point(0, 0);
+            this.lblQuesDB.Name = "lblQuesDB";
+            this.lblQuesDB.Size = new System.Drawing.Size(258, 27);
+            this.lblQuesDB.TabIndex = 4;
+            this.lblQuesDB.Text = "Có 1000 câu hỏi";
+            this.lblQuesDB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbNumCourse
             // 
+            this.cbNumCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
             this.cbNumCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTransition1.SetDecoration(this.cbNumCourse, BunifuAnimatorNS.DecorationType.None);
+            this.cbNumCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNumCourse.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNumCourse.FormattingEnabled = true;
             this.cbNumCourse.Location = new System.Drawing.Point(117, 24);
             this.cbNumCourse.Name = "cbNumCourse";
             this.cbNumCourse.Size = new System.Drawing.Size(126, 27);
             this.cbNumCourse.TabIndex = 4;
+            this.cbNumCourse.SelectedIndexChanged += new System.EventHandler(this.cbNumCourse_SelectedIndexChanged);
             // 
             // bunifuCustomLabel5
             // 
@@ -512,10 +518,10 @@
             this.panelContentSetting.Controls.Add(this.bunifuMaterialTextbox4);
             this.panelContentSetting.Controls.Add(this.bunifuCustomLabel12);
             this.panelContentSetting.Controls.Add(this.bunifuCustomLabel14);
-            this.panelContentSetting.Controls.Add(this.bunifuCustomLabel13);
-            this.panelContentSetting.Controls.Add(this.bunifuCheckbox2);
-            this.panelContentSetting.Controls.Add(this.bunifuCustomLabel11);
-            this.panelContentSetting.Controls.Add(this.bunifuCheckbox1);
+            this.panelContentSetting.Controls.Add(this.lblFile);
+            this.panelContentSetting.Controls.Add(this.checkBoxFile);
+            this.panelContentSetting.Controls.Add(this.lblCSDL);
+            this.panelContentSetting.Controls.Add(this.checkBoxCSDL);
             this.bunifuTransition1.SetDecoration(this.panelContentSetting, BunifuAnimatorNS.DecorationType.None);
             this.panelContentSetting.Location = new System.Drawing.Point(287, 58);
             this.panelContentSetting.Name = "panelContentSetting";
@@ -529,7 +535,7 @@
             this.bunifuTransition1.SetDecoration(this.bunifuMaterialTextbox4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuMaterialTextbox4.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuMaterialTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuMaterialTextbox4.HintForeColor = System.Drawing.Color.Black;
+            this.bunifuMaterialTextbox4.HintForeColor = System.Drawing.Color.DimGray;
             this.bunifuMaterialTextbox4.HintText = "Nhập vào số phút";
             this.bunifuMaterialTextbox4.isPassword = false;
             this.bunifuMaterialTextbox4.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
@@ -542,6 +548,7 @@
             this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(162, 36);
             this.bunifuMaterialTextbox4.TabIndex = 10;
             this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bunifuMaterialTextbox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // bunifuCustomLabel12
             // 
@@ -568,75 +575,65 @@
             this.bunifuCustomLabel14.TabIndex = 5;
             this.bunifuCustomLabel14.Text = "Lấy Câu Hỏi";
             // 
-            // bunifuCustomLabel13
+            // lblFile
             // 
-            this.bunifuCustomLabel13.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel13, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(7)))), ((int)(((byte)(71)))));
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(81, 87);
-            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
-            this.bunifuCustomLabel13.Size = new System.Drawing.Size(65, 23);
-            this.bunifuCustomLabel13.TabIndex = 4;
-            this.bunifuCustomLabel13.Text = "Từ File";
+            this.lblFile.AutoSize = true;
+            this.lblFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.lblFile, BunifuAnimatorNS.DecorationType.None);
+            this.lblFile.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(7)))), ((int)(((byte)(71)))));
+            this.lblFile.Location = new System.Drawing.Point(81, 87);
+            this.lblFile.Name = "lblFile";
+            this.lblFile.Size = new System.Drawing.Size(65, 23);
+            this.lblFile.TabIndex = 4;
+            this.lblFile.Text = "Từ File";
+            this.lblFile.Click += new System.EventHandler(this.lblFile_Click);
+            this.lblFile.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblFile.MouseLeave += new System.EventHandler(this.lblFile_MouseLeave);
             // 
-            // bunifuCheckbox2
+            // checkBoxFile
             // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.Checked = false;
-            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuTransition1.SetDecoration(this.bunifuCheckbox2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(55, 90);
-            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
-            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox2.TabIndex = 3;
+            this.checkBoxFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkBoxFile.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkBoxFile.Checked = false;
+            this.checkBoxFile.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.checkBoxFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.checkBoxFile, BunifuAnimatorNS.DecorationType.None);
+            this.checkBoxFile.ForeColor = System.Drawing.Color.White;
+            this.checkBoxFile.Location = new System.Drawing.Point(55, 90);
+            this.checkBoxFile.Name = "checkBoxFile";
+            this.checkBoxFile.Size = new System.Drawing.Size(20, 20);
+            this.checkBoxFile.TabIndex = 3;
             // 
-            // bunifuCustomLabel11
+            // lblCSDL
             // 
-            this.bunifuCustomLabel11.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.bunifuCustomLabel11, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(18)))), ((int)(((byte)(36)))));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(81, 57);
-            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(80, 23);
-            this.bunifuCustomLabel11.TabIndex = 1;
-            this.bunifuCustomLabel11.Text = "Từ CSDL";
+            this.lblCSDL.AutoSize = true;
+            this.lblCSDL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.lblCSDL, BunifuAnimatorNS.DecorationType.None);
+            this.lblCSDL.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCSDL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(18)))), ((int)(((byte)(36)))));
+            this.lblCSDL.Location = new System.Drawing.Point(81, 57);
+            this.lblCSDL.Name = "lblCSDL";
+            this.lblCSDL.Size = new System.Drawing.Size(80, 23);
+            this.lblCSDL.TabIndex = 1;
+            this.lblCSDL.Text = "Từ CSDL";
+            this.lblCSDL.Click += new System.EventHandler(this.lblCSDL_Click);
+            this.lblCSDL.MouseEnter += new System.EventHandler(this.lbl_MouseEnter);
+            this.lblCSDL.MouseLeave += new System.EventHandler(this.lblCSDL_MouseLeave);
             // 
-            // bunifuCheckbox1
+            // checkBoxCSDL
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = false;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuTransition1.SetDecoration(this.bunifuCheckbox1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(55, 60);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 0;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 5;
-            this.bunifuElipse2.TargetControl = this.panelHeaderQuesFile;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 5;
-            this.bunifuElipse3.TargetControl = this.panelHeaderQuesDB;
-            // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 5;
-            this.bunifuElipse4.TargetControl = this;
-            // 
-            // bunifuElipse5
-            // 
-            this.bunifuElipse5.ElipseRadius = 5;
-            this.bunifuElipse5.TargetControl = this.panelHeaderSetting;
+            this.checkBoxCSDL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkBoxCSDL.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.checkBoxCSDL.Checked = false;
+            this.checkBoxCSDL.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.checkBoxCSDL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.checkBoxCSDL, BunifuAnimatorNS.DecorationType.None);
+            this.checkBoxCSDL.ForeColor = System.Drawing.Color.White;
+            this.checkBoxCSDL.Location = new System.Drawing.Point(55, 60);
+            this.checkBoxCSDL.Name = "checkBoxCSDL";
+            this.checkBoxCSDL.Size = new System.Drawing.Size(20, 20);
+            this.checkBoxCSDL.TabIndex = 0;
             // 
             // btnCreateOrOK
             // 
@@ -664,12 +661,13 @@
             this.btnCreateOrOK.Size = new System.Drawing.Size(185, 41);
             this.btnCreateOrOK.TabIndex = 10;
             this.btnCreateOrOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCreateOrOK.Click += new System.EventHandler(this.btnCreateOrOK_Click);
             // 
             // bunifuThinButton22
             // 
             this.bunifuThinButton22.ActiveBorderThickness = 1;
             this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
+            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuThinButton22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -683,14 +681,34 @@
             this.bunifuThinButton22.IdleBorderThickness = 1;
             this.bunifuThinButton22.IdleCornerRadius = 20;
             this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
             this.bunifuThinButton22.Location = new System.Drawing.Point(80, 403);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(185, 41);
             this.bunifuThinButton22.TabIndex = 10;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this.panelHeaderQuesFile;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 5;
+            this.bunifuElipse3.TargetControl = this.panelHeaderQuesDB;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 5;
+            this.bunifuElipse5.TargetControl = this.panelHeaderSetting;
             // 
             // ucSetting
             // 
@@ -750,12 +768,12 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private System.Windows.Forms.ComboBox cbNumCourse;
         private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblQuesDB;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblQuesFile;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private System.Windows.Forms.Panel panelHeaderSetting;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
@@ -765,10 +783,10 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
+        private Bunifu.Framework.UI.BunifuCheckbox checkBoxCSDL;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblCSDL;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblFile;
+        private Bunifu.Framework.UI.BunifuCheckbox checkBoxFile;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
