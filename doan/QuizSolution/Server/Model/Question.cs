@@ -26,5 +26,12 @@ namespace Server.Model
             this.Content = r["content"].ToString();
             this.Id = int.Parse(r["id"].ToString());
         }
+
+        public Question(int id, string content, int num)
+        {
+            this.Id = id;
+            this.Content = content;
+            this.Num_answer_right = num;
+        }
     }
 }

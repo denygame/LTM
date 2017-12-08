@@ -22,6 +22,17 @@ namespace Server.Controller
             return null;
         }
 
+        public static List<Model.Question> getListQues(int idCourse)
+        {
+            var ls = new List<Model.Question>();
+            var data = DataProvider.sqlQuery("select * from `ques` where id_course = " + idCourse);
+            foreach (DataRow row in data.Rows)
+            {
+                ls.Add(new Model.Question(row));
+            }
+            return ls;
+        }
+
         public static bool delete(int id)
         {
             int result = DataProvider.sqlExecuteNonQuery("DELETE FROM `ques` WHERE id = @id", new object[] { id });
@@ -54,7 +65,7 @@ namespace Server.Controller
         {
             var ls = new List<int>();
             var data = DataProvider.sqlQuery("Select id from `ques` where id_course = " + idcourse);
-            foreach(DataRow row in data.Rows)
+            foreach (DataRow row in data.Rows)
             {
                 ls.Add(Convert.ToInt32(row["id"]));
             }

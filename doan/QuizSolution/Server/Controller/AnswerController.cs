@@ -9,9 +9,20 @@ namespace Server.Controller
 {
     public class AnswerController
     {
-        public static DataTable getListAnswer(int id_ques)
+        public static DataTable getDataAnswer(int id_ques)
         {
             return DataProvider.sqlQuery("select id ,content, true_or_false from `answers` where id_ques = @id", new object[] { id_ques });
+        }
+
+        public static List<Model.Answer> getAnswerList(int id_ques)
+        {
+            var ls = new List<Model.Answer>();
+            var data = DataProvider.sqlQuery("select * from `answers` where id_ques = @id", new object[] { id_ques });
+            foreach(DataRow row in data.Rows)
+            {
+                ls.Add(new Model.Answer(row));
+            }
+            return ls;
         }
 
         public static int get_last_id()

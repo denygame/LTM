@@ -86,7 +86,8 @@ namespace Server.View
             panelSlideMenu.Width = 50;
             logo.Visible = false;
 
-            this.btnSetting_Click(sender, e);
+            this.btnQuestion_Click(sender, e);
+            Controller.DBConnection.connect();
         }
 
         #endregion

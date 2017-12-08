@@ -13,6 +13,7 @@ namespace Server.View
     public partial class ucQuestionDB : UserControl
     {
         private int idcourse = -1;
+        private bool connectDb;
 
         public ucQuestionDB()
         {
@@ -20,6 +21,8 @@ namespace Server.View
             {
                 InitializeComponent();
             }
+
+            this.connectDb = Controller.DBConnection.connect();
         }
 
 
@@ -28,23 +31,37 @@ namespace Server.View
         private void ucQuestionDB_Load(object sender, EventArgs e)
         {
             resizeFill();
-            show_course();
 
-            lblCourse.Text = "Có tất cả " + Controller.CourseController.count() + " khóa học";
+            if (connectDb)
+            {
+                show_course();
+                lblCourse.Text = "Có tất cả " + Controller.CourseController.count() + " chủ đề";
+            }
+            else
+            {
+                lblCourse.Text = "Vui lòng kiểm tra lại kết nối";
+                lblQues.Text = "File " + Controller.Constant.nameFileConnection + " hoặc kết nối có lỗi";
+            }
         }
 
         private void btnCreateCourse_Click(object sender, EventArgs e)
         {
-            var frm_course = new View.frmCourse();
-            frm_course.EvtSend += Frm_course_EvtSend;
-            frm_course.ShowDialog();
+            if (connectDb)
+            {
+                var frm_course = new View.frmCourse();
+                frm_course.EvtSend += Frm_course_EvtSend;
+                frm_course.ShowDialog();
+            }
         }
 
         private void btnAddQues_Click(object sender, EventArgs e)
         {
-            var f = new View.frmQues(this.idcourse);
-            f.EvtSaveOk += F_EvtSaveOk;
-            f.ShowDialog();
+            if (connectDb)
+            {
+                var f = new View.frmQues(this.idcourse);
+                f.EvtSaveOk += F_EvtSaveOk;
+                f.ShowDialog();
+            }
         }
 
         private void F_EvtSaveOk(object sender, EventArgs e)
@@ -67,37 +84,43 @@ namespace Server.View
 
         private void dGv_Ques_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id_ques = int.Parse(get_current_cell_content_dgv(dGv_Ques, 2).ToString());
-            if (e.ColumnIndex == 0)//edit
+            if (connectDb)
             {
-                if (e.RowIndex != -1)// not header
+                int id_ques = int.Parse(get_current_cell_content_dgv(dGv_Ques, 2).ToString());
+                if (e.ColumnIndex == 0)//edit
                 {
-                    var f = new View.frmQues(this.idcourse, id_ques);
-                    f.EvtSaveOk += F_EvtSaveOk;
-                    f.ShowDialog();
+                    if (e.RowIndex != -1)// not header
+                    {
+                        var f = new View.frmQues(this.idcourse, id_ques);
+                        f.EvtSaveOk += F_EvtSaveOk;
+                        f.ShowDialog();
+                    }
                 }
-            }
 
-            if (e.ColumnIndex == 1)//xóa
-            {
-                DialogResult res = MessageBox.Show("Bạn xác nhận muốn xóa câu hỏi có mã " + id_ques + "?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (res == DialogResult.Yes)
+                if (e.ColumnIndex == 1)//xóa
                 {
-                    Controller.AnswerController.deleteByIdQues(id_ques);
-                    Controller.QuestionController.delete(id_ques);
-                    dGv_Course_SelectionChanged(null, null);
+                    DialogResult res = MessageBox.Show("Bạn xác nhận muốn xóa câu hỏi có mã " + id_ques + "?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
+                    {
+                        Controller.AnswerController.deleteByIdQues(id_ques);
+                        Controller.QuestionController.delete(id_ques);
+                        dGv_Course_SelectionChanged(null, null);
+                    }
                 }
             }
         }
 
         private void dGv_Course_SelectionChanged(object sender, EventArgs e)
         {
-            if (dGv_Course.SelectedCells.Count > 0)
+            if (connectDb)
             {
-                int id_course = int.Parse(get_current_cell_content_dgv(dGv_Course, 0).ToString());
-                this.idcourse = id_course;
-                fill_dgv_ques(id_course);
-                lblQues.Text = "Khóa học: " + get_current_cell_content_dgv(dGv_Course, 1).ToString() + " có " + Controller.QuestionController.countInCourse(id_course) + " câu hỏi";
+                if (dGv_Course.SelectedCells.Count > 0)
+                {
+                    int id_course = int.Parse(get_current_cell_content_dgv(dGv_Course, 0).ToString());
+                    this.idcourse = id_course;
+                    fill_dgv_ques(id_course);
+                    lblQues.Text = "Khóa học: " + get_current_cell_content_dgv(dGv_Course, 1).ToString() + " có " + Controller.QuestionController.countInCourse(id_course) + " câu hỏi";
+                }
             }
         }
 
@@ -111,7 +134,7 @@ namespace Server.View
         private void show_course()
         {
             dGv_Course.DataSource = Controller.CourseController.getCourses();
-            dGv_Course.Columns[0].HeaderText = "Mã Khóa Học";
+            dGv_Course.Columns[0].HeaderText = "Mã Chủ Đề";
             dGv_Course.Columns[1].HeaderText = "Tên Khóa Học";
         }
 

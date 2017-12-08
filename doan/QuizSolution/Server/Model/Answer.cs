@@ -34,5 +34,17 @@ namespace Server.Model
             this.True_or_false = true_or_false;
             this.Id_ques = id_ques;
         }
+
+        public Answer(string content, int id_ques, int true_or_false)
+        {
+            this.Content = content;
+            this.True_or_false = true_or_false;
+            this.Id_ques = id_ques;
+        }
+
+        public string toString()
+        {
+            return this.Content + "+idques=" + this.Id_ques;
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace Server.View
                 this.txtQues.Text = Controller.QuestionController.getQues(this.idques).Content;
             }
 
-            constuct_dgv_ans(Controller.AnswerController.getListAnswer(this.idques));
+            constuct_dgv_ans(Controller.AnswerController.getDataAnswer(this.idques));
 
             this.txtQues.Select(txtQues.Text.Length, 0);
             this.txtQues.ScrollToCaret();
@@ -85,7 +85,7 @@ namespace Server.View
         private void dgv_answer_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             checkRowAddNotConstruct = false;
-            constuct_dgv_ans(Controller.AnswerController.getListAnswer(this.idques));
+            constuct_dgv_ans(Controller.AnswerController.getDataAnswer(this.idques));
             return;
         }
 

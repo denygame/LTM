@@ -94,7 +94,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreateCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
             this.btnCreateCourse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreateCourse.BackgroundImage")));
-            this.btnCreateCourse.ButtonText = "Tạo Khóa Học Mới";
+            this.btnCreateCourse.ButtonText = "Tạo Chủ Đề Mới";
             this.btnCreateCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateCourse.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
@@ -184,7 +184,7 @@
             this.txtSearchCourse.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchCourse.HintForeColor = System.Drawing.Color.Empty;
-            this.txtSearchCourse.HintText = "Tìm khóa học";
+            this.txtSearchCourse.HintText = "Tìm chủ đề";
             this.txtSearchCourse.isPassword = false;
             this.txtSearchCourse.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
             this.txtSearchCourse.LineIdleColor = System.Drawing.Color.Gray;
@@ -215,7 +215,7 @@
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(264, 56);
             this.bunifuCustomLabel1.TabIndex = 0;
-            this.bunifuCustomLabel1.Text = "KHÓA HỌC !";
+            this.bunifuCustomLabel1.Text = "CHỦ ĐỀ !";
             this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuElipse_Header
@@ -278,7 +278,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
             this.btnReadFile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReadFile.BackgroundImage")));
-            this.btnReadFile.ButtonText = "Đọc File TXT";
+            this.btnReadFile.ButtonText = "Đọc File Excel";
             this.btnReadFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReadFile.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
@@ -287,10 +287,10 @@
             this.btnReadFile.IdleFillColor = System.Drawing.Color.White;
             this.btnReadFile.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(16)))), ((int)(((byte)(62)))));
             this.btnReadFile.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReadFile.Location = new System.Drawing.Point(231, 72);
+            this.btnReadFile.Location = new System.Drawing.Point(221, 72);
             this.btnReadFile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnReadFile.Name = "btnReadFile";
-            this.btnReadFile.Size = new System.Drawing.Size(138, 41);
+            this.btnReadFile.Size = new System.Drawing.Size(148, 41);
             this.btnReadFile.TabIndex = 8;
             this.btnReadFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

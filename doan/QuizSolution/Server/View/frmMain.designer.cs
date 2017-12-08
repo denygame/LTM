@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.panelSlideMenu = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.btnRunServer = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -106,12 +106,12 @@
             this.btnRunServer.IconVisible = true;
             this.btnRunServer.IconZoom = 70D;
             this.btnRunServer.IsTab = true;
-            this.btnRunServer.Location = new System.Drawing.Point(1, 184);
+            this.btnRunServer.Location = new System.Drawing.Point(0, 235);
             this.btnRunServer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRunServer.Name = "btnRunServer";
             this.btnRunServer.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.btnRunServer.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnRunServer.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.btnRunServer.OnHoverTextColor = System.Drawing.Color.DarkGoldenrod;
             this.btnRunServer.selected = false;
             this.btnRunServer.Size = new System.Drawing.Size(207, 48);
             this.btnRunServer.TabIndex = 3;
@@ -124,7 +124,7 @@
             // btnSetting
             // 
             this.btnSetting.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
+            this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSetting.BorderRadius = 0;
             this.btnSetting.ButtonText = "      Cấu Hình";
@@ -145,13 +145,13 @@
             this.btnSetting.IconVisible = true;
             this.btnSetting.IconZoom = 70D;
             this.btnSetting.IsTab = true;
-            this.btnSetting.Location = new System.Drawing.Point(0, 72);
+            this.btnSetting.Location = new System.Drawing.Point(0, 179);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.btnSetting.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnSetting.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.btnSetting.selected = true;
+            this.btnSetting.OnHoverTextColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnSetting.selected = false;
             this.btnSetting.Size = new System.Drawing.Size(207, 48);
             this.btnSetting.TabIndex = 2;
             this.btnSetting.Text = "      Cấu Hình";
@@ -163,7 +163,7 @@
             // btnQuestion
             // 
             this.btnQuestion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.btnQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
             this.btnQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnQuestion.BorderRadius = 0;
             this.btnQuestion.ButtonText = "      CSDL";
@@ -184,13 +184,13 @@
             this.btnQuestion.IconVisible = true;
             this.btnQuestion.IconZoom = 70D;
             this.btnQuestion.IsTab = true;
-            this.btnQuestion.Location = new System.Drawing.Point(0, 128);
+            this.btnQuestion.Location = new System.Drawing.Point(0, 123);
             this.btnQuestion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQuestion.Name = "btnQuestion";
             this.btnQuestion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.btnQuestion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(112)))), ((int)(((byte)(119)))));
-            this.btnQuestion.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.btnQuestion.selected = false;
+            this.btnQuestion.OnHoverTextColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnQuestion.selected = true;
             this.btnQuestion.Size = new System.Drawing.Size(207, 48);
             this.btnQuestion.TabIndex = 0;
             this.btnQuestion.Text = "      CSDL";
@@ -288,22 +288,22 @@
             // 
             this.LogoTransition.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
             this.LogoTransition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 20;
-            animation1.Padding = new System.Windows.Forms.Padding(30);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.LogoTransition.DefaultAnimation = animation1;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 20;
+            animation4.Padding = new System.Windows.Forms.Padding(30);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.LogoTransition.DefaultAnimation = animation4;
             // 
             // panelContent
             // 
@@ -320,22 +320,22 @@
             // 
             this.SlideMenuTransition.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
             this.SlideMenuTransition.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 1F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.SlideMenuTransition.DefaultAnimation = animation2;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 1F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.SlideMenuTransition.DefaultAnimation = animation3;
             // 
             // bunifuDragControl2
             // 

@@ -59,7 +59,7 @@ namespace Server.View
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int total_ques = Controller.QuestionController.countInCourse(this.idcourse);
-            DialogResult yn = MessageBox.Show("Có tất cả " + total_ques + " câu hỏi trong khóa học này! Có chắc rằng bạn muốn xóa?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult yn = MessageBox.Show("Có tất cả " + total_ques + " câu hỏi trong chủ đề này! Có chắc rằng bạn muốn xóa?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (yn == DialogResult.Yes)
             {
                 var lsIdQuesInCourse = Controller.QuestionController.getListIdInCourse(this.idcourse);
@@ -78,7 +78,7 @@ namespace Server.View
         {
             if (txtNameCourse.Text.Trim().Length == 0)
             {
-                if (MessageBox.Show("Bạn có chắc tên khóa học là trống?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (MessageBox.Show("Bạn có chắc tên chủ đề là trống?", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     return;
             }
 

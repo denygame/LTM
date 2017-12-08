@@ -10,7 +10,7 @@ namespace Server.Controller
 {
     public class DataProvider
     {
-        private static MySqlConnection conn = new MySqlConnection(Constant.str_conn);
+        private static MySqlConnection conn = new MySqlConnection(DBConnection.getStrConn());
 
         public static DataTable sqlQuery(string query, object[] bienSoTruyenVao = null)
         {
