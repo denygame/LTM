@@ -55,11 +55,14 @@
     <Compile Include="Controller\CourseController.cs" />
     <Compile Include="Controller\DataProvider.cs" />
     <Compile Include="Controller\DBConnection.cs" />
+    <Compile Include="Controller\EventSendData.cs" />
     <Compile Include="Controller\IO_INI.cs" />
     <Compile Include="Controller\Ip.cs" />
     <Compile Include="Controller\ListObj.cs" />
+    <Compile Include="Controller\ObjectForThread.cs" />
     <Compile Include="Controller\QuestionController.cs" />
     <Compile Include="Controller\ReadFileExcel.cs" />
+    <Compile Include="Controller\ConnectionHandle.cs" />
     <Compile Include="Model\Answer.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Question.cs" />

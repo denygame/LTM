@@ -212,7 +212,7 @@
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(82)))), ((int)(((byte)(105)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(16, 85);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(11, 85);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(91, 20);
             this.bunifuCustomLabel2.TabIndex = 1;
@@ -223,7 +223,7 @@
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(82)))), ((int)(((byte)(105)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(17, 30);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 30);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(90, 20);
             this.bunifuCustomLabel1.TabIndex = 1;

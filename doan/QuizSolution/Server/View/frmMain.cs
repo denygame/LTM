@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,11 +75,17 @@ namespace Server.View
         private void btnRunServer_Click(object sender, EventArgs e)
         {
             View.ucRunServer ucRun = new View.ucRunServer();
+            ucRun.EventStartServer += UcRun_EventStartServer;
             this.ucSelected = "runn";
             btnRunServer.Tag = ucRun;
 
             panelContent.Controls.Clear();
             panelContent.Controls.Add(ucRun);
+        }
+
+        private void UcRun_EventStartServer(object sender, Controller.EventSendData e)
+        {
+            lblInfo.Text = e.Ip + " : " + e.Port;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -88,6 +95,17 @@ namespace Server.View
 
             this.btnQuestion_Click(sender, e);
             Controller.DBConnection.connect();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string path = Path.GetDirectoryName(Application.ExecutablePath);
+            path = Path.Combine(path, Controller.Constant.nameFolderSaveFile);
+            path = Path.Combine(path, Controller.Constant.nameFileSetting);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
         }
 
         #endregion
@@ -116,5 +134,6 @@ namespace Server.View
 
         #endregion
 
+        
     }
 }

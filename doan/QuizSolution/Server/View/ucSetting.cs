@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Server.View
 {
     public partial class ucSetting : UserControl
     {
         private bool checkHasFileIni = false;
+        private bool connectDb;
 
         public ucSetting()
         {
@@ -21,6 +23,7 @@ namespace Server.View
             {
                 InitializeComponent();
             }
+            this.connectDb = Controller.DBConnection.connect();
         }
 
 
@@ -30,9 +33,16 @@ namespace Server.View
         {
             txtIP.Text = Controller.Ip.getIpLocal();
             resizeFill();
-
-            cbNumCourse.DataSource = Controller.CourseController.getList();
-            cbNumCourse.DisplayMember = "id";
+            if (connectDb)
+            {
+                cbNumCourse.DataSource = Controller.CourseController.getList();
+                cbNumCourse.DisplayMember = "id";
+            }
+            else
+            {
+                checkBoxCSDL.Enabled = false;
+                lblCSDL.Enabled = false;
+            }
 
             load();
         }
@@ -204,13 +214,14 @@ namespace Server.View
                 string course = ini.IniReadValue(Controller.Constant.sectionDB, Controller.Constant.keyIdCourse);
                 if (course != string.Empty)
                 {
+                    int selected = Convert.ToInt32(ini.IniReadValue(Controller.Constant.sectionDB, Controller.Constant.keySelectedIndexCB));
                     checkBoxCSDL.Checked = true;
                     panelHeaderQuesDB.Visible = true;
                     panelContentQuesDB.Visible = true;
 
-                    string[] SplitCourse = course.Split('\\');
+                    string[] SplitCourse = course.Split('/');
                     string idcourse = SplitCourse[0];
-                    cbNumCourse.SelectedText = idcourse;
+                    cbNumCourse.SelectedIndex = selected;
                     txtNumQuesDB.Text = ini.IniReadValue(Controller.Constant.sectionDB, Controller.Constant.keyGetQuesDB);
                 }
 
@@ -308,7 +319,6 @@ namespace Server.View
             DirectoryInfo dirInfo = new DirectoryInfo(path);
             Empty(dirInfo);
 
-
             path = Path.Combine(path, Controller.Constant.nameFileSetting);
 
             return path;
@@ -322,8 +332,9 @@ namespace Server.View
             ini.IniWriteValue(Controller.Constant.sectionSetting, Controller.Constant.keyTime, txtTime.Text);
             if (checkBoxCSDL.Checked)
             {
-                ini.IniWriteValue(Controller.Constant.sectionDB, Controller.Constant.keyIdCourse, (cbNumCourse.SelectedItem as Model.Course).Id + "//" + (cbNumCourse.SelectedItem as Model.Course).Name);
+                ini.IniWriteValue(Controller.Constant.sectionDB, Controller.Constant.keyIdCourse, (cbNumCourse.SelectedItem as Model.Course).Id + "//" + convertToUnSign3((cbNumCourse.SelectedItem as Model.Course).Name));
                 ini.IniWriteValue(Controller.Constant.sectionDB, Controller.Constant.keyGetQuesDB, txtNumQuesDB.Text);
+                ini.IniWriteValue(Controller.Constant.sectionDB, Controller.Constant.keySelectedIndexCB, cbNumCourse.SelectedIndex.ToString());
             }
 
             if (checkBoxFile.Checked)
@@ -337,6 +348,18 @@ namespace Server.View
         {
             this.Width = this.Parent.Width;
             this.Height = this.Parent.Height;
+        }
+
+        /// <summary>
+        /// vietnamese k dau
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string convertToUnSign3(string s)
+        {
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
 
         #endregion

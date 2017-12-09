@@ -36,18 +36,18 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelProcess = new System.Windows.Forms.Panel();
             this.btnStartQuiz = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.processBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.btnConnect = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuMaterialTextbox5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtPort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtIpServer = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtClass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtCode = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.PanelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.panelHeader.SuspendLayout();
@@ -93,7 +93,7 @@
             // 
             this.panelProcess.BackColor = System.Drawing.Color.Black;
             this.panelProcess.Controls.Add(this.btnStartQuiz);
-            this.panelProcess.Controls.Add(this.bunifuCircleProgressbar1);
+            this.panelProcess.Controls.Add(this.processBar);
             this.PanelTransition.SetDecoration(this.panelProcess, BunifuAnimatorNS.DecorationType.None);
             this.panelProcess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProcess.Location = new System.Drawing.Point(310, 49);
@@ -128,42 +128,42 @@
             this.btnStartQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnStartQuiz.Click += new System.EventHandler(this.btnStartQuiz_Click);
             // 
-            // bunifuCircleProgressbar1
+            // processBar
             // 
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Black;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.PanelTransition.SetDecoration(this.bunifuCircleProgressbar1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(55, 103);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(201, 201);
-            this.bunifuCircleProgressbar1.TabIndex = 13;
-            this.bunifuCircleProgressbar1.Value = 35;
+            this.processBar.animated = true;
+            this.processBar.animationIterval = 30;
+            this.processBar.animationSpeed = 100;
+            this.processBar.BackColor = System.Drawing.Color.Black;
+            this.processBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("processBar.BackgroundImage")));
+            this.PanelTransition.SetDecoration(this.processBar, BunifuAnimatorNS.DecorationType.None);
+            this.processBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.processBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.processBar.LabelVisible = true;
+            this.processBar.LineProgressThickness = 8;
+            this.processBar.LineThickness = 5;
+            this.processBar.Location = new System.Drawing.Point(55, 103);
+            this.processBar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.processBar.MaxValue = 100;
+            this.processBar.Name = "processBar";
+            this.processBar.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.processBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.processBar.Size = new System.Drawing.Size(201, 201);
+            this.processBar.TabIndex = 13;
+            this.processBar.Value = 0;
             // 
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.panelInfo.Controls.Add(this.btnConnect);
-            this.panelInfo.Controls.Add(this.bunifuMaterialTextbox5);
+            this.panelInfo.Controls.Add(this.txtPort);
             this.panelInfo.Controls.Add(this.bunifuCustomLabel5);
-            this.panelInfo.Controls.Add(this.bunifuMaterialTextbox4);
+            this.panelInfo.Controls.Add(this.txtIpServer);
             this.panelInfo.Controls.Add(this.bunifuCustomLabel4);
-            this.panelInfo.Controls.Add(this.bunifuMaterialTextbox3);
+            this.panelInfo.Controls.Add(this.txtClass);
             this.panelInfo.Controls.Add(this.bunifuCustomLabel3);
-            this.panelInfo.Controls.Add(this.bunifuMaterialTextbox2);
+            this.panelInfo.Controls.Add(this.txtName);
             this.panelInfo.Controls.Add(this.bunifuCustomLabel2);
-            this.panelInfo.Controls.Add(this.bunifuMaterialTextbox1);
+            this.panelInfo.Controls.Add(this.txtCode);
             this.panelInfo.Controls.Add(this.bunifuCustomLabel1);
             this.PanelTransition.SetDecoration(this.panelInfo, BunifuAnimatorNS.DecorationType.None);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Left;
@@ -199,25 +199,27 @@
             this.btnConnect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // bunifuMaterialTextbox5
+            // txtPort
             // 
-            this.bunifuMaterialTextbox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PanelTransition.SetDecoration(this.bunifuMaterialTextbox5, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMaterialTextbox5.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox5.ForeColor = System.Drawing.Color.DarkGray;
-            this.bunifuMaterialTextbox5.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox5.HintText = "";
-            this.bunifuMaterialTextbox5.isPassword = false;
-            this.bunifuMaterialTextbox5.LineFocusedColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox5.LineIdleColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox5.LineMouseHoverColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox5.LineThickness = 3;
-            this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(29, 344);
-            this.bunifuMaterialTextbox5.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox5.Name = "bunifuMaterialTextbox5";
-            this.bunifuMaterialTextbox5.Size = new System.Drawing.Size(256, 37);
-            this.bunifuMaterialTextbox5.TabIndex = 21;
-            this.bunifuMaterialTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPort.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PanelTransition.SetDecoration(this.txtPort, BunifuAnimatorNS.DecorationType.None);
+            this.txtPort.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtPort.HintForeColor = System.Drawing.Color.Empty;
+            this.txtPort.HintText = "";
+            this.txtPort.isPassword = false;
+            this.txtPort.LineFocusedColor = System.Drawing.Color.White;
+            this.txtPort.LineIdleColor = System.Drawing.Color.White;
+            this.txtPort.LineMouseHoverColor = System.Drawing.Color.White;
+            this.txtPort.LineThickness = 3;
+            this.txtPort.Location = new System.Drawing.Point(29, 344);
+            this.txtPort.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(256, 37);
+            this.txtPort.TabIndex = 21;
+            this.txtPort.Text = "9999";
+            this.txtPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // bunifuCustomLabel5
             // 
@@ -231,25 +233,27 @@
             this.bunifuCustomLabel5.TabIndex = 20;
             this.bunifuCustomLabel5.Text = "PORT";
             // 
-            // bunifuMaterialTextbox4
+            // txtIpServer
             // 
-            this.bunifuMaterialTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PanelTransition.SetDecoration(this.bunifuMaterialTextbox4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMaterialTextbox4.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox4.ForeColor = System.Drawing.Color.DarkGray;
-            this.bunifuMaterialTextbox4.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox4.HintText = "";
-            this.bunifuMaterialTextbox4.isPassword = false;
-            this.bunifuMaterialTextbox4.LineFocusedColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox4.LineIdleColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox4.LineMouseHoverColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox4.LineThickness = 3;
-            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(29, 271);
-            this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
-            this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(256, 37);
-            this.bunifuMaterialTextbox4.TabIndex = 19;
-            this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIpServer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PanelTransition.SetDecoration(this.txtIpServer, BunifuAnimatorNS.DecorationType.None);
+            this.txtIpServer.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIpServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtIpServer.HintForeColor = System.Drawing.Color.Empty;
+            this.txtIpServer.HintText = "";
+            this.txtIpServer.isPassword = false;
+            this.txtIpServer.LineFocusedColor = System.Drawing.Color.White;
+            this.txtIpServer.LineIdleColor = System.Drawing.Color.White;
+            this.txtIpServer.LineMouseHoverColor = System.Drawing.Color.White;
+            this.txtIpServer.LineThickness = 3;
+            this.txtIpServer.Location = new System.Drawing.Point(29, 271);
+            this.txtIpServer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIpServer.Name = "txtIpServer";
+            this.txtIpServer.Size = new System.Drawing.Size(256, 37);
+            this.txtIpServer.TabIndex = 19;
+            this.txtIpServer.Text = "127.0.0.1";
+            this.txtIpServer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIpServer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // bunifuCustomLabel4
             // 
@@ -263,25 +267,26 @@
             this.bunifuCustomLabel4.TabIndex = 18;
             this.bunifuCustomLabel4.Text = "IP SERVER";
             // 
-            // bunifuMaterialTextbox3
+            // txtClass
             // 
-            this.bunifuMaterialTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PanelTransition.SetDecoration(this.bunifuMaterialTextbox3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMaterialTextbox3.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox3.ForeColor = System.Drawing.Color.DarkGray;
-            this.bunifuMaterialTextbox3.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox3.HintText = "";
-            this.bunifuMaterialTextbox3.isPassword = false;
-            this.bunifuMaterialTextbox3.LineFocusedColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox3.LineIdleColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox3.LineMouseHoverColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox3.LineThickness = 3;
-            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(29, 200);
-            this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
-            this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(256, 37);
-            this.bunifuMaterialTextbox3.TabIndex = 17;
-            this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtClass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PanelTransition.SetDecoration(this.txtClass, BunifuAnimatorNS.DecorationType.None);
+            this.txtClass.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtClass.HintForeColor = System.Drawing.Color.Empty;
+            this.txtClass.HintText = "";
+            this.txtClass.isPassword = false;
+            this.txtClass.LineFocusedColor = System.Drawing.Color.White;
+            this.txtClass.LineIdleColor = System.Drawing.Color.White;
+            this.txtClass.LineMouseHoverColor = System.Drawing.Color.White;
+            this.txtClass.LineThickness = 3;
+            this.txtClass.Location = new System.Drawing.Point(29, 200);
+            this.txtClass.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(256, 37);
+            this.txtClass.TabIndex = 17;
+            this.txtClass.Text = "CN14A";
+            this.txtClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuCustomLabel3
             // 
@@ -295,25 +300,26 @@
             this.bunifuCustomLabel3.TabIndex = 16;
             this.bunifuCustomLabel3.Text = "LỚP";
             // 
-            // bunifuMaterialTextbox2
+            // txtName
             // 
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PanelTransition.SetDecoration(this.bunifuMaterialTextbox2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.DarkGray;
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox2.HintText = "";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(29, 131);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(256, 37);
-            this.bunifuMaterialTextbox2.TabIndex = 15;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PanelTransition.SetDecoration(this.txtName, BunifuAnimatorNS.DecorationType.None);
+            this.txtName.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtName.HintForeColor = System.Drawing.Color.Empty;
+            this.txtName.HintText = "";
+            this.txtName.isPassword = false;
+            this.txtName.LineFocusedColor = System.Drawing.Color.White;
+            this.txtName.LineIdleColor = System.Drawing.Color.White;
+            this.txtName.LineMouseHoverColor = System.Drawing.Color.White;
+            this.txtName.LineThickness = 3;
+            this.txtName.Location = new System.Drawing.Point(29, 131);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(256, 37);
+            this.txtName.TabIndex = 15;
+            this.txtName.Text = "Nguyễn Thanh Huy";
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuCustomLabel2
             // 
@@ -327,25 +333,26 @@
             this.bunifuCustomLabel2.TabIndex = 14;
             this.bunifuCustomLabel2.Text = "HỌ TÊN";
             // 
-            // bunifuMaterialTextbox1
+            // txtCode
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PanelTransition.SetDecoration(this.bunifuMaterialTextbox1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(29, 61);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(256, 37);
-            this.bunifuMaterialTextbox1.TabIndex = 13;
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PanelTransition.SetDecoration(this.txtCode, BunifuAnimatorNS.DecorationType.None);
+            this.txtCode.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.txtCode.HintForeColor = System.Drawing.Color.Empty;
+            this.txtCode.HintText = "";
+            this.txtCode.isPassword = false;
+            this.txtCode.LineFocusedColor = System.Drawing.Color.White;
+            this.txtCode.LineIdleColor = System.Drawing.Color.White;
+            this.txtCode.LineMouseHoverColor = System.Drawing.Color.White;
+            this.txtCode.LineThickness = 3;
+            this.txtCode.Location = new System.Drawing.Point(29, 61);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(256, 37);
+            this.txtCode.TabIndex = 13;
+            this.txtCode.Text = "1451120025";
+            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuCustomLabel1
             // 
@@ -392,6 +399,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.Text = "frmLogin2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             this.Load += new System.EventHandler(this.frmLogin2_Load);
             this.panelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -409,18 +417,18 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel panelProcess;
         private Bunifu.Framework.UI.BunifuThinButton2 btnStartQuiz;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar processBar;
         private System.Windows.Forms.Panel panelInfo;
         private Bunifu.Framework.UI.BunifuThinButton2 btnConnect;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox5;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtPort;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtIpServer;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtClass;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtName;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtCode;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private BunifuAnimatorNS.BunifuTransition PanelTransition;
     }

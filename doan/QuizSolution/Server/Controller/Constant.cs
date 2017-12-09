@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Server.Controller
 {
@@ -25,8 +27,6 @@ namespace Server.Controller
         public static List<string> ls_cb_answers_dgv = new List<string>() { "True", "False" };
         public static int id_tag_new_row_add_dgv_answer = -1;
 
-        
-
         //setting file ini
         public static string nameFolderSaveFile = "QuizFolder";
         public static string nameFileSetting = "setting.ini";
@@ -40,10 +40,14 @@ namespace Server.Controller
 
         public static string sectionDB = "Database";
         public static string keyIdCourse = "Course";
+        public static string keySelectedIndexCB = "CBSelectedIndex";
         public static string keyGetQuesDB = "Get";
 
         public static string sectionFile = "File";
         public static string keyPathFile = "Path";
         public static string keyGetQuesFile = "Get";
+
+
+       
     }
 }
