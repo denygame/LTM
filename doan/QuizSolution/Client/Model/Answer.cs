@@ -61,7 +61,7 @@ namespace Client.Model
             byteList.AddRange(BitConverter.GetBytes(Id));
             byteList.AddRange(BitConverter.GetBytes(Id_ques));
             byteList.AddRange(BitConverter.GetBytes(True_or_false));
-            byteList.AddRange(Encoding.UTF8.GetBytes(Content));
+            byteList.AddRange(Encoding.Convert(Encoding.Unicode, Encoding.UTF8, Encoding.Unicode.GetBytes(Content)));
             return byteList.ToArray();
         }
     }

@@ -17,8 +17,11 @@ namespace Client.View
     public partial class frmLogin : Form
     {
         private Socket sck;
-        private byte[] data = new byte[1024];
-
+        private byte[] data;
+        private static List<Model.Question> lsquesDB = new List<Model.Question>();
+        private static List<Model.Question> lsquesFile = new List<Model.Question>();
+        private static List<Model.Answer> lsansDB = new List<Model.Answer>();
+        private static List<Model.Answer> lsansFile = new List<Model.Answer>();
 
         public frmLogin()
         {
@@ -44,6 +47,8 @@ namespace Client.View
             btnClose.Location = new Point(135, 4);
         }
 
+
+
         private void btnConnect_Click(object sender, EventArgs e)
         {
             if (validate())
@@ -57,36 +62,93 @@ namespace Client.View
                 try
                 {
                     sck.Connect(IPAddress.Parse(txtIpServer.Text), Convert.ToInt32(txtPort.Text));
-                    // size = sck.Receive(data);//size server transfer
-
-                    //processBar.MaxValue = Convert.ToInt32(Encoding.ASCII.GetString(data, 0, size));
-
-                    size = sck.Receive(data);//object para
-                    Controller.ParaObject para = new Controller.ParaObject(data);
-                    Controller.Constant.time = para.Time;
-
-                    if (para.GetDB > 0)
-                    {
-                        MessageBox.Show(para.GetDB.ToString());
-                        for (int i = 0; i < para.GetDB; i++)
-                        {
-                            size = sck.Receive(data);
-                            Model.Question a = new Model.Question(data);
-                            MessageBox.Show(a.Id.ToString()+"/"+a.Content);
-                            sck.Send(Encoding.ASCII.GetBytes("done"));
-                        }
-                    }
-
                 }
                 catch (SocketException ex)
                 {
                     MessageBox.Show(ex.ToString());
                     sck.Close();
+                    return;
                 }
 
+                try
+                {
+                    data = new byte[1024];
+                    size = sck.Receive(data);//size server transfer
 
+                    processBar.MaxValue = Convert.ToInt32(Encoding.ASCII.GetString(data, 0, size));
 
+                    sendDone();
 
+                    data = new byte[1024];
+                    size = sck.Receive(data);//object para
+                    Controller.ParaObject para = new Controller.ParaObject(data);
+                    Controller.Constant.time = para.Time;
+
+                    processBar.Value += size;
+                    processBar.Update();
+
+                    sendDone();
+
+                    if (para.GetDB > 0)
+                    {
+                        for (int i = 0; i < para.GetDB; i++)
+                        {
+                            data = new byte[1024];
+                            size = sck.Receive(data);
+                            Model.Question ques = new Model.Question(data);
+                            lsquesDB.Add(ques);
+                            processBar.Value += size;
+                            processBar.Update();
+                            sendDone();
+                        }
+                        size = sck.Receive(data);
+                        int countAns = Convert.ToInt32(Encoding.ASCII.GetString(data, 0, size));
+                        sendDone();
+
+                        for (int i = 0; i < countAns; i++)
+                        {
+                            data = new byte[1024];
+                            size = sck.Receive(data);
+                            Model.Answer ans = new Model.Answer(data);
+                            lsansDB.Add(ans);
+                            processBar.Value += size;
+                            processBar.Update();
+                            sendDone();
+                        }
+                    }
+
+                    if (para.GetFile > 0)
+                    {
+                        for (int i = 0; i < para.GetFile; i++)
+                        {
+                            data = new byte[1024];
+                            size = sck.Receive(data);
+                            Model.Question ques = new Model.Question(data);
+                            lsquesFile.Add(ques);
+                            processBar.Value += size;
+                            processBar.Update();
+                            sendDone();
+                        }
+                        size = sck.Receive(data);
+                        int countAns = Convert.ToInt32(Encoding.ASCII.GetString(data, 0, size));
+                        sendDone();
+
+                        for (int i = 0; i < countAns; i++)
+                        {
+                            data = new byte[1024];
+                            size = sck.Receive(data);
+                            Model.Answer ans = new Model.Answer(data);
+                            lsansFile.Add(ans);
+                            processBar.Value += size;
+                            processBar.Update();
+                            sendDone();
+                        }
+                    }
+                }
+                catch
+                {
+                    sck.Close();
+                }
             }
             else
             {
@@ -109,7 +171,10 @@ namespace Client.View
 
 
 
-
+        private void sendDone()
+        {
+            sck.Send(Encoding.ASCII.GetBytes("done"));
+        }
 
 
         private bool validate()
@@ -124,7 +189,11 @@ namespace Client.View
 
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (sck != null) sck.Close();
+            if (sck != null)
+            {
+                sck.Send(Encoding.ASCII.GetBytes("disconnect"));
+                sck.Close();
+            }
         }
     }
 }

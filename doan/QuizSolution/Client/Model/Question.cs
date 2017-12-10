@@ -43,7 +43,7 @@ namespace Client.Model
         {
             Id = BitConverter.ToInt32(data, 0);
             Num_answer_right = BitConverter.ToInt32(data, 4);
-            Content = Encoding.ASCII.GetString(data, 8, data.Length - 8);
+            Content = Encoding.UTF8.GetString(data, 8, data.Length - 8);
         }
 
         public byte[] toByteArray()
@@ -51,7 +51,7 @@ namespace Client.Model
             List<byte> byteList = new List<byte>();
             byteList.AddRange(BitConverter.GetBytes(Id));
             byteList.AddRange(BitConverter.GetBytes(Num_answer_right));
-            byteList.AddRange(Encoding.ASCII.GetBytes(Content));
+            byteList.AddRange(Encoding.Convert(Encoding.Unicode, Encoding.UTF8, Encoding.Unicode.GetBytes(Content)));
             return byteList.ToArray();
         }
     }

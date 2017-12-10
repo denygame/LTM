@@ -56,7 +56,6 @@ namespace Server.View
 
                     eventStartServer(this, new Controller.EventSendData(ip, port));
 
-
                     Socket sckServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                     sckServer.Bind(new IPEndPoint(IPAddress.Any, Convert.ToInt32(port)));
                     sckServer.Listen(100);
@@ -68,16 +67,28 @@ namespace Server.View
                         {
                             try
                             {
-                                //Socket sckClient = null;
                                 Socket sckClient = sckServer.Accept();
                                 AppendText(txtCmd, sckClient.RemoteEndPoint + " connected", new Tuple<int, int, int>(0, 128, 0));
 
                                 Controller.ConnectionHandle server = new Controller.ConnectionHandle(sckClient);
                                 server.Run();
+
+                                while (true)
+                                {
+                                    byte[] data = new byte[1024];
+                                    int size = sckClient.Receive(data);
+                                    string msg = Encoding.ASCII.GetString(data, 0, size);
+                                    if (msg == "disconnect")
+                                    {
+                                        showDisconnet(sckClient);
+                                        sckClient.Close();
+                                        break;
+                                    }
+                                }
                             }
-                            catch
+                            catch (Exception ex)
                             {
-                                sckServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                                MessageBox.Show(ex.ToString());
                             }
                         }
                     });
@@ -107,7 +118,10 @@ namespace Server.View
 
 
 
-       
+        private void showDisconnet(Socket sck)
+        {
+            AppendText(txtCmd, sck.RemoteEndPoint + " disconnected", new Tuple<int, int, int>(255, 0, 0));
+        }
 
         private void AppendText(RichTextBox box, string text, Tuple<int, int, int> color)
         {
