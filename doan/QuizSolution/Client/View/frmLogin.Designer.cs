@@ -217,7 +217,7 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(256, 37);
             this.txtPort.TabIndex = 21;
-            this.txtPort.Text = "9999";
+            this.txtPort.Text = "12345";
             this.txtPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
@@ -253,7 +253,6 @@
             this.txtIpServer.TabIndex = 19;
             this.txtIpServer.Text = "127.0.0.1";
             this.txtIpServer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIpServer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // bunifuCustomLabel4
             // 

@@ -38,7 +38,6 @@ namespace Client.View
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar)) { e.Handled = true; }
         }
 
-
         private void frmLogin2_Load(object sender, EventArgs e)
         {
             PanelTransition.Hide(panelProcess);
@@ -47,16 +46,10 @@ namespace Client.View
             btnClose.Location = new Point(135, 4);
         }
 
-
-
         private void btnConnect_Click(object sender, EventArgs e)
         {
             if (validate())
             {
-                this.Width = 620;
-                btnClose.Location = new Point(290, 4);
-                PanelTransition.ShowSync(panelProcess);
-
                 int size;
                 sck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 try
@@ -70,6 +63,10 @@ namespace Client.View
                     return;
                 }
 
+                this.Width = 620;
+                btnClose.Location = new Point(290, 4);
+                PanelTransition.ShowSync(panelProcess);
+
                 try
                 {
                     data = new byte[1024];
@@ -82,7 +79,7 @@ namespace Client.View
                     data = new byte[1024];
                     size = sck.Receive(data);//object para
                     Controller.ParaObject para = new Controller.ParaObject(data);
-                    Controller.Constant.time = para.Time;
+                    Controller.Constant.time = para.Time * 60;
 
                     processBar.Value += size;
                     processBar.Update();
@@ -154,14 +151,12 @@ namespace Client.View
             {
                 MessageBox.Show("Bạn phải điền đủ thông tin!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
         }
 
         private void btnStartQuiz_Click(object sender, EventArgs e)
         {
             this.Hide();
-            (new frmMain()).ShowDialog();
+            (new frmMain(lsquesDB, lsquesFile, lsansDB, lsansFile)).ShowDialog();
         }
 
 
@@ -190,10 +185,11 @@ namespace Client.View
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (sck != null)
-            {
-                sck.Send(Encoding.ASCII.GetBytes("disconnect"));
-                sck.Close();
-            }
+                if (sck.Connected)
+                {
+                    sck.Send(Encoding.ASCII.GetBytes("disconnect"));
+                    sck.Close();
+                }
         }
     }
 }

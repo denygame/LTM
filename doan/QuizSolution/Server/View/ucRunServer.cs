@@ -23,7 +23,7 @@ namespace Server.View
             remove { eventStartServer -= value; }
         }
 
-        private bool start = false;
+        private static bool start = false;
 
 
         public ucRunServer()
@@ -43,7 +43,6 @@ namespace Server.View
         {
             if (!start)
             {
-                start = true;
                 string path = Path.GetDirectoryName(Application.ExecutablePath);
                 path = Path.Combine(path, Controller.Constant.nameFolderSaveFile);
                 path = Path.Combine(path, Controller.Constant.nameFileSetting);
@@ -57,39 +56,34 @@ namespace Server.View
                     eventStartServer(this, new Controller.EventSendData(ip, port));
 
                     Socket sckServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                    sckServer.Bind(new IPEndPoint(IPAddress.Any, Convert.ToInt32(port)));
-                    sckServer.Listen(100);
-                    AppendText(txtCmd, "Server start. Waiting for client ..........", new Tuple<int, int, int>(165, 42, 42));
+                    try
+                    {
+                        sckServer.Bind(new IPEndPoint(IPAddress.Any, Convert.ToInt32(port)));
+                        sckServer.Listen(100);
+                        AppendText(txtCmd, "Server start. Waiting for client ..........", new Tuple<int, int, int>(165, 42, 42));
+                    }
+                    catch
+                    {
+                        return;
+                    }
+
+                    start = true;
 
                     Thread Listening = new Thread(() =>
                     {
-                        while (true)
+                        try
                         {
-                            try
+                            while (true)
                             {
                                 Socket sckClient = sckServer.Accept();
-                                AppendText(txtCmd, sckClient.RemoteEndPoint + " connected", new Tuple<int, int, int>(0, 128, 0));
 
-                                Controller.ConnectionHandle server = new Controller.ConnectionHandle(sckClient);
+                                Controller.ConnectionHandle server = new Controller.ConnectionHandle(sckClient, txtCmd);
                                 server.Run();
-
-                                while (true)
-                                {
-                                    byte[] data = new byte[1024];
-                                    int size = sckClient.Receive(data);
-                                    string msg = Encoding.ASCII.GetString(data, 0, size);
-                                    if (msg == "disconnect")
-                                    {
-                                        showDisconnet(sckClient);
-                                        sckClient.Close();
-                                        break;
-                                    }
-                                }
                             }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show(ex.ToString());
-                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
                         }
                     });
                     Listening.IsBackground = true;
@@ -117,11 +111,6 @@ namespace Server.View
 
 
 
-
-        private void showDisconnet(Socket sck)
-        {
-            AppendText(txtCmd, sck.RemoteEndPoint + " disconnected", new Tuple<int, int, int>(255, 0, 0));
-        }
 
         private void AppendText(RichTextBox box, string text, Tuple<int, int, int> color)
         {

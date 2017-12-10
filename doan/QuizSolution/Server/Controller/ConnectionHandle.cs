@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,9 +24,20 @@ namespace Server.Controller
         private int sizeTransfer = 0;
         private int size = 0;
 
-        public ConnectionHandle(Socket sckClient)
+        private RichTextBox txtCmd;
+
+        /*
+         * fix “cross-thread exception” 
+         * vì cập nhật thuộc tính các đối tượng
+         * giao diện đồ họa (như textbox, Button, ListBox,…)
+         * của thread trong thread
+         */
+        delegate void richTXTChange(RichTextBox box, string text, Tuple<int, int, int> color);
+
+        public ConnectionHandle(Socket sckClient, RichTextBox txtCmd)
         {
             this.sckClient = sckClient;
+            this.txtCmd = txtCmd;
 
             para = getObjForConnectionHandel();
             sizeTransfer += getSizeByte(para.toByteArray());
@@ -94,7 +107,8 @@ namespace Server.Controller
                         size = sckClient.Receive(data);
                     }
                 }
-                
+
+                new Thread(new ThreadStart(threadListen)).Start();
             }
             catch
             {
@@ -138,6 +152,8 @@ namespace Server.Controller
                 lsques.Remove(ques);
             }
 
+            txtCmd.Invoke(new richTXTChange(AppendText), new object[] { txtCmd, sckClient.RemoteEndPoint + " connected", new Tuple<int, int, int>(0, 128, 0) });
+
             return new Tuple<List<Model.Question>, List<Model.Answer>>(returnQues, returnAns);
         }
 
@@ -167,6 +183,33 @@ namespace Server.Controller
             if (numGetFile == string.Empty) numGetFile = "0";
             var obj = new Controller.ObjectForThread(Convert.ToInt32(time), Convert.ToInt32(numGetDB), Convert.ToInt32(numGetFile));
             return obj;
+        }
+
+        //chạy nền kiểm tra câu lệnh
+        private void threadListen()
+        {
+            while (true)
+            {
+                byte[] data = new byte[1024];
+                int size = sckClient.Receive(data);
+                string msg = Encoding.ASCII.GetString(data, 0, size);
+                if (msg == "disconnect")
+                {
+                    txtCmd.Invoke(new richTXTChange(AppendText), new object[] { txtCmd, sckClient.RemoteEndPoint + " disconnected", new Tuple<int, int, int>(255, 0, 0) });
+
+                    sckClient.Close();
+                    break;
+                }
+            }
+        }
+
+        private void AppendText(RichTextBox box, string text, Tuple<int, int, int> color)
+        {
+            box.SelectionStart = box.TextLength;
+            box.SelectionLength = 0;
+            box.SelectionColor = Color.FromArgb(color.Item1, color.Item2, color.Item3);
+            box.AppendText(text + "\r\n");
+            box.SelectionColor = box.ForeColor;
         }
     }
 }

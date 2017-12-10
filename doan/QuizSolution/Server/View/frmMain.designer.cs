@@ -40,6 +40,7 @@
             this.btnMenu = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lblInfo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblNameProject = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnImgClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -47,7 +48,7 @@
             this.panelContent = new System.Windows.Forms.Panel();
             this.SlideMenuTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.lblInfo = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -249,6 +250,18 @@
             this.btnMinimize.Zoom = 20;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.LogoTransition.SetDecoration(this.lblInfo, BunifuAnimatorNS.DecorationType.None);
+            this.SlideMenuTransition.SetDecoration(this.lblInfo, BunifuAnimatorNS.DecorationType.None);
+            this.lblInfo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.Color.White;
+            this.lblInfo.Location = new System.Drawing.Point(110, 11);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(0, 23);
+            this.lblInfo.TabIndex = 1;
+            // 
             // lblNameProject
             // 
             this.lblNameProject.AutoSize = true;
@@ -346,17 +359,12 @@
             this.bunifuDragControl2.TargetControl = this.lblNameProject;
             this.bunifuDragControl2.Vertical = true;
             // 
-            // lblInfo
+            // bunifuDragControl3
             // 
-            this.lblInfo.AutoSize = true;
-            this.LogoTransition.SetDecoration(this.lblInfo, BunifuAnimatorNS.DecorationType.None);
-            this.SlideMenuTransition.SetDecoration(this.lblInfo, BunifuAnimatorNS.DecorationType.None);
-            this.lblInfo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.ForeColor = System.Drawing.Color.White;
-            this.lblInfo.Location = new System.Drawing.Point(110, 11);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(0, 23);
-            this.lblInfo.TabIndex = 1;
+            this.bunifuDragControl3.Fixed = true;
+            this.bunifuDragControl3.Horizontal = true;
+            this.bunifuDragControl3.TargetControl = this.lblInfo;
+            this.bunifuDragControl3.Vertical = true;
             // 
             // frmMain
             // 
@@ -401,6 +409,7 @@
         private System.Windows.Forms.Panel panelContent;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private Bunifu.Framework.UI.BunifuCustomLabel lblInfo;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl3;
     }
 }
 

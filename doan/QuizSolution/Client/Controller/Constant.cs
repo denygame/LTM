@@ -10,6 +10,5 @@ namespace Client.Controller
     {
         public static Tuple<int, int, int> colorHoverAnswer = new Tuple<int, int, int>(123, 104, 238);
         public static int time = -1;
-       
     }
 }

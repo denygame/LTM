@@ -22,3 +22,4 @@ E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.exe
 E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.pdb
 E:\LTM C#\doan\QuizSolution\Client\bin\Debug\Bunifu_UI_v1.5.3.dll
 E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.View.frmMain.resources
+E:\LTM C#\doan\QuizSolution\Client\obj\Debug\Client.View.uc_answer.resources

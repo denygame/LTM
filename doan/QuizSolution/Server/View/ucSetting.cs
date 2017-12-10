@@ -42,6 +42,7 @@ namespace Server.View
             {
                 checkBoxCSDL.Enabled = false;
                 lblCSDL.Enabled = false;
+                lblCSDL.ForeColor = Color.Gray;
             }
 
             load();

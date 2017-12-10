@@ -98,6 +98,7 @@
             this.txtCmd.ForeColor = System.Drawing.Color.DarkSalmon;
             this.txtCmd.Location = new System.Drawing.Point(14, 58);
             this.txtCmd.Name = "txtCmd";
+            this.txtCmd.ReadOnly = true;
             this.txtCmd.Size = new System.Drawing.Size(678, 404);
             this.txtCmd.TabIndex = 13;
             this.txtCmd.Text = "";

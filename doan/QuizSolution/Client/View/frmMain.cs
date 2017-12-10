@@ -12,13 +12,36 @@ namespace Client.View
 {
     public partial class frmMain : Form
     {
-        List<Panel> lsPanel = new List<Panel>();
-        List<RadioButton> lsRadio = new List<RadioButton>();
+        List<Model.Question> lsQuesDB, lsQuesFile;
+        List<Model.Answer> lsAnsDB, lsAnsFile;
 
-        public frmMain()
+        int total_ques;
+
+        List<Tuple<View.uc_answer, int>> lsSaveUC = new List<Tuple<View.uc_answer, int>>();
+        List<Tuple<string, int, bool>> lsResult = new List<Tuple<string, int, bool>>();
+
+        int runQuiz = 0;
+
+        string quesInFileOrDB = "";
+        int idques = -1;
+
+        //timer
+        int timeRun = 0;
+        int second = 60;
+        int minute = Controller.Constant.time / 60;
+        bool firstTime = true;
+
+        public frmMain(List<Model.Question> lsQuesDB, List<Model.Question> lsQuesFile, List<Model.Answer> lsAnsDB, List<Model.Answer> lsAnsFile)
         {
             InitializeComponent();
+
+            this.lsQuesDB = lsQuesDB;
+            this.lsQuesFile = lsQuesFile;
+            this.lsAnsDB = lsAnsDB;
+            this.lsAnsFile = lsAnsFile;
         }
+
+        #region -- Event --
 
         private void btnImgClose_Click(object sender, EventArgs e)
         {
@@ -45,190 +68,255 @@ namespace Client.View
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void panelContent_MouseEnter(object sender, EventArgs e)
-        {
-            foreach (RadioButton item in lsRadio)
-                if (!item.Checked)
-                    item.Parent.BackColor = Color.Transparent;
-        }
 
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            string ques = "dasklfdjbgajdsf gdsfhgifdsk fsadkdskjadfk sa dsauif hds fhdsa hfjkds hfjkds hafdsahfk ds;hli fhdsui hfuda hfuksd fkjsda ghfkj dsaghfjk dhsagk fjhdsajk fhdsj kafhds jkahfk jdsahfdjska hfkjdsa hfkjdsa hfjkdsa hfkjads hfkjasd hfdsjkfdsf  dfhdskf dsjkf dskjf kdjsh fkjds hfkjdsh fkjd hkjf hsf hsa fhdsugh dsif ghids hgiodsh flksajhf ksahg fksja fkusaj hfs hfsa f;isahf ;iosahfio;sah fisahfisa;f lsahfkjsagfjk saf usa fhsakjfh saklh fklsa hfklsa hfisah fskalh flksah klf end.";
+            total_ques = lsQuesDB.Count + lsQuesFile.Count;
+            setTimer();
+            btnPrev.Visible = false;
+            setQuiz(runQuiz);
+        }
 
-            var setupQues = setQues(ques);
+        private void timerBlock_Tick(object sender, EventArgs e)
+        {
+            if (firstTime)
+            {
+                minute--;
+                if (minute < 10)
+                {
+                    if (minute == 1) lblMinute.Text = "00" + " : ";
+                    else lblMinute.Text = "0" + minute + " : ";
+                }
+                else lblMinute.Text = minute + " : ";
+                firstTime = false;
+            }
+            second--;
+            if (timeRun == Controller.Constant.time)//end
+            {
+                timerBlock.Stop();
+            }
+            else
+            {
+                if (second < 10) lblSecond.Text = "0" + second;
+                else lblSecond.Text = second.ToString();
+                if (second == 0)
+                {
+                    second = 60;
+                    minute--;
+                    if (minute < 10)
+                    {
+                        if (minute == 1) lblMinute.Text = "00" + " : ";
+                        else lblMinute.Text = "0" + minute + " : ";
+                    }
+                    else lblMinute.Text = minute + " : ";
+                }
+            }
+            timeRun += 1;
+        }
+
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            runQuiz++;
+            if (runQuiz + 1 == lsQuesDB.Count + lsQuesFile.Count)
+            {
+                btnNext.Visible = false;
+            }
+            if (runQuiz != 0) btnPrev.Visible = true;
+            setQuiz(runQuiz);
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            int count = 0;
+            for (int i = 0; i < lsSaveUC.Count; i++)
+            {
+                if ((int)lsSaveUC[i].Item1.Tag == lsSaveUC[i].Item2) count++;
+            }
+
+            if (count == lsSaveUC.Count)
+            {
+                lsResult.Add(new Tuple<string, int, bool>(quesInFileOrDB, idques, true));
+            }
+
+            total_ques--;
+
+            if (total_ques != 0)
+            {
+                if (!btnNext.Visible) btnPrev_Click(null, null);
+                else btnNext_Click(null, null);
+            }
+            else
+            {
+                panelQuiz.Controls.Clear();
+                MessageBox.Show(lsResult.Count.ToString());
+            }
+
+
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            runQuiz--;
+            if (runQuiz == 0) btnPrev.Visible = false;
+            if (runQuiz != lsQuesDB.Count + lsQuesFile.Count) btnNext.Visible = true;
+            setQuiz(runQuiz);
+        }
+
+        #endregion
+
+
+
+        #region -- Method --
+
+        private void setQuiz(int index)
+        {
+            panelQuiz.Controls.Clear();
+            lsSaveUC.Clear();
+
+            Model.Question ques;
+            if (lsQuesDB.Count == 0)
+            {
+                ques = lsQuesFile[index];
+            }
+            else
+            {
+                if (lsQuesFile.Count == 0)
+                    ques = lsQuesDB[index];
+                else
+                {
+                    if (index < lsQuesDB.Count)
+                        ques = lsQuesDB[index];
+                    else
+                    {
+                        int new_index = index - lsQuesDB.Count;
+                        ques = lsQuesFile[new_index];
+                    }
+                }
+            }
+
+            var setupQues = setQues((runQuiz + 1) + ") " + ques.Content);
 
             int width = setupQues.Item1;
             int height = setupQues.Item2;
 
-            setAnswers(setupQues.Item1, setupQues.Item2);
-
-            Panel pn1 = new Panel();
-            pn1.Location = new Point(20, height);
-            pn1.Size = new Size(width, 10);
-            pn1.BackColor = Color.Transparent;
-            panelQuiz.Controls.Add(pn1);
-        }
-
-        private void Pn_MouseEnter(object sender, EventArgs e)
-        {
-            var panel = (sender as Panel);
-            RadioButton radio = getRadioInPanel(panel);
-            if (!radio.Checked)
+            if (lsQuesDB.Count == 0)
             {
-                panel.BackColor = Color.FromArgb(Controller.Constant.colorHoverAnswer.Item1, Controller.Constant.colorHoverAnswer.Item2, Controller.Constant.colorHoverAnswer.Item3);
-            }
-        }
-
-        private void Pn_MouseLeave(object sender, EventArgs e)
-        {
-            var panel = (sender as Panel);
-            RadioButton radio = getRadioInPanel(panel);
-            if (!radio.Checked)
-                panel.BackColor = Color.Transparent;
-        }
-
-        private void Pn_Click(object sender, EventArgs e)
-        {
-            var panel = (sender as Panel);
-            RadioButton radio = getRadioInPanel(panel);
-            radio.Checked = true;
-            Rb_CheckedChanged(radio, null);
-        }
-
-        private void Rb_CheckedChanged(object sender, EventArgs e)
-        {
-            var currentRb = (sender as RadioButton);
-            if (currentRb.Checked == true)
-            {
-                foreach (RadioButton radio in lsRadio)
-                    if (radio != currentRb) radio.Checked = false;
-
-                currentRb.Parent.BackColor = Color.FromArgb(Controller.Constant.colorHoverAnswer.Item1, Controller.Constant.colorHoverAnswer.Item2, Controller.Constant.colorHoverAnswer.Item3);
+                setAnswers(setupQues.Item1, setupQues.Item2, ques.Id, ques.Num_answer_right, lsAnsFile);
+                quesInFileOrDB = "file";
             }
             else
             {
-                currentRb.Parent.BackColor = Color.Transparent;
+                setAnswers(setupQues.Item1, setupQues.Item2, ques.Id, ques.Num_answer_right, lsAnsDB);
+                quesInFileOrDB = "data";
             }
+            idques = ques.Id;
         }
 
-        private void Rb_MouseEnter(object sender, EventArgs e)
+        private void setTimer()
         {
-            var radio = (sender as RadioButton);
-            var panel = radio.Parent;
-            Pn_MouseEnter(panel, e);
-        }
-
-
-
-
-
-
-        private RadioButton getRadioInPanel(Panel panel)
-        {
-            RadioButton radio = null;
-            foreach (RadioButton rb in panel.Controls)
+            if (minute < 10)
             {
-                radio = rb;
-                break;
+                if (minute == 1) lblMinute.Text = "00" + " : ";
+                else lblMinute.Text = "0" + minute + " : ";
             }
-            return radio;
+            else lblMinute.Text = minute + " : ";
+
+            timerBlock.Start();
         }
+
 
         private SizeF getSizeText(string str, Font f)
         {
-            Graphics g = this.CreateGraphics();
-            SizeF sz = g.MeasureString(str, f);
-            return sz;
+            using (Graphics g = CreateGraphics())
+            {
+                SizeF sz = g.MeasureString(str, f);
+                return sz;
+            }
         }
+
 
         // item1: width, item2:height
         private Tuple<int, int> setQues(string ques)
         {
-            Font f = lblQues.Font;
-            SizeF sz = getSizeText(ques, f);
-            //string strDetail = "height: " + sz.Height.ToString() + ", width: " + sz.Width.ToString();
-            //MessageBox.Show(strDetail);
-            var row = sz.Width / lblQues.Width;
-            var a = sz.Height;
-            var rowofQues = row + 1;
-            var heightQues = (a * rowofQues);
+            Label lbl = new Label();
+            lbl.Font = new Font("Verdana", 12);
+            lbl.AutoSize = false;
+            lbl.Dock = DockStyle.Top;
+            //lbl.BackColor = Color.Red;
+            panelQuiz.Controls.Add(lbl);
 
-            this.lblQues.Height = (int)heightQues;
-            this.lblQues.Text = ques;
-            //MessageBox.Show(lblQues.Height.ToString());
-            //this.lblQues.BackColor = Color.Blue;
+            SizeF sz = getSizeText(ques, lbl.Font);
+
+            if (sz.Width > lbl.Width)
+            {
+                var row = sz.Width / lbl.Width;
+                if (sz.Width % lbl.Width > 0.5) row = row + 1;
+                var heightStr = row * sz.Height;
+                if (heightStr > lbl.Height) lbl.Height = (int)heightStr;
+            }
+            else
+            {
+                if (sz.Height > lbl.Height) lbl.Height = (int)sz.Height;
+            }
+
+            lbl.Text = ques;
 
             // width height return for answers
             int width = this.panelQuiz.Width - 40;
-            int height = (int)heightQues + 1;
+            int height = (int)lbl.Height + 10;
 
             return new Tuple<int, int>(width, height);
         }
 
-        private void setAnswers(int width, int height)
+        private void setAnswers(int width, int height, int idques, int num_right, List<Model.Answer> ls)
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < ls.Count; i++)
             {
-                Panel pn = new Panel();
-                pn.Location = new Point(20, height);
-                pn.Text = i.ToString();
-
-                pn.Name = i.ToString();
-
-                
-
-                RadioButton rb = new RadioButton();
-
-                rb.Width = width - 22;
-                rb.Location = new Point(10, 0);
-                rb.Font = new Font("Verdana", 10);
-
-
-                string str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss sdddddddddddddddddddddd sssssssssssssssssssssssssssssssa";
-
-                var sizeTextAnswer = getSizeText(str, rb.Font);
-                var row = sizeTextAnswer.Width / rb.Width;
-                var a = sizeTextAnswer.Height;
-                var rowofAns = row + 1;
-                var heightAnsw = (a * rowofAns);
-                //MessageBox.Show(heightAnsw.ToString());
-
-                if (heightAnsw < 50)
+                if (ls[i].Id_ques == idques)
                 {
-                    rb.Height = 50;
-                    pn.Size = new Size(width, 50);
+                    var uc = new View.uc_answer(ls[i].Content, num_right);
+                    uc.Location = new Point(20, height);
+                    uc.Name = "answer" + ls[i].Id;
+                    this.lsSaveUC.Add(new Tuple<uc_answer, int>(uc, 0));
+
+                    uc.radioClick += radioClick_click;
+                    uc.Tag = ls[i].True_or_false;
+                    height += uc.Height + 10;
+                    panelQuiz.Controls.Add(uc);
+
+                }
+            }
+
+            Panel pn = new Panel();
+            pn.Location = new Point(20, height);
+            pn.Size = new Size(width, 10);
+            pn.BackColor = Color.Transparent;
+            panelQuiz.Controls.Add(pn);
+        }
+
+        //radio button uncheck
+        private void radioClick_click(object sender, EventArgs e)
+        {
+            var uc = (sender as View.uc_answer);
+            for (int i = 0; i < lsSaveUC.Count; i++)
+            {
+                if (lsSaveUC[i].Item1 != uc)
+                {
+                    lsSaveUC[i].Item1.uncheckRb();
+                    lsSaveUC[i] = new Tuple<uc_answer, int>(lsSaveUC[i].Item1, 0);
                 }
                 else
                 {
-                    rb.Height = (int)heightAnsw;
-                    pn.Size = new Size(width, (int)heightAnsw);
+                    lsSaveUC[i] = new Tuple<uc_answer, int>(uc, 1);
                 }
-
-                rb.Text = str;
-
-                height += pn.Height + 10;
-
-
-
-
-                rb.CheckedChanged += Rb_CheckedChanged;
-                rb.MouseEnter += Rb_MouseEnter;
-
-                pn.Controls.Add(rb);
-
-                pn.Click += Pn_Click;
-                pn.MouseEnter += Pn_MouseEnter;
-                pn.MouseLeave += Pn_MouseLeave;
-
-
-                this.lsRadio.Add(rb);
-
-                panelQuiz.Controls.Add(pn);
-
-                this.lsPanel.Add(pn);
             }
         }
+
+
+
+
+        #endregion
     }
 }

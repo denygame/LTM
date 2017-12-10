@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.lblSecond = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblMinute = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblNameProject = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnImgMax = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
@@ -39,23 +41,25 @@
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelStt = new System.Windows.Forms.Panel();
             this.panelButton = new System.Windows.Forms.Panel();
-            this.bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnPrev = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnNext = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnAccept = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelQuiz = new System.Windows.Forms.Panel();
-            this.lblQues = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.timerBlock = new System.Windows.Forms.Timer(this.components);
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).BeginInit();
             this.panelContent.SuspendLayout();
             this.panelButton.SuspendLayout();
-            this.panelQuiz.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.panelHeader.Controls.Add(this.lblSecond);
+            this.panelHeader.Controls.Add(this.lblMinute);
             this.panelHeader.Controls.Add(this.lblNameProject);
             this.panelHeader.Controls.Add(this.btnImgMax);
             this.panelHeader.Controls.Add(this.btnMinimize);
@@ -66,6 +70,28 @@
             this.panelHeader.Size = new System.Drawing.Size(726, 51);
             this.panelHeader.TabIndex = 3;
             this.panelHeader.DoubleClick += new System.EventHandler(this.btnImgMax_Click);
+            // 
+            // lblSecond
+            // 
+            this.lblSecond.AutoSize = true;
+            this.lblSecond.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecond.ForeColor = System.Drawing.Color.White;
+            this.lblSecond.Location = new System.Drawing.Point(117, 19);
+            this.lblSecond.Name = "lblSecond";
+            this.lblSecond.Size = new System.Drawing.Size(30, 23);
+            this.lblSecond.TabIndex = 3;
+            this.lblSecond.Text = "00";
+            // 
+            // lblMinute
+            // 
+            this.lblMinute.AutoSize = true;
+            this.lblMinute.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinute.ForeColor = System.Drawing.Color.White;
+            this.lblMinute.Location = new System.Drawing.Point(81, 19);
+            this.lblMinute.Name = "lblMinute";
+            this.lblMinute.Size = new System.Drawing.Size(45, 23);
+            this.lblMinute.TabIndex = 3;
+            this.lblMinute.Text = "00 : ";
             // 
             // lblNameProject
             // 
@@ -144,7 +170,6 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(726, 519);
             this.panelContent.TabIndex = 4;
-            this.panelContent.MouseEnter += new System.EventHandler(this.panelContent_MouseEnter);
             // 
             // panelStt
             // 
@@ -153,118 +178,118 @@
             this.panelStt.Name = "panelStt";
             this.panelStt.Size = new System.Drawing.Size(630, 31);
             this.panelStt.TabIndex = 2;
-            this.panelStt.MouseEnter += new System.EventHandler(this.panelContent_MouseEnter);
             // 
             // panelButton
             // 
             this.panelButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.panelButton.BackColor = System.Drawing.Color.Transparent;
-            this.panelButton.Controls.Add(this.bunifuThinButton23);
-            this.panelButton.Controls.Add(this.bunifuThinButton22);
-            this.panelButton.Controls.Add(this.bunifuThinButton21);
+            this.panelButton.Controls.Add(this.btnPrev);
+            this.panelButton.Controls.Add(this.btnNext);
+            this.panelButton.Controls.Add(this.btnAccept);
             this.panelButton.Location = new System.Drawing.Point(47, 456);
             this.panelButton.Name = "panelButton";
             this.panelButton.Size = new System.Drawing.Size(630, 51);
             this.panelButton.TabIndex = 1;
-            this.panelButton.MouseEnter += new System.EventHandler(this.panelContent_MouseEnter);
             // 
-            // bunifuThinButton23
+            // btnPrev
             // 
-            this.bunifuThinButton23.ActiveBorderThickness = 1;
-            this.bunifuThinButton23.ActiveCornerRadius = 20;
-            this.bunifuThinButton23.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton23.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton23.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuThinButton23.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton23.BackgroundImage")));
-            this.bunifuThinButton23.ButtonText = "Quay lại";
-            this.bunifuThinButton23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton23.IdleBorderThickness = 1;
-            this.bunifuThinButton23.IdleCornerRadius = 20;
-            this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton23.Location = new System.Drawing.Point(90, 10);
-            this.bunifuThinButton23.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton23.Name = "bunifuThinButton23";
-            this.bunifuThinButton23.Size = new System.Drawing.Size(116, 31);
-            this.bunifuThinButton23.TabIndex = 0;
-            this.bunifuThinButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrev.ActiveBorderThickness = 1;
+            this.btnPrev.ActiveCornerRadius = 20;
+            this.btnPrev.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnPrev.ActiveForecolor = System.Drawing.Color.White;
+            this.btnPrev.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrev.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrev.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrev.BackgroundImage")));
+            this.btnPrev.ButtonText = "Quay lại";
+            this.btnPrev.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnPrev.IdleBorderThickness = 1;
+            this.btnPrev.IdleCornerRadius = 20;
+            this.btnPrev.IdleFillColor = System.Drawing.Color.White;
+            this.btnPrev.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnPrev.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnPrev.Location = new System.Drawing.Point(90, 10);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(116, 31);
+            this.btnPrev.TabIndex = 0;
+            this.btnPrev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
-            // bunifuThinButton22
+            // btnNext
             // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuThinButton22.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "Tiếp theo";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton22.Location = new System.Drawing.Point(425, 10);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(116, 31);
-            this.bunifuThinButton22.TabIndex = 0;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNext.ActiveBorderThickness = 1;
+            this.btnNext.ActiveCornerRadius = 20;
+            this.btnNext.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnNext.ActiveForecolor = System.Drawing.Color.White;
+            this.btnNext.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
+            this.btnNext.ButtonText = "Tiếp theo";
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnNext.IdleBorderThickness = 1;
+            this.btnNext.IdleCornerRadius = 20;
+            this.btnNext.IdleFillColor = System.Drawing.Color.White;
+            this.btnNext.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnNext.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnNext.Location = new System.Drawing.Point(425, 10);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(5);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(116, 31);
+            this.btnNext.TabIndex = 0;
+            this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // bunifuThinButton21
+            // btnAccept
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Chọn";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
-            this.bunifuThinButton21.Location = new System.Drawing.Point(235, 2);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(163, 47);
-            this.bunifuThinButton21.TabIndex = 0;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAccept.ActiveBorderThickness = 1;
+            this.btnAccept.ActiveCornerRadius = 20;
+            this.btnAccept.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnAccept.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAccept.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAccept.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAccept.BackgroundImage")));
+            this.btnAccept.ButtonText = "Chọn";
+            this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccept.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnAccept.IdleBorderThickness = 1;
+            this.btnAccept.IdleCornerRadius = 20;
+            this.btnAccept.IdleFillColor = System.Drawing.Color.White;
+            this.btnAccept.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnAccept.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
+            this.btnAccept.Location = new System.Drawing.Point(235, 2);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(163, 47);
+            this.btnAccept.TabIndex = 0;
+            this.btnAccept.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // panelQuiz
             // 
             this.panelQuiz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panelQuiz.AutoScroll = true;
             this.panelQuiz.BackColor = System.Drawing.Color.Transparent;
-            this.panelQuiz.Controls.Add(this.lblQues);
             this.panelQuiz.Location = new System.Drawing.Point(47, 41);
             this.panelQuiz.Name = "panelQuiz";
             this.panelQuiz.Size = new System.Drawing.Size(630, 409);
             this.panelQuiz.TabIndex = 0;
-            this.panelQuiz.MouseEnter += new System.EventHandler(this.panelContent_MouseEnter);
             // 
-            // lblQues
+            // bunifuDragControl3
             // 
-            this.lblQues.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblQues.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQues.Location = new System.Drawing.Point(0, 0);
-            this.lblQues.Name = "lblQues";
-            this.lblQues.Size = new System.Drawing.Size(630, 13);
-            this.lblQues.TabIndex = 0;
-            this.lblQues.Text = "label";
-            this.lblQues.MouseEnter += new System.EventHandler(this.panelContent_MouseEnter);
+            this.bunifuDragControl3.Fixed = true;
+            this.bunifuDragControl3.Horizontal = true;
+            this.bunifuDragControl3.TargetControl = this.lblNameProject;
+            this.bunifuDragControl3.Vertical = true;
+            // 
+            // timerBlock
+            // 
+            this.timerBlock.Interval = 1000;
+            this.timerBlock.Tick += new System.EventHandler(this.timerBlock_Tick);
             // 
             // frmMain
             // 
@@ -275,7 +300,7 @@
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
-            this.Text = "frmMain";
+            this.Text = "Trắc Nghiệm";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
@@ -284,7 +309,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).EndInit();
             this.panelContent.ResumeLayout(false);
             this.panelButton.ResumeLayout(false);
-            this.panelQuiz.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -300,10 +324,13 @@
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panelStt;
         private System.Windows.Forms.Panel panelButton;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnPrev;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnNext;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAccept;
         private System.Windows.Forms.Panel panelQuiz;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblQues;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl3;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblSecond;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblMinute;
+        private System.Windows.Forms.Timer timerBlock;
     }
 }
