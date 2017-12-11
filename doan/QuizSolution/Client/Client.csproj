@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Constant.cs" />
+    <Compile Include="Controller\EventCheckBox.cs" />
     <Compile Include="Controller\ParaObject.cs" />
     <Compile Include="Model\Answer.cs" />
     <Compile Include="Model\Question.cs" />

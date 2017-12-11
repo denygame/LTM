@@ -7,7 +7,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Server.Controller
 {
-    class ReadFileExcel
+    class FileExcel
     {
         private static List<int> lsIdQuesInListObj = new List<int>();
 
@@ -36,6 +36,50 @@ namespace Server.Controller
             System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkbook);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
         }
+
+
+        /*public static int write(string link, int row, Controller.ObjectClient obj)
+        {
+            // Khởi động chtr Excell
+            Excel.Application exApp = new Excel.Application();
+
+
+            // Thêm file hay open
+            Excel.Workbook exBook = (link == string.Empty) ? exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet) : exApp.Workbooks.Open(link);
+
+            // Lấy sheet 1.
+            Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
+
+            //exSheet.Name = "Lập trình mạng";
+
+
+            // Range là ô [1,1] (A1)
+            Excel.Range code = (Excel.Range)exSheet.Cells[row, 1];
+            Excel.Range name = (Excel.Range)exSheet.Cells[row, 2];
+            Excel.Range class_str = (Excel.Range)exSheet.Cells[row, 3];
+
+            // Ghi dữ liệu
+            code.Value2 = obj.Code;
+            name.Value2 = obj.Name;
+            class_str.Value2 = obj.Class_str;
+
+            // Giãn cột
+            code.Columns.AutoFit();
+            name.Columns.AutoFit();
+            class_str.Columns.AutoFit();
+
+
+            exApp.DisplayAlerts = false;
+
+            exBook.SaveAs(link, Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, Excel.XlSaveAsAccessMode.xlNoChange, Excel.XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+
+            exBook.Close(false, false, false);
+            exApp.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(exBook);
+
+            return row++;
+        }*/
+
 
 
         private static void addToList(Excel.Worksheet xlWorksheet, object[,] valueArray)

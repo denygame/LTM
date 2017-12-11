@@ -16,6 +16,7 @@ namespace Server.View
     {
         private string ucSelected = null;
 
+
         public frmMain()
         {
             InitializeComponent();
@@ -48,44 +49,57 @@ namespace Server.View
                 SlideMenuTransition.ShowSync(panelSlideMenu);
             }
 
-            if (this.ucSelected != null)
-                resizeUcPanelContent();
+            switch (ucSelected)
+            {
+                case "ques": (panelContent.Tag as View.ucQuestionDB).resizeFill(); break;
+                case "sett": (panelContent.Tag as View.ucSetting).resizeFill(); break;
+                case "run": (panelContent.Tag as View.ucRunServer).resizeFill(); break;
+                default: break;
+            }
+            
         }
 
         private void btnQuestion_Click(object sender, EventArgs e)
         {
-            View.ucQuestionDB ucQues = new View.ucQuestionDB();
-            this.ucSelected = "ques";
-            btnQuestion.Tag = ucQues;
-
+            View.ucQuestionDB ucQues = View.ucQuestionDB.Instance;
             panelContent.Controls.Clear();
             panelContent.Controls.Add(ucQues);
+            ucQues.resizeFill();
+            panelContent.Tag = ucQues;
+            ucSelected = "ques";
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            View.ucSetting ucSett = new View.ucSetting();
-            this.ucSelected = "sett";
-            btnSetting.Tag = ucSett;
-
+            View.ucSetting ucSett = View.ucSetting.Instance;
             panelContent.Controls.Clear();
             panelContent.Controls.Add(ucSett);
+            ucSett.resizeFill();
+            panelContent.Tag = ucSett;
+            ucSelected = "sett";
         }
 
         private void btnRunServer_Click(object sender, EventArgs e)
         {
-            View.ucRunServer ucRun = new View.ucRunServer();
+            View.ucRunServer ucRun = View.ucRunServer.Instance;
             ucRun.EventStartServer += UcRun_EventStartServer;
-            this.ucSelected = "runn";
-            btnRunServer.Tag = ucRun;
-
+            ucRun.StopServer += UcRun_StopServer;
             panelContent.Controls.Clear();
             panelContent.Controls.Add(ucRun);
+            ucRun.resizeFill();
+            panelContent.Tag = ucRun;
+            ucSelected = "run";
+        }
+
+        private void UcRun_StopServer(object sender, EventArgs e)
+        {
+            View.ucSetting.Instance.startServer = false;
         }
 
         private void UcRun_EventStartServer(object sender, Controller.EventSendData e)
         {
             lblInfo.Text = e.Ip + " : " + e.Port;
+            View.ucSetting.Instance.startServer = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -106,6 +120,7 @@ namespace Server.View
             {
                 File.Delete(path);
             }
+            View.ucRunServer.Instance.stopServer("not show txt");
         }
 
         #endregion
@@ -113,27 +128,8 @@ namespace Server.View
 
 
 
-        #region -- Method --
 
-        private void resizeUcPanelContent()
-        {
-            switch (this.ucSelected)
-            {
-                case "ques":
-                    (btnQuestion.Tag as View.ucQuestionDB).resizeFill();
-                    break;
-                case "sett":
-                    (btnSetting.Tag as View.ucSetting).resizeFill();
-                    break;
-                case "runn":
-                    (btnRunServer.Tag as View.ucRunServer).resizeFill();
-                    break;
-                default: break;
-            }
-        }
 
-        #endregion
 
-        
     }
 }

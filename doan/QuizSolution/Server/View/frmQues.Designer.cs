@@ -254,7 +254,7 @@
             this.Name = "frmQues";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmQues";
+            this.Text = "Câu Hỏi";
             this.Load += new System.EventHandler(this.frmQues_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

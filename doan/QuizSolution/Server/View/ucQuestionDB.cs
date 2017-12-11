@@ -15,6 +15,22 @@ namespace Server.View
         private int idcourse = -1;
         private bool connectDb;
 
+        #region -- Singlethon --
+
+        private static ucQuestionDB instance = null;
+
+        public static ucQuestionDB Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ucQuestionDB();
+                }
+                return instance;
+            }
+        }
+
         public ucQuestionDB()
         {
             if (!this.DesignMode)
@@ -24,6 +40,11 @@ namespace Server.View
 
             this.connectDb = Controller.DBConnection.connect();
         }
+
+        #endregion
+
+
+
 
 
         #region -- Event --

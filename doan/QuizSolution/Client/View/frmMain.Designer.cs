@@ -47,11 +47,13 @@
             this.panelQuiz = new System.Windows.Forms.Panel();
             this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.timerBlock = new System.Windows.Forms.Timer(this.components);
+            this.lblInfo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).BeginInit();
             this.panelContent.SuspendLayout();
+            this.panelStt.SuspendLayout();
             this.panelButton.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,7 +164,6 @@
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(183)))));
-            this.panelContent.Controls.Add(this.panelStt);
             this.panelContent.Controls.Add(this.panelButton);
             this.panelContent.Controls.Add(this.panelQuiz);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -173,10 +174,12 @@
             // 
             // panelStt
             // 
-            this.panelStt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelStt.Location = new System.Drawing.Point(47, 7);
+            this.panelStt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
+            this.panelStt.Controls.Add(this.lblInfo);
+            this.panelStt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStt.Location = new System.Drawing.Point(0, 51);
             this.panelStt.Name = "panelStt";
-            this.panelStt.Size = new System.Drawing.Size(630, 31);
+            this.panelStt.Size = new System.Drawing.Size(726, 31);
             this.panelStt.TabIndex = 2;
             // 
             // panelButton
@@ -291,11 +294,23 @@
             this.timerBlock.Interval = 1000;
             this.timerBlock.Tick += new System.EventHandler(this.timerBlock_Tick);
             // 
+            // lblInfo
+            // 
+            this.lblInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblInfo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.Color.Navy;
+            this.lblInfo.Location = new System.Drawing.Point(0, 0);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(726, 31);
+            this.lblInfo.TabIndex = 4;
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 570);
+            this.Controls.Add(this.panelStt);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -308,6 +323,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).EndInit();
             this.panelContent.ResumeLayout(false);
+            this.panelStt.ResumeLayout(false);
             this.panelButton.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -332,5 +348,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblSecond;
         private Bunifu.Framework.UI.BunifuCustomLabel lblMinute;
         private System.Windows.Forms.Timer timerBlock;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblInfo;
     }
 }

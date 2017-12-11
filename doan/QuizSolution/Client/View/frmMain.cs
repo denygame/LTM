@@ -12,18 +12,20 @@ namespace Client.View
 {
     public partial class frmMain : Form
     {
-        List<Model.Question> lsQuesDB, lsQuesFile;
-        List<Model.Answer> lsAnsDB, lsAnsFile;
+        private List<Tuple<int, Model.Question, bool>> quesList = null;
+        private string info = "";
+        private List<Tuple<int, Model.Answer>> ansList = null;
 
         int total_ques;
 
+        //list save answer in each ques
         List<Tuple<View.uc_answer, int>> lsSaveUC = new List<Tuple<View.uc_answer, int>>();
-        List<Tuple<string, int, bool>> lsResult = new List<Tuple<string, int, bool>>();
 
-        int runQuiz = 0;
+        //list ket qua dung
+        List<Tuple<int, bool>> lsResult = new List<Tuple<int, bool>>();
 
-        string quesInFileOrDB = "";
-        int idques = -1;
+        Model.Question quesCurrent = null;
+        int integerCurrent = 0;
 
         //timer
         int timeRun = 0;
@@ -31,14 +33,19 @@ namespace Client.View
         int minute = Controller.Constant.time / 60;
         bool firstTime = true;
 
-        public frmMain(List<Model.Question> lsQuesDB, List<Model.Question> lsQuesFile, List<Model.Answer> lsAnsDB, List<Model.Answer> lsAnsFile)
+        public frmMain(List<Tuple<int, Model.Question>> quesLs, List<Tuple<int, Model.Answer>> ansList, string info)
         {
             InitializeComponent();
 
-            this.lsQuesDB = lsQuesDB;
-            this.lsQuesFile = lsQuesFile;
-            this.lsAnsDB = lsAnsDB;
-            this.lsAnsFile = lsAnsFile;
+            this.quesList = new List<Tuple<int, Model.Question, bool>>();
+
+            for (int i = 0; i < quesLs.Count; i++)
+            {
+                this.quesList.Add(new Tuple<int, Model.Question, bool>(quesLs[i].Item1, quesLs[i].Item2, false));
+            }
+            this.ansList = ansList;
+
+            this.info = info;
         }
 
         #region -- Event --
@@ -68,14 +75,17 @@ namespace Client.View
             this.WindowState = FormWindowState.Minimized;
         }
 
-
-
         private void frmMain_Load(object sender, EventArgs e)
         {
-            total_ques = lsQuesDB.Count + lsQuesFile.Count;
+            total_ques = quesList.Count;
             setTimer();
-            btnPrev.Visible = false;
-            setQuiz(runQuiz);
+            if (total_ques == 1)
+            {
+                btnNext.Visible = false;
+                btnPrev.Visible = false;
+            }
+            else btnPrev.Visible = false;
+            setQuiz(0);
         }
 
         private void timerBlock_Tick(object sender, EventArgs e)
@@ -103,7 +113,7 @@ namespace Client.View
                 if (second == 0)
                 {
                     second = 60;
-                    minute--;
+                    if (minute != 0) minute--;
                     if (minute < 10)
                     {
                         if (minute == 1) lblMinute.Text = "00" + " : ";
@@ -113,44 +123,69 @@ namespace Client.View
                 }
             }
             timeRun += 1;
-        }
 
+            if (Controller.Constant.time == timeRun)
+            {
+                endQuiz();
+            }
+        }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            runQuiz++;
-            if (runQuiz + 1 == lsQuesDB.Count + lsQuesFile.Count)
+            //if (countNext("off") == 0) btnNext.Visible = false;
+            //if (countPrev("on") == 0) btnPrev.Visible = true;
+
+            int index = -1;
+            for (int i = integerCurrent; i < quesList.Count; i++)
             {
-                btnNext.Visible = false;
+                if (!quesList[i].Item3)
+                {
+                    index = i;
+                    break;
+                }
             }
-            if (runQuiz != 0) btnPrev.Visible = true;
-            setQuiz(runQuiz);
+
+            if (index != -1) setQuiz(index);
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            int count = 0;
-            for (int i = 0; i < lsSaveUC.Count; i++)
+            if (checkChoseAns())
             {
-                if ((int)lsSaveUC[i].Item1.Tag == lsSaveUC[i].Item2) count++;
-            }
+                int count = 0;
+                for (int i = 0; i < lsSaveUC.Count; i++)
+                {
+                    if ((int)lsSaveUC[i].Item1.Tag == lsSaveUC[i].Item2) count++;
+                }
 
-            if (count == lsSaveUC.Count)
-            {
-                lsResult.Add(new Tuple<string, int, bool>(quesInFileOrDB, idques, true));
-            }
+                if (count == lsSaveUC.Count)
+                {
+                    lsResult.Add(new Tuple<int, bool>(quesCurrent.Id, true));
+                }
 
-            total_ques--;
+                total_ques--;
 
-            if (total_ques != 0)
-            {
-                if (!btnNext.Visible) btnPrev_Click(null, null);
-                else btnNext_Click(null, null);
+                if (total_ques != 0)
+                {
+                    for (int i = 0; i < quesList.Count; i++)
+                    {
+                        if (quesList[i].Item1 == integerCurrent)
+                        {
+                            quesList[i] = new Tuple<int, Model.Question, bool>(integerCurrent, quesCurrent, true);
+                            break;
+                        }
+                    }
+
+                    if (!btnNext.Visible) btnPrev_Click(null, null); else btnNext_Click(null, null);
+                }
+                else
+                {
+                    endQuiz();
+                }
             }
             else
             {
-                panelQuiz.Controls.Clear();
-                MessageBox.Show(lsResult.Count.ToString());
+                MessageBox.Show("Bạn chưa chọn đáp án", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
 
 
@@ -158,10 +193,20 @@ namespace Client.View
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            runQuiz--;
-            if (runQuiz == 0) btnPrev.Visible = false;
-            if (runQuiz != lsQuesDB.Count + lsQuesFile.Count) btnNext.Visible = true;
-            setQuiz(runQuiz);
+            //if (countPrev("off") == 0) btnPrev.Visible = false;
+            //if (countNext("on") != 0) btnNext.Visible = true;
+
+            int index = -1;
+            for (int i = integerCurrent - 2; i >= 0; i--)
+            {
+                if (!quesList[i].Item3)
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index != -1) setQuiz(index);
         }
 
         #endregion
@@ -170,48 +215,43 @@ namespace Client.View
 
         #region -- Method --
 
+        private void endQuiz()
+        {
+            int score = (100 / quesList.Count) * lsResult.Count;
+            panelContent.Controls.Clear();
+            Label lbl = new Label();
+            lbl.Dock = DockStyle.Fill;
+            lbl.Text = score.ToString();
+            lbl.Font = new Font("Verdana", 90);
+            lbl.ForeColor = Color.FromArgb(0, 128, 128);
+            lbl.TextAlign = ContentAlignment.MiddleCenter;
+            panelContent.Controls.Add(lbl);
+            lblInfo.Text = info;
+            timerBlock.Stop();
+        }
+
         private void setQuiz(int index)
         {
             panelQuiz.Controls.Clear();
             lsSaveUC.Clear();
 
             Model.Question ques;
-            if (lsQuesDB.Count == 0)
-            {
-                ques = lsQuesFile[index];
-            }
-            else
-            {
-                if (lsQuesFile.Count == 0)
-                    ques = lsQuesDB[index];
-                else
-                {
-                    if (index < lsQuesDB.Count)
-                        ques = lsQuesDB[index];
-                    else
-                    {
-                        int new_index = index - lsQuesDB.Count;
-                        ques = lsQuesFile[new_index];
-                    }
-                }
-            }
 
-            var setupQues = setQues((runQuiz + 1) + ") " + ques.Content);
+            ques = quesList[index].Item2;
+
+            var setupQues = setQues(quesList[index].Item1 + ") " + ques.Content);
 
             int width = setupQues.Item1;
             int height = setupQues.Item2;
 
-            if (lsQuesDB.Count == 0)
-            {
-                setAnswers(setupQues.Item1, setupQues.Item2, ques.Id, ques.Num_answer_right, lsAnsFile);
-                quesInFileOrDB = "file";
-            }
-            else
-            {
-                setAnswers(setupQues.Item1, setupQues.Item2, ques.Id, ques.Num_answer_right, lsAnsDB);
-                quesInFileOrDB = "data";
-            }
-            idques = ques.Id;
+            setAnswers(setupQues.Item1, setupQues.Item2, ques.Id, ques.Num_answer_right);
+
+            quesCurrent = ques;
+            integerCurrent = quesList[index].Item1;
+
+
+            if (countPrev() != 0) btnPrev.Visible = true; else btnPrev.Visible = false;
+            if (countNext() != 0) btnNext.Visible = true; else btnNext.Visible = false;
         }
 
         private void setTimer()
@@ -226,7 +266,6 @@ namespace Client.View
             timerBlock.Start();
         }
 
-
         private SizeF getSizeText(string str, Font f)
         {
             using (Graphics g = CreateGraphics())
@@ -235,7 +274,6 @@ namespace Client.View
                 return sz;
             }
         }
-
 
         // item1: width, item2:height
         private Tuple<int, int> setQues(string ques)
@@ -270,19 +308,19 @@ namespace Client.View
             return new Tuple<int, int>(width, height);
         }
 
-        private void setAnswers(int width, int height, int idques, int num_right, List<Model.Answer> ls)
+        private void setAnswers(int width, int height, int idques, int num_right)
         {
-            for (int i = 0; i < ls.Count; i++)
+            for (int i = 0; i < ansList.Count; i++)
             {
-                if (ls[i].Id_ques == idques)
+                if (ansList[i].Item2.Id_ques == idques)
                 {
-                    var uc = new View.uc_answer(ls[i].Content, num_right);
+                    var uc = new View.uc_answer(ansList[i].Item2.Content, num_right);
                     uc.Location = new Point(20, height);
-                    uc.Name = "answer" + ls[i].Id;
+                    uc.Name = "answer" + ansList[i].Item2.Id;
                     this.lsSaveUC.Add(new Tuple<uc_answer, int>(uc, 0));
-
+                    uc.CheckboxClick += Uc_CheckboxClick;
                     uc.radioClick += radioClick_click;
-                    uc.Tag = ls[i].True_or_false;
+                    uc.Tag = ansList[i].Item2.True_or_false;
                     height += uc.Height + 10;
                     panelQuiz.Controls.Add(uc);
 
@@ -296,7 +334,21 @@ namespace Client.View
             panelQuiz.Controls.Add(pn);
         }
 
-        //radio button uncheck
+        //event checkbox in user control checked
+        private void Uc_CheckboxClick(object sender, Controller.EventCheckBox e)
+        {
+            var uc = (sender as View.uc_answer);
+            for (int i = 0; i < lsSaveUC.Count; i++)
+            {
+                if (lsSaveUC[i].Item1 == uc)
+                {
+                    if (e.Check) lsSaveUC[i] = new Tuple<uc_answer, int>(lsSaveUC[i].Item1, 1);
+                    else lsSaveUC[i] = new Tuple<uc_answer, int>(lsSaveUC[i].Item1, 0);
+                }
+            }
+        }
+
+        //event radio button in user control checked
         private void radioClick_click(object sender, EventArgs e)
         {
             var uc = (sender as View.uc_answer);
@@ -314,8 +366,32 @@ namespace Client.View
             }
         }
 
+        private bool checkChoseAns()
+        {
+            int count = 0;
+            for (int i = 0; i < lsSaveUC.Count; i++)
+            {
+                if (lsSaveUC[i].Item2 == 1) count++;
+            }
+            if (count == 0) return false;
+            return true;
+        }
 
+        private int countNext()
+        {
+            int count = 0;
+            for (int i = integerCurrent; i < quesList.Count; i++)
+                if (!quesList[i].Item3) count++;
+            return count;
+        }
 
+        private int countPrev()
+        {
+            int count = 0;
+            for (int i = 0; i < integerCurrent - 1; i++)
+                if (!quesList[i].Item3) count++;
+            return count;
+        }
 
         #endregion
     }

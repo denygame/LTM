@@ -16,6 +16,8 @@ namespace Server.View
 {
     public partial class ucRunServer : UserControl
     {
+        #region -- Parameters --
+
         private event EventHandler<Controller.EventSendData> eventStartServer;
         public event EventHandler<Controller.EventSendData> EventStartServer
         {
@@ -23,8 +25,29 @@ namespace Server.View
             remove { eventStartServer -= value; }
         }
 
-        private static bool start = false;
+        public event EventHandler StopServer;
 
+        private volatile bool startServer = false;
+        private Socket sckServer;
+        private Thread Listening = null;
+
+        #endregion
+
+        #region -- Singlethon --
+
+        private static ucRunServer instance = null;
+
+        public static ucRunServer Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ucRunServer();
+                }
+                return instance;
+            }
+        }
 
         public ucRunServer()
         {
@@ -34,14 +57,20 @@ namespace Server.View
             }
         }
 
+        #endregion
+
+
+        #region -- Event --
+
         private void ucRunServer_Load(object sender, EventArgs e)
         {
             resizeFill();
+            btnStop.Visible = false;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (!start)
+            if (!startServer)
             {
                 string path = Path.GetDirectoryName(Application.ExecutablePath);
                 path = Path.Combine(path, Controller.Constant.nameFolderSaveFile);
@@ -55,40 +84,45 @@ namespace Server.View
 
                     eventStartServer(this, new Controller.EventSendData(ip, port));
 
-                    Socket sckServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                    sckServer = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                     try
                     {
                         sckServer.Bind(new IPEndPoint(IPAddress.Any, Convert.ToInt32(port)));
                         sckServer.Listen(100);
                         AppendText(txtCmd, "Server start. Waiting for client ..........", new Tuple<int, int, int>(165, 42, 42));
                     }
-                    catch
+                    catch (SocketException ex)
                     {
+                        MessageBox.Show(ex.ToString(), "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
-                    start = true;
+                    startServer = true;
 
-                    Thread Listening = new Thread(() =>
-                    {
-                        try
-                        {
-                            while (true)
-                            {
-                                Socket sckClient = sckServer.Accept();
+                    Listening = new Thread(() =>
+                      {
+                          try
+                          {
+                              while (startServer)
+                              {
+                                  Socket sckClient = sckServer.Accept();
 
-                                Controller.ConnectionHandle server = new Controller.ConnectionHandle(sckClient, txtCmd);
-                                server.Run();
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.ToString());
-                        }
-                    });
+                                  Controller.ConnectionHandle server = new Controller.ConnectionHandle(sckClient, txtCmd);
+
+                                  server.Run();
+                              }
+                          }
+                          catch (Exception ex)
+                          {
+                              //MessageBox.Show(ex.ToString(), "Thread", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                          }
+                      });
                     Listening.IsBackground = true;
                     Listening.Start();
 
+
+                    btnStart.Visible = false;
+                    btnStop.Visible = true;
                 }
                 else
                 {
@@ -105,12 +139,31 @@ namespace Server.View
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-
+            stopServer();
         }
 
+        #endregion
 
 
+        #region -- Method --
 
+        public void stopServer(string str = null)
+        {
+            Controller.ConnectionHandle conn = new Controller.ConnectionHandle(this.txtCmd);
+
+            conn.stopServer(str);
+
+            startServer = false;
+
+            if (sckServer != null)
+            {
+                sckServer.Close();
+                StopServer(this, new EventArgs());
+            }
+
+            btnStop.Visible = false;
+            btnStart.Visible = true;
+        }
 
         private void AppendText(RichTextBox box, string text, Tuple<int, int, int> color)
         {
@@ -127,5 +180,7 @@ namespace Server.View
             this.Width = this.Parent.Width;
             this.Height = this.Parent.Height;
         }
+
+        #endregion
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation10 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation9 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucSetting));
             this.panelTcpContent = new System.Windows.Forms.Panel();
             this.txtPort = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -110,7 +110,7 @@
             this.txtPort.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.txtPort.HintForeColor = System.Drawing.Color.Black;
-            this.txtPort.HintText = "Chỉ nhập số";
+            this.txtPort.HintText = "";
             this.txtPort.isPassword = false;
             this.txtPort.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(87)))));
             this.txtPort.LineIdleColor = System.Drawing.Color.Gray;
@@ -207,22 +207,22 @@
             // 
             this.TitleTransition.AnimationType = BunifuAnimatorNS.AnimationType.Rotate;
             this.TitleTransition.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(50);
-            animation2.RotateCoeff = 1F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 1F;
-            this.TitleTransition.DefaultAnimation = animation2;
+            animation10.AnimateOnlyDifferences = true;
+            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
+            animation10.LeafCoeff = 0F;
+            animation10.MaxTime = 1F;
+            animation10.MinTime = 0F;
+            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
+            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
+            animation10.MosaicSize = 0;
+            animation10.Padding = new System.Windows.Forms.Padding(50);
+            animation10.RotateCoeff = 1F;
+            animation10.RotateLimit = 0F;
+            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
+            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
+            animation10.TimeCoeff = 0F;
+            animation10.TransparencyCoeff = 1F;
+            this.TitleTransition.DefaultAnimation = animation10;
             this.TitleTransition.MaxAnimationTime = 300;
             // 
             // panelContentQuesFile
@@ -253,7 +253,7 @@
             this.txtNumQuesFile.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumQuesFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(7)))), ((int)(((byte)(71)))));
             this.txtNumQuesFile.HintForeColor = System.Drawing.Color.DimGray;
-            this.txtNumQuesFile.HintText = "Random Question";
+            this.txtNumQuesFile.HintText = "";
             this.txtNumQuesFile.isPassword = false;
             this.txtNumQuesFile.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(7)))), ((int)(((byte)(71)))));
             this.txtNumQuesFile.LineIdleColor = System.Drawing.Color.Gray;
@@ -412,7 +412,7 @@
             this.txtNumQuesDB.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumQuesDB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(18)))), ((int)(((byte)(36)))));
             this.txtNumQuesDB.HintForeColor = System.Drawing.Color.DimGray;
-            this.txtNumQuesDB.HintText = "Random Question";
+            this.txtNumQuesDB.HintText = "";
             this.txtNumQuesDB.isPassword = false;
             this.txtNumQuesDB.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(18)))), ((int)(((byte)(36)))));
             this.txtNumQuesDB.LineIdleColor = System.Drawing.Color.Gray;
@@ -572,7 +572,7 @@
             this.txtTime.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
             this.txtTime.HintForeColor = System.Drawing.Color.DimGray;
-            this.txtTime.HintText = "Nhập vào số phút";
+            this.txtTime.HintText = "";
             this.txtTime.isPassword = false;
             this.txtTime.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(33)))), ((int)(((byte)(94)))));
             this.txtTime.LineIdleColor = System.Drawing.Color.Gray;
@@ -763,22 +763,22 @@
             // 
             this.ShowTransition.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
             this.ShowTransition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 20;
-            animation1.Padding = new System.Windows.Forms.Padding(30);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.ShowTransition.DefaultAnimation = animation1;
+            animation9.AnimateOnlyDifferences = true;
+            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
+            animation9.LeafCoeff = 0F;
+            animation9.MaxTime = 1F;
+            animation9.MinTime = 0F;
+            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
+            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
+            animation9.MosaicSize = 20;
+            animation9.Padding = new System.Windows.Forms.Padding(30);
+            animation9.RotateCoeff = 0F;
+            animation9.RotateLimit = 0F;
+            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
+            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
+            animation9.TimeCoeff = 0F;
+            animation9.TransparencyCoeff = 0F;
+            this.ShowTransition.DefaultAnimation = animation9;
             this.ShowTransition.MaxAnimationTime = 300;
             // 
             // ucSetting

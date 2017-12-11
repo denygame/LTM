@@ -16,6 +16,23 @@ namespace Server.View
     {
         private bool checkHasFileIni = false;
         private bool connectDb;
+        public bool startServer = false;
+
+        #region -- Singlethon --
+
+        private static ucSetting instance = null;
+
+        public static ucSetting Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ucSetting();
+                }
+                return instance;
+            }
+        }
 
         public ucSetting()
         {
@@ -25,6 +42,8 @@ namespace Server.View
             }
             this.connectDb = Controller.DBConnection.connect();
         }
+
+        #endregion
 
 
         #region -- Event --
@@ -45,7 +64,7 @@ namespace Server.View
                 lblCSDL.ForeColor = Color.Gray;
             }
 
-            load();
+            //load();
         }
 
         private void lblCSDL_Click(object sender, EventArgs e)
@@ -103,8 +122,6 @@ namespace Server.View
             var count = Controller.QuestionController.countInCourse((cbNumCourse.SelectedItem as Model.Course).Id);
             lblQuesDB.Text = "Có " + count + " câu hỏi";
             lblQuesDB.Tag = count;
-
-            Controller.ListObj.addWithDB((cbNumCourse.SelectedItem as Model.Course).Id);
         }
 
         private void checkBoxCSDL_OnChange(object sender, EventArgs e)
@@ -165,7 +182,8 @@ namespace Server.View
 
         private void txtPathFile_OnValueChanged(object sender, EventArgs e)
         {
-            Controller.ReadFileExcel.read(txtPathFile.Text);
+            lblQuesFile.Text = "Đang đọc file ...";
+            Controller.FileExcel.read(txtPathFile.Text);
             int countQuesInFile = Controller.ListObj.LsQuesFile.Count;
             lblQuesFile.Text = "Có " + countQuesInFile + " câu hỏi";
             lblQuesFile.Tag = countQuesInFile;
@@ -175,6 +193,7 @@ namespace Server.View
         {
             if (validate())
             {
+                Controller.ListObj.addWithDB((cbNumCourse.SelectedItem as Model.Course).Id);
                 string path = create_folder_contain_setting();
                 create_file_setting(path);
                 checkHasFileIni = true;
@@ -186,60 +205,24 @@ namespace Server.View
 
         private void btnDestroy_Click(object sender, EventArgs e)
         {
-            create_folder_contain_setting();
-            this.btnDestroy.Visible = false;
-            this.btnCreateOrOK.Visible = true;
-            checkHasFileIni = false;
-            cbNumCourse.Enabled = true;
+            if (!startServer)
+            {
+                create_folder_contain_setting();
+                this.btnDestroy.Visible = false;
+                this.btnCreateOrOK.Visible = true;
+                checkHasFileIni = false;
+                cbNumCourse.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Server đang chạy cấu hình này", "Không Thể Hủy", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         #endregion
 
 
         #region -- Method --
-
-        private void load()
-        {
-            string path = Path.GetDirectoryName(Application.ExecutablePath);
-            path = Path.Combine(path, Controller.Constant.nameFolderSaveFile);
-            path = Path.Combine(path, Controller.Constant.nameFileSetting);
-            if (File.Exists(path))
-            {
-                checkHasFileIni = true;
-                cbNumCourse.Enabled = false;
-                btnCreateOrOK.Visible = false;
-                Controller.IO_INI ini = new Controller.IO_INI(path);
-                txtIP.Text = ini.IniReadValue(Controller.Constant.sectionInfo, Controller.Constant.keyIP);
-                txtPort.Text = ini.IniReadValue(Controller.Constant.sectionInfo, Controller.Constant.keyPort);
-                txtTime.Text = ini.IniReadValue(Controller.Constant.sectionSetting, Controller.Constant.keyTime);
-                string course = ini.IniReadValue(Controller.Constant.sectionDB, Controller.Constant.keyIdCourse);
-                if (course != string.Empty)
-                {
-                    int selected = Convert.ToInt32(ini.IniReadValue(Controller.Constant.sectionDB, Controller.Constant.keySelectedIndexCB));
-                    checkBoxCSDL.Checked = true;
-                    panelHeaderQuesDB.Visible = true;
-                    panelContentQuesDB.Visible = true;
-
-                    string[] SplitCourse = course.Split('/');
-                    string idcourse = SplitCourse[0];
-                    cbNumCourse.SelectedIndex = selected;
-                    txtNumQuesDB.Text = ini.IniReadValue(Controller.Constant.sectionDB, Controller.Constant.keyGetQuesDB);
-                }
-
-                string file = ini.IniReadValue(Controller.Constant.sectionFile, Controller.Constant.keyPathFile);
-                if (file != string.Empty)
-                {
-                    checkBoxFile.Checked = true;
-                    panelHeaderQuesFile.Visible = true;
-                    panelContentQuesFile.Visible = true;
-
-                    txtPathFile.Text = ini.IniReadValue(Controller.Constant.sectionFile, Controller.Constant.keyPathFile);
-                    txtNumQuesFile.Text = ini.IniReadValue(Controller.Constant.sectionFile, Controller.Constant.keyGetQuesFile);
-                }
-
-                btnDestroy.Visible = true;
-            }
-        }
 
         private bool checkTextBoxEmpty(Bunifu.Framework.UI.BunifuMaterialTextbox txt)
         {
@@ -277,6 +260,11 @@ namespace Server.View
                     MessageBox.Show("Câu hỏi lấy ra từ CSDL phải bé hơn " + Convert.ToInt32(lblQuesDB.Tag).ToString(), "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
+                if (numQuesDB == 0)
+                {
+                    MessageBox.Show("Câu hỏi lấy ra từ CSDL không thể là 0", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
             }
             if (checkBoxFile.Checked)
             {
@@ -294,6 +282,11 @@ namespace Server.View
                 if (numQuesFile > Convert.ToInt32(lblQuesFile.Tag))
                 {
                     MessageBox.Show("Câu hỏi lấy ra từ File phải bé hơn " + Convert.ToInt32(lblQuesFile.Tag).ToString(), "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
+                if (numQuesFile == 0)
+                {
+                    MessageBox.Show("Câu hỏi lấy ra từ File không thể là 0", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
             }
@@ -316,9 +309,11 @@ namespace Server.View
             {
                 Directory.CreateDirectory(Controller.Constant.nameFolderSaveFile);
             }
-
-            DirectoryInfo dirInfo = new DirectoryInfo(path);
-            Empty(dirInfo);
+            else
+            {
+                string test = Path.Combine(path, Controller.Constant.nameFileSetting);
+                if (File.Exists(test)) File.Delete(test);
+            }
 
             path = Path.Combine(path, Controller.Constant.nameFileSetting);
 

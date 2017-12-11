@@ -14,8 +14,16 @@ namespace Client.View
     {
         public event EventHandler radioClick;
 
+        private event EventHandler<Controller.EventCheckBox> checkboxClick;
+        public event EventHandler<Controller.EventCheckBox> CheckboxClick
+        {
+            add { checkboxClick += value; }
+            remove { checkboxClick -= value; }
+        }
+
         private string txt;
         private int type;
+        private CheckBox cb = new CheckBox();
 
         public uc_answer(string txt, int type)
         {
@@ -55,7 +63,7 @@ namespace Client.View
             }
             else
             {
-                CheckBox cb = new CheckBox();
+                
                 cb.MouseHover += lblContent_MouseEnter;
                 cb.MouseLeave += lblContent_MouseLeave;
                 cb.Click += Cb_Click;
@@ -82,6 +90,7 @@ namespace Client.View
         private void Cb_Click(object sender, EventArgs e)
         {
             lblContent_MouseEnter(null, null);
+            checkboxClick(this, new Controller.EventCheckBox((sender as CheckBox).Checked));
         }
 
         private void Rb_Click(object sender, EventArgs e)
@@ -104,6 +113,7 @@ namespace Client.View
             {
                 var cb = (pnRB.Controls[0] as CheckBox);
                 if (cb.Checked) cb.Checked = false; else cb.Checked = true;
+                checkboxClick(this, new Controller.EventCheckBox(cb.Checked));
             }
             lblContent_MouseEnter(null, null);
         }

@@ -22,7 +22,7 @@ namespace Server.Controller
         public static string mysql_db_name = "quiz";
         public static string mysql_port = "3306";
         public static string mysql_user = "root";
-        
+
 
         public static List<string> ls_cb_answers_dgv = new List<string>() { "True", "False" };
         public static int id_tag_new_row_add_dgv_answer = -1;
@@ -48,6 +48,8 @@ namespace Server.Controller
         public static string keyGetQuesFile = "Get";
 
 
-       
+
+        
+
     }
 }

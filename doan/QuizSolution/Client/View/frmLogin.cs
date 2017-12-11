@@ -18,15 +18,23 @@ namespace Client.View
     {
         private Socket sck;
         private byte[] data;
-        private static List<Model.Question> lsquesDB = new List<Model.Question>();
-        private static List<Model.Question> lsquesFile = new List<Model.Question>();
-        private static List<Model.Answer> lsansDB = new List<Model.Answer>();
-        private static List<Model.Answer> lsansFile = new List<Model.Answer>();
+        private List<Model.Question> lsquesDB = new List<Model.Question>();
+        private List<Model.Question> lsquesFile = new List<Model.Question>();
+        private List<Model.Answer> lsansDB = new List<Model.Answer>();
+        private List<Model.Answer> lsansFile = new List<Model.Answer>();
+
+        private List<Tuple<int, Model.Question>> quesList = null;
+        private List<Tuple<int, Model.Answer>> ansList = null;
+
+        private bool checkConnect = false;
 
         public frmLogin()
         {
             InitializeComponent();
         }
+
+
+        #region -- Event --
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -48,6 +56,7 @@ namespace Client.View
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            if (checkConnect) return;
             if (validate())
             {
                 int size;
@@ -58,7 +67,7 @@ namespace Client.View
                 }
                 catch (SocketException ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show(ex.ToString(), "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     sck.Close();
                     return;
                 }
@@ -66,10 +75,12 @@ namespace Client.View
                 this.Width = 620;
                 btnClose.Location = new Point(290, 4);
                 PanelTransition.ShowSync(panelProcess);
+                checkConnect = true;
 
                 try
                 {
                     data = new byte[1024];
+
                     size = sck.Receive(data);//size server transfer
 
                     processBar.MaxValue = Convert.ToInt32(Encoding.ASCII.GetString(data, 0, size));
@@ -142,10 +153,20 @@ namespace Client.View
                         }
                     }
                 }
-                catch
+                catch (SocketException ex)
                 {
+                    MessageBox.Show(ex.ToString(), "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     sck.Close();
+                    return;
                 }
+
+                var ls = joinList();
+                this.quesList = ls.Item1;
+                this.ansList = ls.Item2;
+
+                btnStartQuiz.Visible = true;
+
+                new Thread(new ThreadStart(threadListen)).Start();
             }
             else
             {
@@ -156,21 +177,71 @@ namespace Client.View
         private void btnStartQuiz_Click(object sender, EventArgs e)
         {
             this.Hide();
-            (new frmMain(lsquesDB, lsquesFile, lsansDB, lsansFile)).ShowDialog();
+            (new frmMain(quesList, ansList, txtCode.Text + " - " + txtName.Text + " - " + txtClass.Text)).ShowDialog();
         }
 
+        #endregion
 
 
+        #region -- Method --
 
+        private void threadListen()
+        {
+            while (true)
+            {
+                byte[] data = new byte[1024];
+                try
+                {
+                    int size = sck.Receive(data);
+                    string msg = Encoding.ASCII.GetString(data, 0, size);
+                    if (msg == "SETTING;serverstop")
+                    {
+                        sck.Close();
+                        break;
+                    }
+                }
+                catch { return; }
+            }
+        }
 
+        private Tuple<List<Tuple<int, Model.Question>>, List<Tuple<int, Model.Answer>>> joinList()
+        {
+            List<Tuple<int, Model.Question>> quesList = new List<Tuple<int, Model.Question>>();
+            List<Tuple<int, Model.Answer>> answList = new List<Tuple<int, Model.Answer>>();
+            int sttQues = 1;
+            int sttAns = 1;
 
+            foreach (var ques in lsquesDB)
+            {
+                quesList.Add(new Tuple<int, Model.Question>(sttQues, ques));
+                sttQues++;
+            }
 
+            foreach (var ques in lsquesFile)
+            {
+                quesList.Add(new Tuple<int, Model.Question>(sttQues, ques));
+                sttQues++;
+            }
+
+            foreach (var anw in lsansDB)
+            {
+                answList.Add(new Tuple<int, Model.Answer>(sttAns, anw));
+                sttAns++;
+            }
+
+            foreach (var anw in lsansFile)
+            {
+                answList.Add(new Tuple<int, Model.Answer>(sttAns, anw));
+                sttAns++;
+            }
+
+            return new Tuple<List<Tuple<int, Model.Question>>, List<Tuple<int, Model.Answer>>>(quesList, answList);
+        }
 
         private void sendDone()
         {
             sck.Send(Encoding.ASCII.GetBytes("done"));
         }
-
 
         private bool validate()
         {
@@ -191,5 +262,7 @@ namespace Client.View
                     sck.Close();
                 }
         }
+
+        #endregion
     }
 }

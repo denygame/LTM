@@ -126,6 +126,7 @@
             this.btnStartQuiz.Size = new System.Drawing.Size(256, 41);
             this.btnStartQuiz.TabIndex = 14;
             this.btnStartQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnStartQuiz.Visible = false;
             this.btnStartQuiz.Click += new System.EventHandler(this.btnStartQuiz_Click);
             // 
             // processBar
@@ -385,6 +386,7 @@
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
             this.PanelTransition.DefaultAnimation = animation1;
+            this.PanelTransition.MaxAnimationTime = 500;
             // 
             // frmLogin
             // 
@@ -397,7 +399,7 @@
             this.PanelTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
-            this.Text = "frmLogin2";
+            this.Text = "Kết Nối";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             this.Load += new System.EventHandler(this.frmLogin2_Load);
             this.panelHeader.ResumeLayout(false);

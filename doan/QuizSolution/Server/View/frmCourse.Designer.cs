@@ -244,7 +244,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmCourse";
+            this.Text = "Chủ Đề";
             this.Load += new System.EventHandler(this.frmCourse_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();

@@ -15,7 +15,7 @@ namespace Server.Controller
     public class ConnectionHandle
     {
         private Socket sckClient;
-        //private static List<Socket> lsClient = new List<Socket>();
+        private static List<Socket> lsClient = new List<Socket>();
         private ObjectForThread para;
         private List<Model.Question> lsquesdb = null;
         private List<Model.Question> lsquesfile = null;
@@ -23,8 +23,9 @@ namespace Server.Controller
         private List<Model.Answer> lsansfile = null;
         private int sizeTransfer = 0;
         private int size = 0;
-
         private RichTextBox txtCmd;
+        private bool stop = false;
+
 
         /*
          * fix “cross-thread exception” 
@@ -34,15 +35,22 @@ namespace Server.Controller
          */
         delegate void richTXTChange(RichTextBox box, string text, Tuple<int, int, int> color);
 
+        public ConnectionHandle(RichTextBox txtCmd)
+        {
+            this.txtCmd = txtCmd;
+            stop = true;
+        }
+
         public ConnectionHandle(Socket sckClient, RichTextBox txtCmd)
         {
+            stop = false;
             this.sckClient = sckClient;
             this.txtCmd = txtCmd;
 
             para = getObjForConnectionHandel();
             sizeTransfer += getSizeByte(para.toByteArray());
 
-            //lsClient.Add(sckClient);
+            lsClient.Add(sckClient);
 
             if (para.GetDB != 0)
             {
@@ -63,11 +71,21 @@ namespace Server.Controller
             }
         }
 
+
+        private void sendDone()
+        {
+            sckClient.Send(Encoding.ASCII.GetBytes("done"));
+        }
+
+        /// <summary>
+        /// function thread call
+        /// </summary>
         public void Run()
         {
             try
             {
                 byte[] data = new byte[1024];
+
                 sckClient.Send(Encoding.ASCII.GetBytes(sizeTransfer.ToString()));
                 size = sckClient.Receive(data);
 
@@ -108,11 +126,14 @@ namespace Server.Controller
                     }
                 }
 
+
+
                 new Thread(new ThreadStart(threadListen)).Start();
             }
             catch
             {
-                //lsClient.Remove(sckClient);
+                txtCmd.Invoke(new richTXTChange(AppendText), new object[] { txtCmd, sckClient.RemoteEndPoint + " disconnected", new Tuple<int, int, int>(255, 0, 0) });
+                lsClient.Remove(sckClient);
                 sckClient.Close();
             }
         }
@@ -188,17 +209,24 @@ namespace Server.Controller
         //chạy nền kiểm tra câu lệnh
         private void threadListen()
         {
-            while (true)
+            while (!stop)
             {
                 byte[] data = new byte[1024];
-                int size = sckClient.Receive(data);
-                string msg = Encoding.ASCII.GetString(data, 0, size);
-                if (msg == "disconnect")
+                try
                 {
-                    txtCmd.Invoke(new richTXTChange(AppendText), new object[] { txtCmd, sckClient.RemoteEndPoint + " disconnected", new Tuple<int, int, int>(255, 0, 0) });
-
-                    sckClient.Close();
-                    break;
+                    int size = sckClient.Receive(data);
+                    string msg = Encoding.ASCII.GetString(data, 0, size);
+                    if (msg == "disconnect")
+                    {
+                        txtCmd.Invoke(new richTXTChange(AppendText), new object[] { txtCmd, sckClient.RemoteEndPoint + " disconnected", new Tuple<int, int, int>(255, 0, 0) });
+                        lsClient.Remove(sckClient);
+                        sckClient.Close();
+                        break;
+                    }
+                }
+                catch
+                {
+                    return;
                 }
             }
         }
@@ -210,6 +238,22 @@ namespace Server.Controller
             box.SelectionColor = Color.FromArgb(color.Item1, color.Item2, color.Item3);
             box.AppendText(text + "\r\n");
             box.SelectionColor = box.ForeColor;
+        }
+
+        public void stopServer(string str = null)
+        {
+            foreach (var sck in lsClient)
+            {
+                sck.Send(Encoding.ASCII.GetBytes("SETTING;serverstop"));
+                sck.Close();
+            }
+
+            if (str == null)
+            {
+                txtCmd.Invoke(new richTXTChange(AppendText), new object[] { txtCmd, "Server stop!", new Tuple<int, int, int>(255, 0, 0) });
+            }
+
+            lsClient.Clear();
         }
     }
 }
