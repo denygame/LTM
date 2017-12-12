@@ -27,6 +27,7 @@ namespace Client.View
         private List<Tuple<int, Model.Answer>> ansList = null;
 
         private bool checkConnect = false;
+        private Thread listen = null;
 
         public frmLogin()
         {
@@ -38,7 +39,7 @@ namespace Client.View
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,7 +167,9 @@ namespace Client.View
 
                 btnStartQuiz.Visible = true;
 
-                new Thread(new ThreadStart(threadListen)).Start();
+                listen = new Thread(new ThreadStart(threadListen));
+                listen.IsBackground = true;
+                listen.Start();
             }
             else
             {
@@ -261,6 +264,8 @@ namespace Client.View
                     sck.Send(Encoding.ASCII.GetBytes("disconnect"));
                     sck.Close();
                 }
+            if (listen != null) listen.Abort();
+            Environment.Exit(0);
         }
 
         #endregion

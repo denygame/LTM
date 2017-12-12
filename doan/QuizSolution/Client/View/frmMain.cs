@@ -52,6 +52,7 @@ namespace Client.View
 
         private void btnImgClose_Click(object sender, EventArgs e)
         {
+            // Environment.Exit(0);
             Application.Exit();
         }
 
@@ -132,9 +133,6 @@ namespace Client.View
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //if (countNext("off") == 0) btnNext.Visible = false;
-            //if (countPrev("on") == 0) btnPrev.Visible = true;
-
             int index = -1;
             for (int i = integerCurrent; i < quesList.Count; i++)
             {
@@ -193,9 +191,6 @@ namespace Client.View
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            //if (countPrev("off") == 0) btnPrev.Visible = false;
-            //if (countNext("on") != 0) btnNext.Visible = true;
-
             int index = -1;
             for (int i = integerCurrent - 2; i >= 0; i--)
             {

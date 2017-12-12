@@ -25,6 +25,7 @@ namespace Server.Controller
         private int size = 0;
         private RichTextBox txtCmd;
         private bool stop = false;
+        private Thread listen = null;
 
 
         /*
@@ -128,7 +129,9 @@ namespace Server.Controller
 
 
 
-                new Thread(new ThreadStart(threadListen)).Start();
+                listen = new Thread(new ThreadStart(threadListen));
+                listen.IsBackground = true;
+                listen.Start();
             }
             catch
             {
@@ -244,7 +247,6 @@ namespace Server.Controller
         {
             foreach (var sck in lsClient)
             {
-                sck.Send(Encoding.ASCII.GetBytes("SETTING;serverstop"));
                 sck.Close();
             }
 
@@ -254,6 +256,7 @@ namespace Server.Controller
             }
 
             lsClient.Clear();
+            if (listen != null) listen.Abort();
         }
     }
 }

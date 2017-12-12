@@ -26,7 +26,7 @@ namespace Server.View
 
         private void btnImgClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -123,6 +123,8 @@ namespace Server.View
                 File.Delete(path);
             }
             View.ucRunServer.Instance.stopServer("not show txt");
+
+            Environment.Exit(0);
         }
 
         #endregion

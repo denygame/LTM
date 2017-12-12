@@ -163,6 +163,8 @@ namespace Server.View
 
             btnStop.Visible = false;
             btnStart.Visible = true;
+
+            if (Listening != null) Listening.Abort();
         }
 
         private void AppendText(RichTextBox box, string text, Tuple<int, int, int> color)
