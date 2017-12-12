@@ -37,8 +37,6 @@ namespace Server.View
             {
                 InitializeComponent();
             }
-
-            this.connectDb = Controller.DBConnection.connect();
         }
 
         #endregion
@@ -52,17 +50,6 @@ namespace Server.View
         private void ucQuestionDB_Load(object sender, EventArgs e)
         {
             resizeFill();
-
-            if (connectDb)
-            {
-                show_course();
-                lblCourse.Text = "Có tất cả " + Controller.CourseController.count() + " chủ đề";
-            }
-            else
-            {
-                lblCourse.Text = "Vui lòng kiểm tra lại kết nối";
-                lblQues.Text = "File " + Controller.Constant.nameFileConnection + " hoặc kết nối có lỗi";
-            }
         }
 
         private void btnCreateCourse_Click(object sender, EventArgs e)
@@ -151,6 +138,21 @@ namespace Server.View
 
 
         #region -- Method -- 
+
+        public void checkConnect()
+        {
+            this.connectDb = Controller.DBConnection.connect();
+            if (connectDb)
+            {
+                show_course();
+                lblCourse.Text = "Có tất cả " + Controller.CourseController.count() + " chủ đề";
+            }
+            else
+            {
+                lblCourse.Text = "Vui lòng kiểm tra lại kết nối";
+                lblQues.Text = "File " + Controller.Constant.nameFileConnection + " hoặc kết nối có lỗi";
+            }
+        }
 
         private void show_course()
         {

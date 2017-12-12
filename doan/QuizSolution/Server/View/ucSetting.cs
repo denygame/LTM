@@ -40,7 +40,6 @@ namespace Server.View
             {
                 InitializeComponent();
             }
-            this.connectDb = Controller.DBConnection.connect();
         }
 
         #endregion
@@ -52,19 +51,6 @@ namespace Server.View
         {
             txtIP.Text = Controller.Ip.getIpLocal();
             resizeFill();
-            if (connectDb)
-            {
-                cbNumCourse.DataSource = Controller.CourseController.getList();
-                cbNumCourse.DisplayMember = "id";
-            }
-            else
-            {
-                checkBoxCSDL.Enabled = false;
-                lblCSDL.Enabled = false;
-                lblCSDL.ForeColor = Color.Gray;
-            }
-
-            //load();
         }
 
         private void lblCSDL_Click(object sender, EventArgs e)
@@ -223,6 +209,26 @@ namespace Server.View
 
 
         #region -- Method --
+
+        public void checkConnect()
+        {
+            this.connectDb = Controller.DBConnection.connect();
+            if (connectDb)
+            {
+                cbNumCourse.DataSource = Controller.CourseController.getList();
+                cbNumCourse.DisplayMember = "id";
+                checkBoxCSDL.Enabled = true;
+                lblCSDL.Enabled = true;
+                lblCSDL.ForeColor = Color.FromArgb(146, 18, 36);
+            }
+            else
+            {
+                checkBoxCSDL.Enabled = false;
+                lblCSDL.Enabled = false;
+                lblCSDL.ForeColor = Color.Gray;
+            }
+        }
+
 
         private bool checkTextBoxEmpty(Bunifu.Framework.UI.BunifuMaterialTextbox txt)
         {

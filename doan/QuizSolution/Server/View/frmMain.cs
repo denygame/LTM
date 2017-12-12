@@ -62,6 +62,7 @@ namespace Server.View
         private void btnQuestion_Click(object sender, EventArgs e)
         {
             View.ucQuestionDB ucQues = View.ucQuestionDB.Instance;
+            ucQues.checkConnect();
             panelContent.Controls.Clear();
             panelContent.Controls.Add(ucQues);
             ucQues.resizeFill();
@@ -72,6 +73,7 @@ namespace Server.View
         private void btnSetting_Click(object sender, EventArgs e)
         {
             View.ucSetting ucSett = View.ucSetting.Instance;
+            ucSett.checkConnect();
             panelContent.Controls.Clear();
             panelContent.Controls.Add(ucSett);
             ucSett.resizeFill();
