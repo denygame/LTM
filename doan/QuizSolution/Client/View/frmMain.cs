@@ -217,7 +217,8 @@ namespace Client.View
 
         private void endQuiz()
         {
-            int score = (100 / quesList.Count) * lsResult.Count;
+            double score = Math.Round(((double)100 / (double)quesList.Count) * lsResult.Count, 1);
+
             panelContent.Controls.Clear();
             Label lbl = new Label();
             lbl.Dock = DockStyle.Fill;

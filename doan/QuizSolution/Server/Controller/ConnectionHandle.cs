@@ -234,7 +234,7 @@ namespace Server.Controller
         private void AppendText(RichTextBox box, string text, Tuple<int, int, int> color)
         {
             box.SelectionStart = box.TextLength;
-            box.SelectionLength = 0;
+            box.SelectionLength = box.TextLength;
             box.SelectionColor = Color.FromArgb(color.Item1, color.Item2, color.Item3);
             box.AppendText(text + "\r\n");
             box.SelectionColor = box.ForeColor;

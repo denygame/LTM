@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Server.Controller
@@ -25,8 +26,6 @@ namespace Server.Controller
             object[,] valueArray = (object[,])xlRange.get_Value(Excel.XlRangeValueDataType.xlRangeValueDefault);
 
             addToList(xlWorksheet, valueArray);
-
-
 
             // Đóng Workbook.
             xlWorkbook.Close(false);
@@ -152,10 +151,12 @@ namespace Server.Controller
         private static bool checkHasTrue(int row, Excel.Worksheet xlWorksheet, object[,] valueArray)
         {
             int count = 0;
-            for (int test = 3; test <= xlWorksheet.UsedRange.Columns.Count; test = test + 3)
+            for (int test = 3; test <= xlWorksheet.UsedRange.Columns.Count; test = test + 2)
             {
+                if (valueArray[row, test] == null) continue;
                 if (valueArray[row, test].ToString() == "True") count++;
             }
+            
             return count > 0;
         }
 
