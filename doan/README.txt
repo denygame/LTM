@@ -1,2 +1,4 @@
 - CSDL la MySQL
 - Phai cai Office, co doc file Excel
+- Cau hinh ket noi database o file connection.ini (chung path Server.exe)
+- QuizFolder/setting.ini luu tru cac thong tin khi cau hinh server

@@ -16,7 +16,7 @@ namespace Server.Controller
     {
         private Socket sckClient;
         private static List<Socket> lsClient = new List<Socket>();
-        private ObjectForThread para;
+        private ObjectForThread para;//object chứa time
         private List<Model.Question> lsquesdb = null;
         private List<Model.Question> lsquesfile = null;
         private List<Model.Answer> lsansdb = null;

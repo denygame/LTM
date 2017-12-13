@@ -120,18 +120,19 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnImgMax.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4QsQDxUK6jlMPgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHjSURBVHhe
-        7ZuxccJAEEUZUmpwTkgzdEIP1EAZDumCkMAlkNCA8f/ez9i7nEBk0t6+mZ0bpFvm3kcIAt3iFbfbbY3a
-        oY6oM+qKmipcG9fItXLNa2m8D5o3eqO5Q4eNtF6DyUvUHvWNygJd6LSUZhtMWKE+UVmh20q6HpzgJ59Z
-        /g4dH68EHOQlMoYL6jTR4trGsJe2gQO84T37zn+htqgPtUwWrlFr5ZqHoOvfjREvnt3tD6j292bCcM1a
-        +xDH+0T+zg9x+J00Y+hgKk3WnMA/DC14Cc3uk4/QQS4tdpwwdPlv9R6zhy6m9MCRJ/nXscXkb3hjoYsp
-        PXDmydZ/+4t600AnU3NceaLFSX1poJOpeSoAjZEKQH1poJOpeSoAjZEKQH1poJOpeSoAjZEKQH1poJOp
-        eSoAjZEKQH1poJOpeSoAjZEKQH1poJOpeSoAjZEKQH1poJOpeSoAjZEKQH1poJOpeSoAjZEKQH1poJOp
-        eSoAjZEKQH1poJOpeSoAjZEKQH1poJOpeSoAjZEKQH1poJOpeSoAjZEKQH1poJOpeSoAVPePyXX/oGT3
-        j8p2/7B034/La1K/GyYIXvS9ZYbgQL+bpggO9r1tjuBEvxsn72BCv1tn/4PJfW6ejqA58fb5xeIHMVyd
-        1b+xbb0AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAKiSURBVHhe7ZsxahtRGAZdpUqVg+U4vkOqFClSGlcmpHAVTIrgYxgfw7hKYZR5u3ZjjItdwYuY
+        GfjgbwTS7KBCoLPD4fCZfWHf2Hd28byr5/1k16/2i928s9/s9j/YW+9t68Znfu3hGHvxfMxdspfn+N7O
+        RwDjBeHkdgTwY71DyBLA+BoKJwUgpwDkFICcApBTAHIKQM4SwPiVK5wUgJwCkFMAcgpAzlECeGxT98S2
+        sjuAB/aJfWzTds+2cpQAPpzFNPB/tzyJbRTAqYP/AjCD/wIwg/8CMIP/AjCD/wIwg/8CMIP/AjCD/wIw
+        g/8CMIP/AjCD/90BjD9RbqUAJoP/AjCD/wIwg/8CMIP/AjCD/wIwg/8CMIP/AjCD/wIwg/8CMIP/AjCD
+        /wIwg/8CMIP/AjCD/wIwg/8CMIP/AjCD/wIwg/8CMIP/AjCD/wIwg/8CMIP/3QH8We9NFMBk8L87gP4X
+        cMLgvwDM4L8AzOC/AMzgvwDM4L8AzOC/AMzgvwDM4L8AzOC/AMzgvwDM4L8AzOC/AMzgvwDM4L8AzOC/
+        AMzgvwDM4L8AzOC/AMzgvwDM4L8AzOC/AMzgvwDM4H93ANfrvYkCmAz+C8AM/gvADP4LwAz+C8AM/gvA
+        DP4LwAz+C8AM/gvADP4LwAz+C8AM/gvADP4LwAz+C8AM/gvADP4LwAz+C8AM/gvADP4LwAz+C8AM/gvA
+        DP53B3C13psogMngvwDM4L8AzOC/AMzgvwDM4L8AzOC/AMzgvwDM4L8AzOC/AMzgvwDM4L8AzOC/AMzg
+        vwDM4L8AzOC/AMzgf2oAT2y8gTZvf9lWdgcQp00ByCkAOQUgZwngcr1DyBLAxXqHkAKQUwByCkBOAcgp
+        ADkFIKcA5BSAnCWA83E04w5f/wH+SyL0HXfUWgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

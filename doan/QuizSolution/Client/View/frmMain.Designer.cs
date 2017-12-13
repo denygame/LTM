@@ -39,22 +39,22 @@
             this.btnImgClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelContent = new System.Windows.Forms.Panel();
-            this.panelStt = new System.Windows.Forms.Panel();
             this.panelButton = new System.Windows.Forms.Panel();
             this.btnPrev = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnNext = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAccept = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelQuiz = new System.Windows.Forms.Panel();
+            this.panelStt = new System.Windows.Forms.Panel();
+            this.lblInfo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuDragControl3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.timerBlock = new System.Windows.Forms.Timer(this.components);
-            this.lblInfo = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).BeginInit();
             this.panelContent.SuspendLayout();
-            this.panelStt.SuspendLayout();
             this.panelButton.SuspendLayout();
+            this.panelStt.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHeader
@@ -172,16 +172,6 @@
             this.panelContent.Size = new System.Drawing.Size(726, 519);
             this.panelContent.TabIndex = 4;
             // 
-            // panelStt
-            // 
-            this.panelStt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
-            this.panelStt.Controls.Add(this.lblInfo);
-            this.panelStt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStt.Location = new System.Drawing.Point(0, 51);
-            this.panelStt.Name = "panelStt";
-            this.panelStt.Size = new System.Drawing.Size(726, 31);
-            this.panelStt.TabIndex = 2;
-            // 
             // panelButton
             // 
             this.panelButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -282,17 +272,15 @@
             this.panelQuiz.Size = new System.Drawing.Size(630, 409);
             this.panelQuiz.TabIndex = 0;
             // 
-            // bunifuDragControl3
+            // panelStt
             // 
-            this.bunifuDragControl3.Fixed = true;
-            this.bunifuDragControl3.Horizontal = true;
-            this.bunifuDragControl3.TargetControl = this.lblNameProject;
-            this.bunifuDragControl3.Vertical = true;
-            // 
-            // timerBlock
-            // 
-            this.timerBlock.Interval = 1000;
-            this.timerBlock.Tick += new System.EventHandler(this.timerBlock_Tick);
+            this.panelStt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
+            this.panelStt.Controls.Add(this.lblInfo);
+            this.panelStt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStt.Location = new System.Drawing.Point(0, 51);
+            this.panelStt.Name = "panelStt";
+            this.panelStt.Size = new System.Drawing.Size(726, 31);
+            this.panelStt.TabIndex = 2;
             // 
             // lblInfo
             // 
@@ -304,6 +292,18 @@
             this.lblInfo.Size = new System.Drawing.Size(726, 31);
             this.lblInfo.TabIndex = 4;
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuDragControl3
+            // 
+            this.bunifuDragControl3.Fixed = true;
+            this.bunifuDragControl3.Horizontal = true;
+            this.bunifuDragControl3.TargetControl = this.lblNameProject;
+            this.bunifuDragControl3.Vertical = true;
+            // 
+            // timerBlock
+            // 
+            this.timerBlock.Interval = 1000;
+            this.timerBlock.Tick += new System.EventHandler(this.timerBlock_Tick);
             // 
             // frmMain
             // 
@@ -323,8 +323,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnImgClose)).EndInit();
             this.panelContent.ResumeLayout(false);
-            this.panelStt.ResumeLayout(false);
             this.panelButton.ResumeLayout(false);
+            this.panelStt.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -12,6 +12,7 @@ namespace Client.View
 {
     public partial class frmMain : Form
     {
+        #region -- Parameters --
         private List<Tuple<int, Model.Question, bool>> quesList = null;
         private string info = "";
         private List<Tuple<int, Model.Answer>> ansList = null;
@@ -32,6 +33,8 @@ namespace Client.View
         int second = 60;
         int minute = Controller.Constant.time / 60;
         bool firstTime = true;
+
+        #endregion
 
         public frmMain(List<Tuple<int, Model.Question>> quesLs, List<Tuple<int, Model.Answer>> ansList, string info)
         {
@@ -207,7 +210,6 @@ namespace Client.View
         #endregion
 
 
-
         #region -- Method --
 
         private void endQuiz()
@@ -306,23 +308,36 @@ namespace Client.View
 
         private void setAnswers(int width, int height, int idques, int num_right)
         {
+            //bool là lấy ra chưa
+            List<Model.Answer> listAnsInQues = new List<Model.Answer>();
             for (int i = 0; i < ansList.Count; i++)
             {
                 if (ansList[i].Item2.Id_ques == idques)
+                    listAnsInQues.Add(ansList[i].Item2);
+            }
+
+            // random cac doi tuong trong list
+            Random rnd = new Random();
+            listAnsInQues = listAnsInQues.OrderBy(item => rnd.Next()).ToList();
+
+            //create answer
+            for (int i = 0; i < listAnsInQues.Count; i++)
+            {
+                if (listAnsInQues[i].Id_ques == idques)
                 {
-                    var uc = new View.uc_answer(ansList[i].Item2.Content, num_right);
+                    var uc = new View.uc_answer(listAnsInQues[i].Content, num_right);
                     uc.Location = new Point(20, height);
-                    uc.Name = "answer" + ansList[i].Item2.Id;
+                    uc.Name = "answer" + listAnsInQues[i].Id;
                     this.lsSaveUC.Add(new Tuple<uc_answer, int>(uc, 0));
                     uc.CheckboxClick += Uc_CheckboxClick;
                     uc.radioClick += radioClick_click;
-                    uc.Tag = ansList[i].Item2.True_or_false;
+                    uc.Tag = listAnsInQues[i].True_or_false;
                     height += uc.Height + 10;
                     panelQuiz.Controls.Add(uc);
-
                 }
             }
 
+            //design phan cuoi cho dep
             Panel pn = new Panel();
             pn.Location = new Point(20, height);
             pn.Size = new Size(width, 10);
