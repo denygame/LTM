@@ -91,7 +91,9 @@ namespace Server.Controller
 
             List<Model.Question> lsques = new List<Model.Question>();
             List<Model.Answer> lsans = new List<Model.Answer>();
-            int idquesfile = 1;
+
+            //id ques of file k ổn lắm
+            int idquesfile = QuestionController.get_last_id() + 50;
 
             for (int row = 1; row <= xlWorksheet.UsedRange.Rows.Count; row++)//đọc row hiện có trong Excel
             {
@@ -156,7 +158,7 @@ namespace Server.Controller
                 if (valueArray[row, test] == null) continue;
                 if (valueArray[row, test].ToString() == "True") count++;
             }
-            
+
             return count > 0;
         }
 

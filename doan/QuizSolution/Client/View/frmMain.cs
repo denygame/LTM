@@ -234,7 +234,6 @@ namespace Client.View
             lsSaveUC.Clear();
 
             Model.Question ques;
-
             ques = quesList[index].Item2;
 
             var setupQues = setQues(quesList[index].Item1 + ") " + ques.Content);
@@ -308,7 +307,6 @@ namespace Client.View
 
         private void setAnswers(int width, int height, int idques, int num_right)
         {
-            //bool là lấy ra chưa
             List<Model.Answer> listAnsInQues = new List<Model.Answer>();
             for (int i = 0; i < ansList.Count; i++)
             {
