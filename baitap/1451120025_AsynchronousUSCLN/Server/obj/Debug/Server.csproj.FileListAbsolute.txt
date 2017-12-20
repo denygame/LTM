@@ -1,0 +1,7 @@
+E:\LTM C#\baitap\1451120025_AsynchronousUSCLN\Server\bin\Debug\Server.exe.config
+E:\LTM C#\baitap\1451120025_AsynchronousUSCLN\Server\bin\Debug\Server.exe
+E:\LTM C#\baitap\1451120025_AsynchronousUSCLN\Server\bin\Debug\Server.pdb
+E:\LTM C#\baitap\1451120025_AsynchronousUSCLN\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+E:\LTM C#\baitap\1451120025_AsynchronousUSCLN\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+E:\LTM C#\baitap\1451120025_AsynchronousUSCLN\Server\obj\Debug\Server.exe
+E:\LTM C#\baitap\1451120025_AsynchronousUSCLN\Server\obj\Debug\Server.pdb

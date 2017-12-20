@@ -1,0 +1,12 @@
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\TCPClient\bin\Debug\TCPClient.exe.config
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\TCPClient\bin\Debug\TCPClient.exe
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\TCPClient\bin\Debug\TCPClient.pdb
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\TCPClient\obj\Debug\TCPClient.exe
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\TCPClient\obj\Debug\TCPClient.pdb
+C:\Users\cucod\Downloads\MultiClientServerTCP\TCPClient\bin\Debug\TCPClient.exe.config
+C:\Users\cucod\Downloads\MultiClientServerTCP\TCPClient\bin\Debug\TCPClient.exe
+C:\Users\cucod\Downloads\MultiClientServerTCP\TCPClient\bin\Debug\TCPClient.pdb
+C:\Users\cucod\Downloads\MultiClientServerTCP\TCPClient\obj\Debug\TCPClient.csprojResolveAssemblyReference.cache
+C:\Users\cucod\Downloads\MultiClientServerTCP\TCPClient\obj\Debug\TCPClient.csproj.CoreCompileInputs.cache
+C:\Users\cucod\Downloads\MultiClientServerTCP\TCPClient\obj\Debug\TCPClient.exe
+C:\Users\cucod\Downloads\MultiClientServerTCP\TCPClient\obj\Debug\TCPClient.pdb

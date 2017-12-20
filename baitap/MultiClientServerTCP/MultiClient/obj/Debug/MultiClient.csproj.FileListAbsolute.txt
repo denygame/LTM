@@ -1,0 +1,11 @@
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClient\bin\Debug\MultiClient.exe.config
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClient\bin\Debug\MultiClient.exe
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClient\bin\Debug\MultiClient.pdb
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClient\obj\Debug\MultiClient.exe
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClient\obj\Debug\MultiClient.pdb
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClient\bin\Debug\MultiClient.exe.config
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClient\bin\Debug\MultiClient.exe
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClient\bin\Debug\MultiClient.pdb
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClient\obj\Debug\MultiClient.csproj.CoreCompileInputs.cache
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClient\obj\Debug\MultiClient.exe
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClient\obj\Debug\MultiClient.pdb

@@ -1,0 +1,10 @@
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\bin\Debug\1451120025_HTTPClient.exe.config
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\bin\Debug\1451120025_HTTPClient.exe
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\bin\Debug\1451120025_HTTPClient.pdb
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\obj\Debug\1451120025_HTTPClient.csprojResolveAssemblyReference.cache
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\obj\Debug\_1451120025_HTTPClient.Form1.resources
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\obj\Debug\_1451120025_HTTPClient.Properties.Resources.resources
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\obj\Debug\1451120025_HTTPClient.csproj.GenerateResource.Cache
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\obj\Debug\1451120025_HTTPClient.csproj.CoreCompileInputs.cache
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\obj\Debug\1451120025_HTTPClient.exe
+C:\Users\thanh\Desktop\1451120025_HTTPClient\1451120025_HTTPClient\obj\Debug\1451120025_HTTPClient.pdb

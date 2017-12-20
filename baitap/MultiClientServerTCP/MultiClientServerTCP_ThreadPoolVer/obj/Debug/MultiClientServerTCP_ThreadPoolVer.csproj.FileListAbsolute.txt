@@ -1,0 +1,13 @@
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\bin\Debug\MultiClientServerTCP_ThreadPoolVer.exe.config
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\bin\Debug\MultiClientServerTCP_ThreadPoolVer.exe
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\bin\Debug\MultiClientServerTCP_ThreadPoolVer.pdb
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\obj\Debug\MultiClientServerTCP_ThreadPoolVer.exe
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\obj\Debug\MultiClientServerTCP_ThreadPoolVer.pdb
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\obj\Debug\MultiClientServerTCP_ThreadPoolVer.csprojResolveAssemblyReference.cache
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\bin\Debug\MultiClientServerTCP_ThreadPoolVer.exe.config
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\bin\Debug\MultiClientServerTCP_ThreadPoolVer.exe
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\bin\Debug\MultiClientServerTCP_ThreadPoolVer.pdb
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\obj\Debug\MultiClientServerTCP_ThreadPoolVer.csprojResolveAssemblyReference.cache
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\obj\Debug\MultiClientServerTCP_ThreadPoolVer.csproj.CoreCompileInputs.cache
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\obj\Debug\MultiClientServerTCP_ThreadPoolVer.exe
+C:\Users\cucod\Downloads\MultiClientServerTCP\MultiClientServerTCP_ThreadPoolVer\obj\Debug\MultiClientServerTCP_ThreadPoolVer.pdb

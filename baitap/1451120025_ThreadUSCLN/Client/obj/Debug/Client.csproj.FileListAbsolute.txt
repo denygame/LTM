@@ -1,0 +1,13 @@
+E:\LTM C#\baitap\1451120025_ThreadUSCLN\Client\bin\Debug\Client.exe.config
+E:\LTM C#\baitap\1451120025_ThreadUSCLN\Client\bin\Debug\Client.exe
+E:\LTM C#\baitap\1451120025_ThreadUSCLN\Client\bin\Debug\Client.pdb
+E:\LTM C#\baitap\1451120025_ThreadUSCLN\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+E:\LTM C#\baitap\1451120025_ThreadUSCLN\Client\obj\Debug\Client.exe
+E:\LTM C#\baitap\1451120025_ThreadUSCLN\Client\obj\Debug\Client.pdb
+C:\Users\thanh\Desktop\1451120025_ThreadUSCLN\Client\bin\Debug\Client.exe.config
+C:\Users\thanh\Desktop\1451120025_ThreadUSCLN\Client\bin\Debug\Client.exe
+C:\Users\thanh\Desktop\1451120025_ThreadUSCLN\Client\bin\Debug\Client.pdb
+C:\Users\thanh\Desktop\1451120025_ThreadUSCLN\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\thanh\Desktop\1451120025_ThreadUSCLN\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\thanh\Desktop\1451120025_ThreadUSCLN\Client\obj\Debug\Client.exe
+C:\Users\thanh\Desktop\1451120025_ThreadUSCLN\Client\obj\Debug\Client.pdb

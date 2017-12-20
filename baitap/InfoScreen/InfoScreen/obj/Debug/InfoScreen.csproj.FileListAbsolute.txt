@@ -1,0 +1,38 @@
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\bin\Debug\InfoScreen.exe.config
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\bin\Debug\InfoScreen.exe
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\bin\Debug\InfoScreen.pdb
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csprojResolveAssemblyReference.cache
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\obj\Debug\InfoScreen.Form1.resources
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\obj\Debug\InfoScreen.Properties.Resources.resources
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csproj.GenerateResource.Cache
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\obj\Debug\InfoScreen.exe
+c:\users\anh\documents\visual studio 2013\Projects\InfoScreen\InfoScreen\obj\Debug\InfoScreen.pdb
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\bin\Debug\InfoScreen.exe.config
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\obj\Debug\InfoScreen.exe
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\obj\Debug\InfoScreen.pdb
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\bin\Debug\InfoScreen.exe
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\bin\Debug\InfoScreen.pdb
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csprojResolveAssemblyReference.cache
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\obj\Debug\InfoScreen.Form1.resources
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\obj\Debug\InfoScreen.Properties.Resources.resources
+G:\Lap trinh mang -v2\Demo\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csproj.GenerateResource.Cache
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\bin\Debug\InfoScreen.exe.config
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\bin\Debug\InfoScreen.exe
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\bin\Debug\InfoScreen.pdb
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csprojResolveAssemblyReference.cache
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.Form1.resources
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.Properties.Resources.resources
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csproj.GenerateResource.Cache
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csproj.CoreCompileInputs.cache
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.exe
+E:\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.pdb
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\bin\Debug\InfoScreen.exe.config
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\bin\Debug\InfoScreen.exe
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\bin\Debug\InfoScreen.pdb
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csprojResolveAssemblyReference.cache
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.Form1.resources
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.Properties.Resources.resources
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csproj.GenerateResource.Cache
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.csproj.CoreCompileInputs.cache
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.exe
+E:\DATA\LTM C#\baitap\InfoScreen\InfoScreen\InfoScreen\obj\Debug\InfoScreen.pdb

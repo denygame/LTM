@@ -1,0 +1,6 @@
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiServerTCP\bin\Debug\MultiServerTCP.exe.config
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiServerTCP\bin\Debug\MultiServerTCP.exe
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiServerTCP\bin\Debug\MultiServerTCP.pdb
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiServerTCP\obj\Debug\MultiServerTCP.csprojResolveAssemblyReference.cache
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiServerTCP\obj\Debug\MultiServerTCP.exe
+G:\Lap trinh mang -v2\Demo\MultiClientServerTCP\MultiServerTCP\obj\Debug\MultiServerTCP.pdb
